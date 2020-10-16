@@ -1,0 +1,20 @@
+{
+    "title" : "Featured insights",
+    "image" : {
+      "position" : "left",
+      "url" : "cost-transformation.jpg",
+      "alt":"homepage"
+    },
+    "heading" : "Cost and Value Transformation in the Era of COVID-19",
+    "paragraphs" : [
+      "As organizations around the world continue to navigate the turmoil of COVID-19, uncertainty remains about how businesses will finally reemerge, and what markets will look like. However, one thing is clear. In the different normal that ensues, resiliency, agility, and speed will separate the organizations that succeed from those that don’t.",
+	  "In this disruption-ready reality, organizations will need to anticipate and respond more frequently to sudden and significant change. Cash preservation is critical, but the answer isn’t merely cost cutting—it’s a focus on cost and value transformation: Finding better ways to organize and run a business that lower cost and make it more variable, while enabling investments so the company is positioned for growth."
+    ],
+    "buttons" : [
+      {
+       "label" : "Read the report",
+       "url" : "https://w3.ibm.com/services/lighthouse/documents/158806"
+      }
+    ] 
+   }
+   

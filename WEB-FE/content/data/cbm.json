@@ -1,0 +1,19 @@
+{
+    "image" : {
+      "position" : "right",
+      "url" : "cbm_ls_800.jpg",
+      "alt":"CBM" 
+    },
+    "heading" : "",
+    "paragraphs" : [
+      "Component Business Modeling (CBM) is a strategic management framework to identify opportunities for improvement or innovation in an organization. It is a technique for modeling and analyzing an enterprise by partitioning it into a manageable number of relatively independent, discrete, modular, and re-usable business components. A business component is a logical view of part of an enterprise that includes the resources, people, technology, and know-how necessary to deliver capabilities to the organization.",
+      "CBM can be used in a variety of ways, the most powerful of which is to create a heat map that identifies the components that provide the greatest opportunity for improvement or innovation. CBM also can be used to create industry-specific, predefined assets."
+    ],
+    "buttons" : [
+      {
+       "label" : "Access CBM tool",
+       "url" : "https://cbm-next.sl.cloud9.ibm.com"
+      }
+    ] 
+   }
+   

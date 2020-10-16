@@ -1,0 +1,12 @@
+.ibv-team	#ibm-leadspace-head{
+    background-image: url('../img/leadspace/experts.png');
+}
+.ibv-team .ibm-grid-small #ibm-leadspace-head{
+    background-image: url('../img/leadspace/experts.png');
+}
+
+@media screen and (max-width:1000px){
+    .ibv-team .menber-leave{
+        display: none;
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "video" : {
+      "position" : "right",
+      "url" : "covid19guide_compressed.mp4?dl=1",
+      "poster":"covid_action_guide_thumbnail.jpg"
+    },
+    "heading" : "Help your clients prepare for a different normal",
+    "paragraphs" : [
+      "Nothing is “business as usual,” and it may not be for some time. To help you prepare your clients for what’s next, our global team of experts will continue to deliver business intelligence that helps leaders navigate disruption. Visit this page frequently to see what’s new. For industry-specific perspectives, <a href='https://www.ibm.com/thought-leadership/institute-business-value/blog/home' target='_blank'>read our COVID-19 blog series</a>, created in partnership with the Industry Academy.",
+      "If you're looking for a way to start a conversation with your clients, our <a href='https://w3.ibm.com/services/lighthouse/documents/153406' target='_blank'>COVID-19 Action Guide</a> is the perfect tool. It outlines steps organizations need to take now to navigate today’s disruption and be ready for a post-pandemic business landscape. The guide is structured around IBM's Big 7 business imperatives and is designed to help organizations address new challenges that come in the wake of coronavirus pandemic. Read it and share it with your clients to help them adapt, become more resilient, and prepare for the future."
+    ],
+    "buttons" : [
+      {
+       "label" : "Download Action Guide",
+       "url" : "https://w3.ibm.com/services/lighthouse/documents/153406"
+      }
+    ] 
+   }
+   

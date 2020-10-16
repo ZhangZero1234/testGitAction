@@ -1,0 +1,23 @@
+{
+    "video" : {
+      "position" : "right",
+      "url" : "cognitive_enterprisevideo_compressed.mp4",
+      "poster":"cogent_video_frame.jpg"
+    },
+    "heading" : "A new era of business reinvention is dawning. Are your clients prepared?",
+    "paragraphs" : [
+      "The digital journeys of the past decade are now becoming cognitive journeys driven by the maturity of AI, blockchain, automation, IoT, 5G, edge computing, and other exponential technologies. As these capabilities are applied at scale, they increasingly change the core of organizations—and their mission-critical processes.",
+      "To prepare, organizations need to adopt a new business model, one that we call the Cognitive Enterprise&trade;. In our report, \"Building the Cognitive Enterprise,\" we explore nine action areas that can help organizations transform."
+    ],
+    "buttons" : [
+      {
+       "label" : "Read the Deep Dive report",
+       "url" : "https://w3.ibm.com/services/lighthouse/documents/150536"
+      },
+      {
+        "label" : "Read the Core Concepts report",
+        "url" : "https://w3.ibm.com/services/lighthouse/documents/154011"
+       }
+    ] 
+   }
+   

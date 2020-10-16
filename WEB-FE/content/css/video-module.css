@@ -1,0 +1,12 @@
+.video-width {
+	width: 100% !important;
+}
+.videoCom-dimensions{
+    height: auto !important;
+}
+.vjs-poster{
+    background-position: unset !important;
+}
+.endCover {
+    display: block !important;
+}

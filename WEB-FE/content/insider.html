@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <!-- HEAD-TOP : BEGIN -->
+  <!--#include virtual="/ssi/head-top.ssi" -->
+  <!-- HEAD-TOP : END -->
+
+  <!-- Page specific settings : START -->
+  <title>IBV Insider webinar series | IBM Institute for Business Value</title>
+  <meta name="title" content="IBV Insider webinar series | IBM Institute for Business Value"/>
+  <meta name="description" content="Conversations about the latest trends impacting our clients, our business, and you."/>
+  <meta name="Keywords" content="IBV, thought leadership, institute for business value, business challenges, strategic insights, thought leader, webinars, replays, register, series, IBV Insider"/>
+  <meta name="IBM.Effective" content="2019-09-23"/>
+  <meta name="DC.Date" content="2019-09-23"/>
+  <link rel="canonical" href="https://ibv.dst.ibm.com/insider.html">
+  <script type="text/javascript">
+    digitalData = {
+      page: {
+        category: {
+          primaryCategory: 'IBM_Institute_for_Business_Value'
+        },
+        pageInfo: {
+          description: 'Conversations about the latest trends impacting our clients, our business, and you.',
+          effectiveDate: '2019-09-23',
+          language: 'en-US',
+          publishDate: '2019-09-23',
+          publisher: 'IBM Corporation',
+          version: 'v18',
+          ibm: {
+            contentDelivery: 'IBV Next Web',
+            contentProducer: 'IBV Next CMS',
+            country: 'ZZ',
+            owner: 'Institute for Business Value/Raleigh/Contr/IBM',
+            siteID: 'IBM_IBV_w3',
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Page specific settings : END -->
+
+  <!-- HEAD-BOT : BEGIN -->
+  <!--#include virtual="/ssi/head-bot.ssi" -->
+  <!-- HEAD-BOT : END -->
+  <link rel="stylesheet" href="css/insider.css">
+  <!-- ------------------------ -->
+  <!-- Page specific Javascript -->
+  <!-- ------------------------ -->
+  <script>
+    $(function(){
+	  $.getJSON('data/insider.json',function(data){
+        ibv.renderSection("#section",data,"./mst/image-module.mst")
+      });
+	  ibv.processRemoteDataAndTemplate('#faqsTarget', 'mst/faqs.mst', 'data/insider_faq.json', function() { $("#faqShowHide").showhide(); } );
+	  $("#ibm-contact-module").on("focus",()=>{$(".ibm-contact-widget-btn.ibm-active").click()});
+    });
+  </script>
+</head>
+
+<body id="ibm-com" class="ibm-type ibv-insider">
+  <div id="ibm-top" class="ibm-landing-page">
+
+    <!-- MASTHEAD : BEGIN -->
+    <!--#include virtual="/ssi/masthead.ssi" -->
+    <!-- MASTHEAD : END -->
+
+    <!-- START MAIN PAGE WRAPPER AROUND LEADSPACE, MAIN CONTENT SIDENAV AND RELATED CONTENT -->
+    <div id="ibm-content-wrapper" role="region" aria-label="ibm content wrapper">
+      <header role="banner" aria-labelledby="ibm-pagetitle-h1">
+
+        <!-- SITENAV_START -->
+        <!--#include virtual="/ssi/navigation.ssi" -->    
+        <!-- SITENAV_END --> 
+
+        <!-- LEADSPACE_START -->
+        <div id="ibm-leadspace-head" class="ibm-alternate ibm-alternate-background ibm-vertical-center ibm-background-black-core">
+          <div id="ibm-leadspace-body" class="ibm-padding-top-r1 ibm-padding-bottom-r1 ibm-vertical-center">
+            <div id="ibv-leadspace" class="ibm-padding-content">
+              <h1 id="ibm-pagetitle-h1" class="ibm-h1 ibm-bold ibm-padding-bottom-0">IBV Insider webinar series</h1>
+			  <h3 class="ibm-h3 leadspace-subtitle">&nbsp;</h3>
+              <p class="ibm-button-link btn-equal-width-mobile ibv-padding-top-1">
+                <a class="ibm-btn-pri ibv-pri-button ibv-button-space  leadspaceBtn" href="#webinar">Access webinar replays
+				</a>
+				<a class="ibm-btn-pri ibv-sec-button ibv-button-space leadspaceBtn" href="https://ibm.co/ibv-subscribe-internal" target="_blank">Get insights via email
+				</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- LEADSPACE_END -->
+
+      </header>
+    </div>
+    <!-- END MAIN PAGE WRAPPER AROUND LEADSPACE, MAIN CONTENT SIDENAV AND RELATED CONTENT -->
+
+    <!-- Page content here : START -->
+    <main role="main" aria-labelledby="ibm-pagetitle-h1">
+      <div id="ibm-pcon">
+        <div id="ibm-content">
+          <div id="ibm-content-body">
+
+            <div id="ibm-content-main" class="ibm-margin-top-2">
+              <div class="ibm-columns">
+                <div class="ibm-col-6-6">
+                  <p><span class="ibm-h3">Conversations about the latest trends impacting our clients, our business, and you</span></p>
+                  <p>IBV Insider is a quarterly, internal webinar series that features the latest insights from our global research leaders and other IBM SMEs. Registration is open to any IBMer who wants to learn more about recent marketplace trends and the key challenges our clients are facing. Each session includes data and recommendations that consultants and sellers can use with clients, as well as a live Q&A session.</p>     
+                </div>
+              </div>
+			  <div id="section"></div>  
+			  <div class="ibm-columns ibm-padding-bottom-2 ibm-padding-top-r1">
+				<div class="ibm-col-6-6">
+					<p>
+						<span id="webinar" class="ibm-h3">Webinar replays and seller materials</span>	
+					</p>
+				</div>
+                <div class="ibm-col-6-6"> 
+					<div id="faqsTarget"></div><br />
+				</div>
+				<div class="ibm-col-6-6">
+					<p><a class="ibm-btn-pri ibv-pri-button" href="https://ibm.box.com/s/nt6w38x8l42emq1e1p6hydvyvz3qe1gl" target='_blank'>Access full archive</a></p>
+				</div>
+			  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Page content here : END -->
+
+    <!-- FOOTER : BEGIN -->
+    <!--#include virtual="/ssi/footer.ssi" -->
+    <!-- FOOTER : END -->
+
+    <!-- CONTACT_MODULE : BEGIN -->
+    <!--#include virtual="/ssi/contact.ssi" -->
+    <!-- CONTACT_MODULE : END -->
+  </div>
+<!-- CLOSING : BEGIN -->
+<!--#include virtual="/ssi/closing.ssi" -->
+<!-- CLOSING : END -->
+</body>
+</html>

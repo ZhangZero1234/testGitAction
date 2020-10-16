@@ -1,0 +1,26 @@
+<div class="ibm-columns ibm-padding-bottom-2 ibm-padding-top-r1">
+{{#title}}
+    <div class="ibm-col-12-12 ibm-padding-content ibm-padding-bottom-1">
+        <h3 class="ibm-h3">{{title}}</h3>
+    </div>
+{{/title}}
+{{#video}}
+<div id="show-video" class="ibm-col-medium-12-12 ibm-col-12-6 ibm-padding-content" style="float:{{position}}">
+    <video id="videoCom" style="position:relative;height:unset;" class="video-js vjs-big-play-centered video-width" controls  poster="img/video-cover/{{poster}}" onended="showCover()" onplay="hideCover()" data-setup="{}">
+        <source src="video/{{url}}?dl=1" type="video/mp4"></source>
+        <p>Your user agent does not support the HTML5 Video element.</p>
+    </video>
+</div>	
+{{/video}}
+<div class="ibm-col-12-6 ibm-col-medium-12-12 ibm-padding-content">
+    {{#heading}}<p><span class="ibm-h3 ibm-left">{{heading}}</span></p>{{/heading}}
+    {{#paragraphs}}
+        <p>{{{.}}}</p>
+    {{/paragraphs}}		
+    <p class="ibm-button-link">
+        {{#buttons}}
+            <a class="ibm-btn-pri ibv-pri-button" style="margin-right:20px;" href="{{url}}" target="_blank">{{label}}</a>
+        {{/buttons}}	
+    </p>
+</div>
+</div>

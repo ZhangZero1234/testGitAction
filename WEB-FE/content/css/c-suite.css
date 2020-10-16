@@ -1,0 +1,9 @@
+.ibv-cSuite #ibm-leadspace-head{
+    background-image: url('../img/leadspace/csuite.png');
+  }
+.ibv-cSuite .ibm-grid-small #ibm-leadspace-head{
+    background-image: url('../img/leadspace/csuite.png');
+  }	
+.csuite-img {
+	border: solid 1px black;
+}

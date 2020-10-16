@@ -1,0 +1,24 @@
+<div class="ibm-columns ibm-padding-bottom-2 ibm-padding-top-r1">
+{{#title}}
+    <div class="ibm-col-12-12 ibm-padding-content ibm-padding-bottom-1">
+        <h3 class="ibm-h3">{{title}}</h3>
+    </div>
+{{/title}}
+{{#image}}
+<div class="ibm-col-12-6 ibm-col-medium-12-12 ibm-center ibm-padding-content" style="float:{{position}}">
+	<img class="ibm-resize" alt="{{alt}}" src="img/side-by-side/{{url}}">
+</div>
+{{/image}}
+<div class="ibm-col-12-6 ibm-col-medium-12-12 ibm-padding-content">
+    {{#header}}<p><span class="ibm-left ibm-bold">{{header}}</span></p>{{/header}}
+    {{#heading}}<p><span class="ibm-h3 ibm-left">{{heading}}</span></p>{{/heading}}
+    {{#paragraphs}}
+        <p>{{{.}}}</p>
+    {{/paragraphs}}		
+    <p class="ibm-button-link">
+        {{#buttons}}
+            <a class="ibm-btn-pri ibv-pri-button" style="margin-right:20px;" href="{{url}}" target="_blank">{{label}}</a>
+        {{/buttons}}	
+    </p>
+</div>
+</div>

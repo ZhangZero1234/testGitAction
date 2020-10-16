@@ -1,0 +1,132 @@
+.ibv-explore #ibm-leadspace-head{
+    background-image: url('../img/leadspace/explore.png');
+}
+.ibv-explore .ibm-grid-small #ibm-leadspace-head{
+    background-image: url('../img/leadspace/explore.png');
+}
+
+#taxoExploreFilterSection span.select2-container{
+    max-height: 100px;
+    overflow: auto;
+}
+
+#serchField{
+    display: flex;
+    position: relative;
+}
+  
+#serchField label {
+    position: absolute;
+    top: -26px;
+}
+#serchField label i{
+    position: absolute;
+    right: -13px;
+    top: 3px;
+}
+#serchField label i::before{
+    font-size: 1rem;
+    left: -8px;
+}
+
+#serchField input{
+    outline: none;
+    height: 44px;
+    border-radius:5px;
+    padding-right: 38px;
+    flex: 1;
+}
+
+#serchField button{
+    width: 58px;
+    height: 44px;
+    position: relative;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+  
+#serchField button i {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#serchField button i::before{
+    left: unset;
+}
+
+#resetSearch{
+    position: absolute;
+    display: none;
+    height: 100%;
+    color: black;
+    font-size: 20px;
+    right: 5px;
+    line-height: 44px;
+    padding:0 10px;
+    cursor: pointer;
+}
+
+#shareFilters2{
+    position: relative;
+}
+#resetFilters2::before,#shareFilters2::before {
+    font-size: 1.6rem;
+    left:10px;
+}
+
+.exploreOperation{
+    margin: 14px auto 0px;
+}
+
+.exploreOperation .ibv-explore-buttons{
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#shareContent{
+    position: absolute; 
+    top: -40px;
+    left: 6px;
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 84px;
+}
+
+#shareContent .angle{
+    position: absolute;
+    bottom: -12px;
+    float: left;
+    width: 0; 
+    height: 0;
+    border-width: 6px;
+    border-style: solid;
+    border-color:rgb(236, 236, 236) transparent transparent transparent;
+}
+ 
+.shareContentHide{
+    display: none !important;
+}
+  
+@media screen and (min-width: 1240px){
+    #ibv-leadspace {
+        width: 35%;
+    }
+}
+@media screen and (max-width: 1239px) and (min-width: 1000px){
+    #ibv-leadspace {
+        width: 44%;
+    }
+}
+
+@media screen and (max-width: 999px) and (min-width: 760px){
+    #ibv-leadspace {
+        width: 58%;
+    }
+}

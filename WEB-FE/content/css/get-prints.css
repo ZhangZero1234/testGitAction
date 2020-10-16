@@ -1,0 +1,6 @@
+.ibv-get-prints #ibm-leadspace-head{
+    background-image: url('../img/leadspace/get_print.jpg');
+}
+.ibv-get-prints .ibm-grid-small #ibm-leadspace-head{
+    background-image: url('../img/leadspace/get_print.jpg');
+}

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <!-- HEAD-TOP : BEGIN -->
+  <!--#include virtual="/ssi/head-top.ssi" -->
+  <!-- HEAD-TOP : END -->
+
+  <!-- Page specific settings : START -->
+  <title>Search | IBM Institute for Business Value</title>
+  <meta name="title" content="Search | IBM Institute for Business Value"/>
+  <meta name="description" content="Explore and discover IBV thought leadership assets including reports, client-ready presentations, infographics and more."/>
+  <meta name="Keywords" content="insights, assets, presentations, infographics, reports, thought leadership, IBV, institute_for_business_value, industry, technology, strategy, benchmarking, csuite, region, research, business, studies"/>
+  <meta name="IBM.Effective" content="2019-09-23"/>
+  <meta name="DC.Date" content="2019-09-23"/>
+  <link rel="canonical" href="https://ibv.dst.ibm.com/explore.html">
+  
+  <script type="text/javascript">
+    digitalData = {
+      page: {
+        category: {
+          primaryCategory: 'IBM_Institute_for_Business_Value'
+        },
+        pageInfo: {
+          description: 'Explore and discover IBV thought leadership assets including reports, client-ready presentations, infographics and more.',
+          effectiveDate: '2019-09-23',
+          language: 'en-US',
+          publishDate: '2019-09-23',
+          publisher: 'IBM Corporation',
+          version: 'v18',
+          ibm: {
+            contentDelivery: 'IBV Next Web',
+            contentProducer: 'IBV Next CMS',
+            country: 'ZZ',
+            owner: 'Institute for Business Value/Raleigh/Contr/IBM',
+            siteID: 'IBM_IBV_w3',
+          }
+        }
+      }
+    };
+  </script>
+  <!-- Page Specific Meta: END -->
+
+  <!-- Page specific settings : END -->
+
+  <!-- HEAD-BOT : BEGIN -->
+  <!--#include virtual="/ssi/head-bot.ssi" -->
+  <!-- HEAD-BOT : END -->
+  <link rel="stylesheet" href="css/explore.css">
+  <link rel="stylesheet" href="css/card-module.css">
+  <!-- ------------------------ -->
+  <!-- Page specific Javascript -->
+  <!-- ------------------------ -->
+  <script src="/js/ibv_forms.js"></script>
+  <script>    
+    // IBV forms setup 
+    if(ibv === undefined) {
+      var ibv = {};
+    };
+    ibv_forms.call(ibv);
+    // -----------------------
+    // EXPLORE CONTROLS: START
+    var taxoExploreSelect = {
+      "taxoSelectControls" : [
+      {   
+        "taxoId" : 4,
+        "colFormatLrg" : "ibm-col-4-1",
+        "colFormatMed" : "ibm-col-medium-4-2",
+        "multiple": true,
+        "displayGroups" : false,
+        "firstColumn": true,
+        "lastColumn" : false
+      },
+      {   
+        "taxoId" : 8,
+        "colFormatLrg" : "ibm-col-4-1",
+        "colFormatMed" : "ibm-col-medium-4-2",
+        "multiple": true,
+        "displayGroups" : false,
+        "firstColumn": false,
+        "lastColumn" : false
+      }, 
+      {   
+        "taxoId" : 3,
+        "colFormatLrg" : "ibm-col-4-1",
+        "colFormatMed" : "ibm-col-medium-4-2",
+        "multiple": true,
+        "displayGroups" : false,
+        "firstColumn": false,
+        "lastColumn" : false
+      },
+      {   
+        "taxoId" : 7,
+        "colFormatLrg" : "ibm-col-4-1",
+        "colFormatMed" : "ibm-col-medium-4-2",
+        "multiple": true,
+        "displayGroups" : false,
+        "firstColumn": false,
+        "lastColumn" : true
+      },
+      {   
+        "taxoId" : 6,
+        "colFormatLrg" : "ibm-col-5-1",
+        "colFormatMed" : "ibm-col-medium-4-2",
+        "multiple": true,
+        "firstColumn": true,
+        "lastColumn" : false
+      },
+      {   
+        "taxoId" :  1,
+        "colFormatLrg" : "ibm-col-5-1",
+        "colFormatMed" : "ibm-col-medium-4-2",
+        "multiple": true,
+        "displayGroups" : false,
+        "firstColumn": false,
+        "lastColumn" : false
+      },
+      {   
+        "taxoId" :  5,
+        "colFormatLrg" : "ibm-col-5-1",
+        "colFormatMed" : "ibm-col-medium-4-2",
+        "multiple": true,
+        "displayGroups" : false,
+        "firstColumn": false,
+        "lastColumn" : false
+      },
+      {   
+        "taxoId" :  9,
+        "colFormatLrg" : "ibm-col-5-1",
+        "colFormatMed" : "ibm-col-medium-4-2",
+        "multiple": true,
+        "displayGroups" : false,
+        "firstColumn": false,
+        "lastColumn" : false
+      },
+      {   
+        "taxoId" :  2,
+        "colFormatLrg" : "ibm-col-5-1",
+        "colFormatMed" : "ibm-col-medium-4-2",
+        "multiple": true,
+        "displayGroups" : false,
+        "firstColumn": false,
+        "lastColumn" : true
+      }
+      ]
+    };
+
+    var allTaxoData = {
+      // server data
+      "taxoBeanList":{
+      },
+      // mapping
+      "taxoBeanListMap":{
+      },
+      "selectedTaxos":{
+        
+      }
+    };
+
+    function createSelectControls () {
+      ibv.createTaxoBeanListMap(allTaxoData.taxoBeanList, allTaxoData.taxoBeanListMap);
+      ibv.markSelectedTaxos(allTaxoData.taxoBeanList, allTaxoData.selectedTaxos);
+      ibv.updateTaxoSelectControls(allTaxoData.taxoBeanList, allTaxoData.taxoBeanListMap, taxoExploreSelect.taxoSelectControls);
+      ibv.processDataAndRemoteTemplate('#selectFilters2', 'mst/taxo-select.mst', taxoExploreSelect, function() {
+        IBMCore.common.widget.selectlist.init("#selectFilters2 select.taxoSelect");
+        $("#taxoExploreFilterSection").css("display","none");
+        $("#showHideFilterButton2").text(`Show filters (${ibv.getSelectIDs('form#taxoExploreSelectForm select.taxoSelect').length})`)
+        ibv.explore(cardInfo, exploreRequest,'form#taxoExploreSelectForm select.taxoSelect', renderOptions,false);
+        ibv.handleGrif();
+      } );
+    };
+
+    // EXPLORE CONTROLS: END
+    // ---------------------
+
+    // -------------------
+    // CARD DISPLAY: START
+    // cardInfo object will hold card format, card, etc. information
+    var cardInfo = {
+      "format" : {
+        "ibm-col-normal" : "ibm-col-4-1",
+        "ibm-col-mobile" : "ibm-col-medium-4-2",
+        "ibm-card-bottom": true
+      } 
+    };
+    var exploreRequest = {
+      "pageSize":8,
+      "page":1,
+      "taxoIds":[],
+      "searchContent":"",
+      "vID":""
+    };
+    var renderOptions = {
+      "append":false,
+      "cardStatus":"span#cardStatus",
+      "cardTarget":"#cardsTarget",
+      "cardTemplateFile":"mst/cards.mst"
+    };
+    // CARD DISPLAY: END
+    // -----------------
+
+    function objSearch(){
+      var hash = window.location.search.substring(1);
+      var obj = {};
+      if(hash.length>0)
+      {
+        hash.split("&").reduce((res,i)=>{
+          res[i.split("=")[0]] = i.split("=")[1] 
+          return res; 
+        },obj)
+      }
+      return obj;
+    }
+
+    $(function() {
+      let searchContent = "";
+      var searchObj = objSearch();
+      var hash = searchObj['tids'];
+      if (hash && hash.length>1) {
+        var array = hash.split(',');
+        $.each(array, function (key, val) {
+          if (val.length) allTaxoData.selectedTaxos[val]="selected";
+        });
+      }else{
+        allTaxoData.selectedTaxos = {
+        }
+      }
+
+      var search = decodeURI(searchObj['search']);
+      if (search!="undefined" && search.length>=1) {
+        exploreRequest.searchContent = search;
+        $("#serchField input").val(search);
+        $("#resetSearch").show();
+      }else{
+        exploreRequest.searchContent = "";
+      }
+      // exploreRequest
+      // -------------------------------------------------------------------------
+      // EXPLORE CONTROLS: Get and process taxonomy data for select controls
+
+      ibv.shareByMail("#mailLink");
+      ibv.getTaxoBeanList(allTaxoData, createSelectControls);   
+      $("#ibm-contact-module").on("focus",()=>{$(".ibm-contact-widget-btn.ibm-active").click()});
+      $("#applyFilters2").click(function(){
+        searchContent= $("#serchField input").val();
+        exploreRequest.searchContent = searchContent;
+        
+        ibv.explore(cardInfo, exploreRequest, 'form#taxoExploreSelectForm select.taxoSelect', renderOptions,true);
+        ibv.shareByMail("#mailLink");
+      });
+	    $("#resetFilters2").click(function(){
+          exploreRequest.searchContent = "";
+          $("#serchField input").val(null);
+          $("#showHideFilterButton2").text().startsWith("Show")?$("#showHideFilterButton2").text(`Show filters (2)`):null;
+          ibv.exploreReset(cardInfo, exploreRequest, 'form#taxoExploreSelectForm select.taxoSelect', renderOptions);
+          ibv.shareByMail("#mailLink");
+        });
+	    $("#showHideFilterButton2").click(function(){
+          ibv.showHideFilters('taxoExploreFilterSection','showHideFilterButton2');
+          $(window).trigger("resize");
+        });	  
+	    $("#exploreMore").click(function(){
+        exploreRequest.searchContent = searchContent;
+	    	ibv.exploreMore(cardInfo, exploreRequest, 'form#taxoExploreSelectForm select.taxoSelect', renderOptions);
+        });
+	    $("#searchFiled").keyup(function(){
+	        if($(this).val().length>0){
+	          $("#resetSearch").show();
+	        }
+	        else{
+	          $("#resetSearch").hide();
+	        }
+	      });
+	      $("#resetSearch").click(function(){
+	        $("#searchFiled").val("");
+	        $(this).hide();
+        });  
+        $("#mailLink").click(function(e){
+          var href = $(this).attr("href");
+          window.location = href;
+          console.log(href)
+        })
+        $("#copyShare").click(function(){
+          $(this).attr("data-clipboard-text",window.location.href)
+        })
+        $("#shareFilters2").click(function(){
+          $("#shareContent").toggleClass("shareContentHide")
+        })
+
+        
+    });
+    </script>
+  <!-- ------------------------ -->
+
+</head>
+
+<body id="ibm-com" class="ibm-type ibv-explore">
+  <div id="ibm-top" class="ibm-landing-page">
+
+    <!-- MASTHEAD : BEGIN -->
+    <!--#include virtual="/ssi/masthead.ssi" -->
+    <!-- MASTHEAD : END -->
+
+    <!-- START MAIN PAGE WRAPPER AROUND LEADSPACE, MAIN CONTENT SIDENAV AND RELATED CONTENT -->
+    <div id="ibm-content-wrapper" role="region" aria-label="ibm content wrapper">
+      <header role="banner" aria-labelledby="ibm-pagetitle-h1">
+
+        <!-- SITENAV_START -->
+        <!--#include virtual="/ssi/navigation.ssi" -->    
+        <!-- SITENAV_END --> 
+
+        <!-- LEADSPACE_START -->
+        <div id="ibm-leadspace-head" class="ibm-alternate ibm-alternate-background ibm-vertical-center ibm-background-black-core">
+          <div id="ibm-leadspace-body" class="ibm-padding-top-r1 ibm-padding-bottom-r1 ibm-vertical-center">
+            <div id="ibv-leadspace" class="ibm-padding-content">
+			  <h1 id="ibm-pagetitle-h1" class="ibm-h1 ibm-bold">Research-driven insights to boost your business IQ</h1>
+			  <p class="ibm-button-link btn-equal-width-mobile ibv-padding-top-1 visibility-button">
+                <a class="ibm-btn-pri ibv-sec-button ibv-button-space leadspaceBtn" href="https://ibm.co/ibv-subscribe-internal" target="_blank">Get insights via email
+				</a>
+              </p>
+          </div>
+        </div>
+      </div>
+      <!-- LEADSPACE_END -->
+
+    </header>
+  </div>
+  <!-- END MAIN PAGE WRAPPER AROUND LEADSPACE, MAIN CONTENT SIDENAV AND RELATED CONTENT -->
+
+  <!-- Page content here : START -->
+  <main role="main" aria-labelledby="ibm-pagetitle-h1">
+    <div id="ibm-pcon">
+      <div id="ibm-content">
+        <div id="ibm-content-body" class="ibm-padding-top-0">
+
+          <div id="ibm-content-main">
+            <!-- ------------------- -->
+            <!-- Explore Filter Band -->
+            <div class="ibm-band ibm-alternate-background ibm-background-blue-70" style="background-color: #3c4646">
+              <form id="taxoExploreSelectForm" class="ibm-row-form" method="post" action="javascript:;" style="height: auto;">
+               <fieldset><legend class="ibm-fullwidth"> 
+                <div class="ibm-columns ibm-no-padding-bottom" id="operationContrls">
+                  <div class="ibm-col-6-3 ibm-col-medium-12-12 exploreOperation">
+                    <div id="serchField">
+                      <!-- <label for="" >Search
+                        <i data-widget="tooltip" class="ibm-alert-link" data-contentid="test-tt-1"></i>
+                        <div id="test-tt-1" class="ibm-tooltip-content" style="width: auto;">
+                          <div>Search tips:</div>
+                          <div>- Common words/punctuation (e.g. and, the, "") may be ignored</div>
+                          <div>- Use additional filters to locate targeted content</div>
+                          <div>- Remember to check your spelling</div>
+                        </div>
+                      </label> -->
+                      <input type="text" maxlength="50" id="searchFiled"><div id="resetSearch">&times;</div>        
+                    </div>
+                  </div>
+                  <div class="ibm-col-6-3 ibm-col-medium-12-12 exploreOperation">
+                    <div class="ibm-btn-row">
+                      <button id="applyFilters2" class="ibm-btn-pri ibv-pri-button ibm-search-link ibv-explore-buttons">Search</button>
+                      <button id="resetFilters2" class="ibm-btn-sec ibm-btn-white borderTransparent ibm-reset-link ibv-explore-buttons">Reset</button>
+                      <button id="showHideFilterButton2" class="ibm-btn-sec ibm-btn-white ibm-expand-link ibv-explore-buttons">Show filters</button>
+                      <button id="shareFilters2" class="ibm-btn-sec ibm-btn-white borderTransparent ibm-share-encircled-link ibv-explore-buttons" style="display: none !important;">Share
+
+                      <div id="shareContent" class="shareContentHide">
+                        <p class="tipcontent"> <a id="mailLink" href="mailto:name1@mail.com,name2@mail.com?subject=IBV%20Explore&body=Here's%20an%20IBV%20link%20to%20explore%3A%0D%0Ahttps%3A%2F%2Fibv-tst.dst.ibm.com%2Fexplore.html%3Ftids%3D6000%2C5004"><i class="ibm-email-link"></i></a></p>
+                        <p class="tipcontent" id="copyShare" data-clipboard-text="" > <a href="javascript:void(0)"><i class="ibm-copy-link"></i></a></p>
+                        <div class="angle"></div>
+                      </div>
+                      </button>
+                      <!-- <div id="urlCatainerHide" class="ibm-hide"></div> -->
+                      
+                      <input type="submit" value="" class="hidden-button">
+                    </div>
+                  </div>
+                </div>
+                <div id="taxoExploreFilterSection" >
+                  <div class="ibm-columns" style="padding: 0 0 0 20px">
+                    <div id="selectFilters2"></div>
+                  </div>
+				</div>
+
+               </legend></fieldset>  
+              </form>
+            </div>
+            <!-- ------------------- -->
+            <!-- Cards -->
+			<div class="ibm-fullwidth">
+				<div class="ibm-columns">  
+				  <div class="ibm-col-6-6 ibm-padding-bottom-0 ibm-padding-top-1">
+					<p>
+					  <span class="ibm-h3">Search results </span><span class="ibm-h4" id="cardStatus"></span>
+					</p> 
+				  </div>
+				  
+				  <div id="cardsTarget" data-widget="setsameheight" data-items=".ibm-card" data-always="true"></div>
+				  <div class="ibm-col-6-6 ibv-padding-topbot-0">
+					<!-- <p class="ibm-btn-row ibm-center">
+					  <button id="exploreMore" class="ibm-btn-pri ibm-forward-link ibm-inlinelink ibm-icon-after exploreStyle">Explore more</button>
+					</p> -->
+					<p class="ibm-center ibm-margin-bottom-1"><a id="exploreMore" class="ibm-btn-pri ibv-pri-button" href="javascript:void(0)">Explore more</a></p>
+				  </div>              
+				</div>  
+			</div>				
+            <!-- Cards End-->
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Page content here : END -->
+
+  <!-- FOOTER : BEGIN -->
+  <!--#include virtual="/ssi/footer.ssi" -->
+  <!-- FOOTER : END -->
+
+  <!-- CONTACT_MODULE : BEGIN -->
+  <!--#include virtual="/ssi/contact.ssi" -->
+  <!-- CONTACT_MODULE : END -->
+</div>
+<!-- CLOSING : BEGIN -->
+<!--#include virtual="/ssi/closing.ssi" -->
+<!-- CLOSING : END -->
+</body>
+</html>

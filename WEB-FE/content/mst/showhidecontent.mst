@@ -1,0 +1,9 @@
+{{#contents}}
+{{#div_begin}}<div class="{{#listItem}}listItem{{/listItem}} {{#ibm_col_6_2}}ibm-col-12-3 ibm-col-medium-12-6{{/ibm_col_6_2}}{{#ibm_col_4_2}}ibm-col-12-6 ibm-col-medium-12-6 ibm-left{{/ibm_col_4_2}}">{{/div_begin}}
+{{#heading_control_begin_two}}<p class="ibm-h4 ibm-padding-top-0">{{heading}}</p>{{/heading_control_begin_two}}
+{{#p_begin}}<p class="ibm-no-padding {{#ocupy}}ibm-hide{{/ocupy}}">{{/p_begin}}
+    {{#heading_control_begin_one}}{{heading}}:{{/heading_control_begin_one}}
+    <span class="ibm-bold"><a target="_blank" href="{{bluepage}}">{{name}}</a></span>{{#bio_need}}<span>: {{bio}}</span>{{/bio_need}}{{#heading_comm}},{{/heading_comm}}
+{{#p_end}}</p>{{/p_end}}
+{{#div_end}}</div>{{/div_end}}
+{{/contents}}

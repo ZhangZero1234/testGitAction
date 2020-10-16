@@ -1,0 +1,37 @@
+<div class="connect-with-us  ibm-fullwidth" data-items=".ibm-card" data-widget="setsameheight">
+    <div class="ibm-columns">
+        <div class="ibm-col-12-3 ibm-col-medium-12-12 connect-title">
+            <h2 class="ibm-h2">{{{title}}}</h2>	
+        </div>
+        {{#cards}}
+        <div class="ibm-col-12-3 ibm-col-medium-12-12">
+            <div class="ibm-card">
+                <div class="ibm-card__content">
+                    <h3 class="ibm-h3">
+                        {{{header}}}
+                    </h3>
+                    {{#bodyType}}
+                    <p>{{body}}</p>
+                    {{/bodyType}}
+                    {{^bodyType}}
+                    <p>
+                        <ul class="ibm-link-list">
+                            {{#body}}
+                            <li><a class="{{iconClass}}" href="{{link}}" {{#newWindow}}target="_blank"{{/newWindow}}>{{linkName}}</a></li>
+                            {{/body}}
+                        </ul>
+                    </p>
+                    {{/bodyType}}
+                </div>
+                {{#linkName}}
+                <div class="ibm-card__bottom">
+                    <p class="ibm-padding-top-1 ibm-button-link">
+                        <a class="ibm-btn-pri ibv-pri-button ibv-button-space leadspaceBtn" href="{{link}}" {{#newWindow}}target="_blank"{{/newWindow}}>{{linkName}}</a>
+                    </p>
+                </div>
+                {{/linkName}}
+            </div>
+        </div>
+        {{/cards}}    
+    </div>
+</div>

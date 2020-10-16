@@ -1,0 +1,20 @@
+{
+    "image" : {
+      "position" : "right",
+      "url" : "insider.jpg",
+	  "loadingUrl":"insider.jpg",
+      "alt":"IBV Insider" 
+    },
+	"header" : "Featured webinar",
+    "heading" : "Transformation Acceleration—Helping clients thrive amidst upheaval and uncertainty",
+    "paragraphs" : [
+      "The global pandemic has required many companies to seriously re-evaluate their transformation goals. Learn how you can use IBV action guides, consumer polling data, and insights to help clients evolve faster and emerge stronger to a different normal.<p>Download reports:</p><ul><li><a href='https://w3.ibm.com/services/lighthouse/documents/154253' target='_blank'>COVID-19 impact on individual perspectives, perceptions and behaviors: Insights from June 2020</a></li><li><a href='http://ibm.co/return-to-workw3' target='_blank'>The CHRO’s guide to workforce re-entry: Rethinking the workplace</a></li><li><a href='https://ibm.co/cmo-action-guidew3' target='_blank'>The CMO’s guide for turning mayhem into momentum: A time for empathy, adaptation and action</a></li><li><a href='https://ibm.co/covid-19-action-guidew3' target='_blank'>Beyond the Lockdown: How IBM is planning to enable safety and productivity in the workplace</a></li></ul>"     
+    ],
+    "buttons" : [
+      {
+       "label" : "Listen to the replay",
+       "url" : "https://ec.yourlearning.ibm.com/w3/playback/10104333"
+      }
+    ] 
+   }
+   

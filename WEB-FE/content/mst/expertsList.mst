@@ -1,0 +1,11 @@
+{{#taxos}}
+    {{#texo_control_begin}}<div data-widget="showhide" data-type="panel" class="ibm-show-hide showHideArea">
+	    <h2 class="ibm-h3">{{taxo}}</h2>
+		<div class="ibm-container-body ibm-padding-bottom-1 ibm-columns" data-widget="setsameheight" data-items=".listItem">
+		<div class="ibm-center ibm-padding-top-1 ibm-padding-bottom-1">
+			<span class="ibm-spinner ibm-h1"></span>
+			<p class="bluePage_Notes ibm-item-note ibm-alert-link ibm-hide ibm-padding-bottom-1 ibm-left" style="position:relative;padding-left:28px;color:#e71d32;left:10px">BluePages is currently unavailable, please check back later.</p>
+		</div>
+	{{/texo_control_begin}}
+    {{#texo_control_end}}</div></div>{{/texo_control_end}}
+{{/taxos}}

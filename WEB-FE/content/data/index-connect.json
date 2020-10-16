@@ -1,0 +1,46 @@
+{
+    "title":"Connect <br class='connect-title-br'>with us",
+    "cards":[
+        {
+            "header":"Get insights <br>via email",
+            "body":"Subscribe to receive our email updates. You can customize your subscription based on your role and interests.",
+            "bodyType":true,
+            "linkName":"Subscribe now",
+            "link":"http://www.pages02.net/instituteforbusinessvalue/w3subscription",
+            "newWindow":true
+            
+        },
+        {
+            "header":"Access our <br>benchmarking data",
+            "body":"Assess client performance and compare clients to peers to help them identify opportunities to excel.",
+            "bodyType":true,
+            "linkName":"Access data",
+            "link":"benchmark.html",
+            "newWindow":false
+        },
+        {
+            "header":"Find IBV on <br>social media",
+            "bodyType":false,
+            "body":[
+                {
+                    "iconClass":"ibm-twitter-encircled-link",
+                    "linkName":"Twitter",
+                    "link":"https://twitter.com/ibmibv",
+                    "newWindow":true
+                },
+                {
+                    "iconClass":"ibm-linkedin-encircled-link",
+                    "linkName":"LinkedIn",
+                    "link":"https://www.linkedin.com/groups/2597995/",
+                    "newWindow":true
+                },
+                {
+                    "iconClass":"ibm-youtube-encircled-link",
+                    "linkName":"YouTube",
+                    "link":"https://www.youtube.com/channel/UCAD0mjCvnb6H7rEPqP8UEbw",
+                    "newWindow":true
+                }
+            ]
+        }
+    ]
+}

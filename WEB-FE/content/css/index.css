@@ -1,0 +1,68 @@
+.ibv-index #ibm-leadspace-head{
+    background-image: url('../img/leadspace/index.jpg');
+}
+.ibv-index .ibm-grid-small #ibm-leadspace-head{
+    background-image: url('../img/leadspace/index.jpg');
+}
+
+
+@media (min-width: 580px){
+    #banner .ibm-col-12-6 {
+        width: 54%;
+    }
+}
+@media screen and (min-width:1000px){
+    #banner .ibm-col-12-6{
+        width: 505px;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1239px){
+    .connect-with-us .ibm-col-12-3{
+        width: 50% !important;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    #banner .ibm-col-12-6{
+        width: 100% !important;
+    }
+    .connect-title-br{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 760px){
+    #banner h1{
+        font-size: 1.7rem;
+        font-weight: 500;
+        line-height: 2rem;
+    }
+    #banner{
+        background-position: 64% 50%;
+    }
+}
+
+@media screen and (max-width: 423px){
+    #banner{
+        background-position: 66% 50%;
+    }
+}
+@media screen and (max-width: 372px){
+    #banner{
+        background-position: 68% 50%;
+    }
+}
+
+#browse-by-category-MB{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: none;
+}
+
+@media screen and (max-width:1024px){
+    #browse-by-category-MB{
+        display: block;
+    }
+} 

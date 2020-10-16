@@ -1,0 +1,16 @@
+
+<!-- SITENAV_START -->
+<div class="ibm-sitenav-menu-container" data-widgetprocessed="true">
+  <div class="ibm-sitenav-menu-name header-details">
+    <a href="index.html" class="ibm-bold">IBM Institute for Business Value</a>
+  </div>
+  <div class="ibm-sitenav-menu-list">
+    <ul id="all-insights" role="menubar" onkeypress>
+      
+    </ul>
+  </div>
+</div>
+<!-- SITENAV_END -->
+
+
+  

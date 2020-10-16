@@ -1,0 +1,20 @@
+{
+    "image" : {
+      "position" : "right",
+      "url" : "getty_image.jpg",
+      "alt":"benchmark"
+    },
+    "heading" : "How does your client's performance measure up?",
+    "paragraphs" : [
+      "The IBM Institute for Business Value provides a process benchmarking service that helps clients assess their current performance and compare themselves to their peers.",
+      "These benchmarking services can be provided as part of a process transformation initiative or similar engagement. This is a mature offering supported by robust content and specialized tools. Our patented custom survey method and tool set enable us to provide meaningful and accurate comparisons of performance tailored to each client's priorities.",
+      "IBV Benchmarking analyzes business processes in six functional areas: finance, human capital, information technology, marketing and sales, product development, and supply chain. Explore our benchmarking insights and find use cases to better understand how you can help your clients."
+    ],
+    "buttons" : [
+      {
+       "label" : "Access benchmark data",
+       "url" : "https://w3.ibm.com/services/bcs/competency/benchmarking/wizard"
+      }
+    ] 
+   }
+   

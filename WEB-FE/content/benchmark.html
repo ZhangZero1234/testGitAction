@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <!-- HEAD-TOP : BEGIN -->
+  <!--#include virtual="/ssi/head-top.ssi" -->
+  <!-- HEAD-TOP : END -->
+
+  <!-- Page specific settings : START -->
+  <title>Performance data and Benchmarking | IBM Institute for Business Value</title>
+  <meta name="title" content="Performance data and Benchmarking | IBM Institute for Business Value"/>
+  <meta name="description" content="The power to make better business decisions lies in the ability to understand and effectively use performance metrics."/>
+  <meta name="Keywords" content="IBV, thought leadership, institute for business value, business challenges, strategic insights, thought leader, benchmark, benchmarking, OSBC, APQC, wizard, benchmarking wizard, metrics, performance data"/>
+  <meta name="IBM.Effective" content="2019-09-23"/>
+  <meta name="DC.Date" content="2019-09-23"/>
+  <link rel="canonical" href="https://ibv.dst.ibm.com/benchmark.html">
+  <script type="text/javascript">
+    digitalData = {
+      page: {
+        category: {
+          primaryCategory: 'IBM_Institute_for_Business_Value'
+        },
+        pageInfo: {
+          description: 'The power to make better business decisions lies in the ability to understand and effectively use performance metrics.',
+          effectiveDate: '2019-09-23',
+          language: 'en-US',
+          publishDate: '2019-09-23',
+          publisher: 'IBM Corporation',
+          version: 'v18',
+          ibm: {
+            contentDelivery: 'IBV Next Web',
+            contentProducer: 'IBV Next CMS',
+            country: 'ZZ',
+            owner: 'Institute for Business Value/Raleigh/Contr/IBM',
+            siteID: 'IBM_IBV_w3',
+          }
+        }
+      }
+    };
+  </script>
+  <!-- Page specific settings : END -->
+
+  <!-- HEAD-BOT : BEGIN -->
+  <!--#include virtual="/ssi/head-bot.ssi" -->
+  <!-- HEAD-BOT : END -->
+  <link rel="stylesheet" href="css/benchmark.css">
+  <link rel="stylesheet" href="css/card-module.css">
+  <!-- ------------------------ -->
+  <!-- Page specific Javascript -->
+  <!-- ------------------------ -->
+
+  <!-- --------------------------- -->
+  <script type="text/javascript">
+    // -------------------
+    // CARD DISPLAY: START
+    // cardInfo object will hold card format, card, etc. information
+    var cardInfo = {
+      "format" : {
+        "ibm-col-normal" : "ibm-col-4-1",
+        "ibm-col-mobile" : "ibm-col-medium-4-2",
+        "ibm-card-bottom": true
+      } 
+    };  
+    var requestOptions = {
+      "pageSize":8,
+      "page":1,
+      "taxoIds":["7007","6000","5004","1001"],
+      "vID":"9038"
+    };
+    var renderOptions = {
+      "append":false,
+      "cardStatus":"span#cardStatus",
+      "cardTarget":"#cardsTarget",
+      "cardTemplateFile":"mst/cards.mst"
+    };
+    // CARD DISPLAY: END
+    // -----------------
+
+    $(function() {
+      $.getJSON('data/benchmark-top.json',function(data){
+        ibv.renderSection("#sectionTop",data,"./mst/image-module.mst")
+      })
+
+      $.getJSON('data/benchmark-bottom.json',function(data){
+        ibv.renderSection("#sectionBottom",data,"./mst/image-module.mst")
+      })
+
+      // DISPLAY CARDS:
+      ibv.renderCards(cardInfo, requestOptions, renderOptions);    
+      $("#ibm-contact-module").on("focus",()=>{$(".ibm-contact-widget-btn.ibm-active").click()})
+    });
+
+  </script>
+
+
+</head>
+
+<body id="ibm-com" class="ibm-type ibv-benchmark">
+  <div id="ibm-top" class="ibm-landing-page">
+
+    <!-- MASTHEAD : BEGIN -->
+    <!--#include virtual="/ssi/masthead.ssi" -->
+    <!-- MASTHEAD : END -->
+
+    <!-- START MAIN PAGE WRAPPER AROUND LEADSPACE, MAIN CONTENT SIDENAV AND RELATED CONTENT -->
+    <div id="ibm-content-wrapper" role="region" aria-label="ibm content wrapper">
+      <header role="banner" aria-labelledby="ibm-pagetitle-h1">
+
+        <!-- SITENAV_START -->
+        <!--#include virtual="/ssi/navigation.ssi" -->    
+        <!-- SITENAV_END --> 
+
+        <!-- LEADSPACE_START -->
+        <div id="ibm-leadspace-head" class="ibm-alternate ibm-alternate-background ibm-vertical-center ibm-background-black-core">
+          <div id="ibm-leadspace-body" class="ibm-padding-top-r1 ibm-padding-bottom-r1 ibm-vertical-center">
+            <div id="ibv-leadspace" class="ibm-padding-content">
+              <h1 id="ibm-pagetitle-h1" class="ibm-h1 ibm-bold">Performance data <br>and Benchmarking</h1>   				
+              <p class="ibm-button-link btn-equal-width-mobile ibv-padding-top-1">
+                <a class="ibm-btn-pri ibv-pri-button ibv-button-space leadspaceBtn" href="#benchmark-explore">Explore insights
+                </a>
+				<a class="ibm-btn-pri ibv-sec-button ibv-button-space leadspaceBtn" href="https://ibm.co/ibv-subscribe-internal" target="_blank">Get insights via email
+				</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- LEADSPACE_END -->
+
+      </header>
+    </div>
+    <!-- END MAIN PAGE WRAPPER AROUND LEADSPACE, MAIN CONTENT SIDENAV AND RELATED CONTENT -->
+
+    <!-- Page content here : START -->
+    <main role="main" aria-labelledby="ibm-pagetitle-h1">
+      <div id="ibm-pcon">
+        <div id="ibm-content">
+          <div id="ibm-content-body">
+            <div id="ibm-content-main">
+              <div id="sectionTop"></div>    
+              <div class="ibm-fullwidth">
+                <div class="ibm-columns">
+                <div class="ibm-col-6-6 ibv-padding-topbot-0">
+                  <p class="ibm-margin-top-1 ibm-margin-bottom-1"><span class="ibm-h3"><a name="benchmark-explore" class="ibm-textcolor-black-core" href="explore.html?tids=6000,5004,7007&lnk=benchmark-cd">Explore Performance data and Benchmarking insights </a></span><span class="ibm-h4" id="cardStatus"></span></p> 
+                </div>
+                <div id="cardsTarget" data-widget="setsameheight" data-items=".ibm-card" data-always="true"></div>
+                
+                <div class="ibm-col-6-6">
+                  <p class="ibm-center ibm-padding-bottom-2"><a class="ibm-btn-pri ibv-pri-button" onclick="ibv.setPageName()" href="explore.html?tids=6000,5004,7007&lnk=benchmark-em">Explore more</a></p>
+                </div>
+                </div>
+              </div>
+              
+              <div class="ibm-columns" data-widget="setsameheight">
+                <div class="ibm-col-4-2 ibm-padding-content ibm-padding-top-r1">
+                  <p>
+                    <span class="ibm-h2 ibm-light">Key metrics from our areas of benchmarking expertise</span>
+                  </p>                  
+                </div>
+                <div class="ibm-col-4-2 ibm-padding-content ibm-padding-top-r1">
+                  <p>IBV benchmarking analyzes business processes in six functional areas: Finance, Human capital, Information technology, Marketing and sales, Product development and Supply chain.  For each of those areas, here is the latest benchmark.  How does your organization stand against these findings?</p>             
+                </div>
+              </div>
+
+              <div class="ibm-columns" data-widget="setsameheight">
+                <div class="ibm-col-4-2 ibm-col-medium-4-4 ibm-padding-content ibm-padding-top-r1 ibm-padding-bottom-r1">
+                  <h1 class="ibm-h6 ibm-bold ibm-padding-bottom-0">Finance</h1>
+                  <div class="ibm-rule ibm-alternate-1 ibm-blue-40"><hr/></div>
+                  <p class="ibm-h1 ibm-textcolor-blue-50 ibm-padding-bottom-0"><span class="ibm-fontsize-x25 ibm-light">30</span></p>
+                  <p>days to complete the annual budget cycle</p>                  
+                </div>
+                <div class="ibm-col-4-2 ibm-col-medium-4-4 ibm-padding-content ibm-padding-top-r1 ibm-padding-bottom-r1">
+                  <h1 class="ibm-h6 ibm-bold ibm-padding-bottom-0">Human Capital</h1>
+                  <div class="ibm-rule ibm-alternate-1 ibm-blue-40"><hr/></div>
+                  <p class="ibm-h1 ibm-textcolor-blue-50 ibm-padding-bottom-0"><span class="ibm-fontsize-x25 ibm-light">6</span></p>
+                  <p>learning days on average per employee</p>                  
+                </div>
+                <div class="ibm-col-4-2 ibm-col-medium-4-4 ibm-padding-content ibm-padding-top-r1 ibm-padding-bottom-r1">
+                  <h1 class="ibm-h6 ibm-bold ibm-padding-bottom-0">Information Technology</h1>
+                  <div class="ibm-rule ibm-alternate-1 ibm-blue-40"><hr/></div>
+                  <p class="ibm-h1 ibm-textcolor-blue-50 ibm-padding-bottom-0"><span class="ibm-fontsize-x25 ibm-light">2.62</span><sup class="ibm-h1 ibm-light ibm-large">%</sup></p>
+                  <p>average IT cost as percentage of revenue</p>                  
+                </div>
+                <div class="ibm-col-4-2 ibm-col-medium-4-4 ibm-padding-content ibm-padding-top-r1 ibm-padding-bottom-r1">
+                  <h1 class="ibm-h6 ibm-bold ibm-padding-bottom-0">Marketing and sales</h1>
+                  <div class="ibm-rule ibm-alternate-1 ibm-blue-40"><hr/></div>
+                  <p class="ibm-h1 ibm-textcolor-blue-50 ibm-padding-bottom-0"><span class="ibm-fontsize-x25 ibm-light">85</span><sup class="ibm-h1 ibm-light ibm-large">%</sup></p>
+                  <p>three year customer retention rate</p>                  
+                </div>
+                <div class="ibm-col-4-2 ibm-col-medium-4-4 ibm-padding-content ibm-padding-top-r1 ibm-padding-bottom-r1">
+                  <h1 class="ibm-h6 ibm-bold ibm-padding-bottom-0">Product development</h1>
+                  <div class="ibm-rule ibm-alternate-1 ibm-blue-40"><hr/></div>
+                  <p class="ibm-h1 ibm-textcolor-blue-50 ibm-padding-bottom-0"><span class="ibm-fontsize-x25 ibm-light">60</span><sup class="ibm-h1 ibm-light ibm-large">%</sup></p>
+                  <p>of product/service development projects launched on budget</p>                  
+                </div>
+                <div class="ibm-col-4-2 ibm-col-medium-4-4 ibm-padding-content ibm-padding-top-r1 ibm-padding-bottom-r1">
+                  <h1 class="ibm-h6 ibm-bold ibm-padding-bottom-0">Supply chain</h1>
+                  <div class="ibm-rule ibm-alternate-1 ibm-blue-40"><hr/></div>
+                  <p class="ibm-h1 ibm-textcolor-blue-50 ibm-padding-bottom-0"><span class="ibm-fontsize-x25 ibm-light">9.0</span></p>
+                  <p>finished goods inventory turns per year</p>                  
+                </div> 
+                <div class="ibm-rule ibm-alternate ibm-gray-30"></div>
+              </div>
+              <div id="sectionBottom"></div>   
+              <div class="ibm-band ibm-alternate-background ibm-background-blue-50 ibm-padding-top-r1 ibm-padding-bottom-r1">
+                <div class="ibm-columns">
+                  <div class="ibm-col-4-2">
+                    <span class="ibm-h2 ibm-light">Open standard benchmarking assessments</span>
+                  </div>
+                  <div class="ibm-col-4-2">
+                    <p>IBM participates in an internationally recognized open standard benchmarking partnership with APQC, a not-for-profit research organization. The benchmarking content is built upon a standard cross-country Process Classification Framework, enabling business performance to be compared across organizations and industries.</p>
+                    <p>Visit the APQC website <a href="http://www.apqc.org/" target="_blank">http://www.apqc.org/</a></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Page content here : END -->
+
+    <!-- FOOTER : BEGIN -->
+    <!--#include virtual="/ssi/footer.ssi" -->
+    <!-- FOOTER : END -->
+
+    <!-- CONTACT_MODULE : BEGIN -->
+    <!--#include virtual="/ssi/contact.ssi" -->
+    <!-- CONTACT_MODULE : END -->
+  </div>
+<!-- CLOSING : BEGIN -->
+<!--#include virtual="/ssi/closing.ssi" -->
+<!-- CLOSING : END -->
+</body>
+</html>

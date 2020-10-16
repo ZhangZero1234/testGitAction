@@ -1,0 +1,6 @@
+.ibv-cbm #ibm-leadspace-head{
+    background-image: url('../img/leadspace/cbm.jpg');
+ }
+.ibv-cbm .ibm-grid-small #ibm-leadspace-head{
+    background-image: url('../img/leadspace/cbm.jpg');
+}

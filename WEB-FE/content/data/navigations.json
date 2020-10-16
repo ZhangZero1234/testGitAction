@@ -1,0 +1,318 @@
+{
+    "allInsights":{
+        "name":"All insights",
+        "links":[
+            {
+                "name":"By industry",
+                "pureName":"Industry",
+                "gridTemplate":"grid-template-rows:repeat(8,34px);grid-template-columns:repeat(3,240px);left:-210px",
+                "border-r":true,
+                "padding-b-1":true,
+                "links":[
+                    {
+                        "name":"Aerospace and Defense",
+                        "href":"explore.html?tids=5004,6000,4001"
+                    },
+                    {
+                        "name":"Automotive",
+                        "href":"explore.html?tids=5004,6000,4002"
+                    },
+                    {
+                        "name":"Banking and Financial markets",
+                        "href":"explore.html?tids=5004,6000,4003"
+                    },
+                    {
+                        "name":"Chemicals",
+                        "href":"explore.html?tids=5004,6000,4004"
+                    },
+                    {
+                        "name":"Consumer products",
+                        "href":"explore.html?tids=5004,6000,4005"
+                    },
+                    {
+                        "name":"Education",
+                        "href":"explore.html?tids=5004,6000,4006"
+                    },
+                    {
+                        "name":"Electronics",
+                        "href":"explore.html?tids=5004,6000,4007"
+                    },
+                    {
+                        "name":"Energy and Utilities",
+                        "href":"explore.html?tids=5004,6000,4008"
+                    },
+                    {
+                        "name":"Government",
+                        "href":"explore.html?tids=5004,6000,4009"
+                    },
+                    {
+                        "name":"Healthcare",
+                        "href":"explore.html?tids=5004,6000,4010"
+                    },
+                    {
+                        "name":"Industrial products",
+                        "href":"explore.html?tids=5004,6000,4011"
+                    },
+                    {
+                        "name":"Insurance",
+                        "href":"explore.html?tids=5004,6000,4012"
+                    },
+                    {
+                        "name":"IT and Professional services",
+                        "href":"explore.html?tids=5004,6000,4013"
+                    },
+                    {
+                        "name":"Life sciences",
+                        "href":"explore.html?tids=5004,6000,4014"
+                    },
+                    {
+                        "name":"Media and Entertainment",
+                        "href":"explore.html?tids=5004,6000,4015"
+                    },
+                    {
+                        "name":"Petroleum",
+                        "href":"explore.html?tids=5004,6000,4016"
+                    },
+                    {
+                        "name":"Retail",
+                        "href":"explore.html?tids=5004,6000,4017"
+                    },
+                    {
+                        "name":"Telecommunications",
+                        "href":"explore.html?tids=5004,6000,4018"
+                    },
+                    {
+                        "name":"Transportation",
+                        "href":"explore.html?tids=5004,6000,4019"
+                    },
+                    {
+                        "name":"Travel",
+                        "href":"explore.html?tids=5004,6000,4020"
+                    }
+                    
+                ]
+            },
+            {
+                "name":"By technology",
+                "pureName":"Technology",
+                "gridTemplate":"grid-template-rows:repeat(6,34px);grid-template-columns:repeat(2,240px)",
+                "padding-t-2":false,
+                "padding-b-5":true,
+                "border-r":true,
+                "links":[
+                    {
+                        "name":"Artificial Intelligence (AI)",
+                        "href":"explore.html?tids=5004,6000,8001"
+                    },
+                    {
+                        "name":"Automation and Robotics",
+                        "href":"explore.html?tids=5004,6000,8002"
+                    },
+                    {
+                        "name":"Blockchain",
+                        "href":"explore.html?tids=5004,6000,8003"
+                    },
+                    {
+                        "name":"Cloud",
+                        "href":"explore.html?tids=5004,6000,8004"
+                    },
+                    {
+                        "name":"Cognitive Enterprise&trade;",
+                        "href":"cognitiveenterprise.html"
+                    },
+                    {
+                        "name":"Data and Analytics",
+                        "href":"explore.html?tids=5004,6000,8005"
+                    },
+                    {
+                        "name":"Digital Reinvention®",
+                        "href":"digitalreinvention.html"
+                    },
+                    {
+                        "name":"Internet of Things (IoT)",
+                        "href":"explore.html?tids=5004,6000,8007"
+                    },
+                    {
+                        "name":"Mobile",
+                        "href":"explore.html?tids=5004,6000,8008"
+                    },
+                    {
+                        "name":"Quantum computing",
+                        "href":"explore.html?tids=5004,6000,8009"
+                    }
+                ]
+            },
+            {
+                "name":"By business role",
+                "pureName":"Business role",
+                "gridTemplate":"grid-template-rows:repeat(6,34px)",
+                "padding-b-1":true,
+                "border-r":true,
+                "links":[
+                    {
+                        "name":"Finance and Risk, CFO",
+                        "href":"explore.html?tids=5004,6000,3001"
+                    },
+                    {
+                        "name":"Marketing and Sales, CMO",
+                        "href":"explore.html?tids=5004,6000,3002"
+                    },
+                    {
+                        "name":"Operations and Supply chain, COO",
+                        "href":"explore.html?tids=5004,6000,3003"
+                    },
+                    {
+                        "name":"Strategy and Management, CEO",
+                        "href":"explore.html?tids=5004,6000,3004"
+                    },
+                    {
+                        "name":"Talent and Skills, CHRO",
+                        "href":"explore.html?tids=5004,6000,3005"
+                    },
+                    {
+                        "name":"Technology and Security, CIO",
+                        "href":"explore.html?tids=5004,6000,3006"
+                    }
+                ]
+            },
+            {
+                "name":"By special program",
+                "pureName":"Special programs",
+                "gridTemplate":"grid-template-rows:repeat(7,34px);grid-template-columns:repeat(2,300px);left:unset;right:0;",
+                "links":[
+                    {
+                        "name":"COVID-19",
+                        "href":"covid-19.html"
+                    },
+                    {
+                        "name":"C-suite Study",
+                        "href":"c-suite.html"
+                    },
+                    {
+                        "name":"Component Business Modeling (CBM)",
+                        "href":"cbm.html"
+                    },
+                    {
+                        "name":"Cognitive Enterprise&trade;",
+                        "href":"cognitiveenterprise.html"
+                    },
+                    {
+                        "name":"Digital Reinvention®",
+                        "href":"digitalreinvention.html"
+                    },
+                    {
+                        "name":"Expert Insights",
+                        "href":"explore.html?tids=5004,6000,7008"
+                    },
+                    {
+                        "name":"Global Industry Agenda (GIA)",
+                        "href":"explore.html?tids=5004,6000,7005"
+                    },
+                    {
+                        "name":"Global Location Trends",
+                        "href":"explore.html?tids=5004,6000,7006"
+                    },
+                    {
+                        "name":"IBM Services Strategy and Capabilities",
+                        "href":"explore.html?tids=5004,6000,7009"
+                    },
+                    {
+                        "name":"Performance data and Benchmarking",
+                        "href":"benchmark.html"
+                    },
+                    {
+                        "name":"Sustainability",
+                        "href":"explore.html?tids=5004,6000,9052"
+                    },
+                    {
+                        "name":"Technology and the Global economy",
+                        "href":"explore.html?tids=5004,6000,9053"
+                    }
+                ]
+            },
+            {
+                "name":"By region",
+                "pureName":"Regions",
+                "gridTemplate":"grid-template-rows:repeat(6,34px);left:unset;right:0;min-width:250px;",
+                "padding-t-2":true,
+                "links":[
+                    {
+                        "name":"Canada",
+                        "href":"explore.html?tids=1001,6006"
+                    },
+                    {
+                        "name":"China",
+                        "href":"explore.html?tids=1001,6007"
+                    },
+                    {
+                        "name":"Germany",
+                        "href":"explore.html?tids=1001,6013"
+                    },
+                    {
+                        "name":"India",
+                        "href":"explore.html?tids=1001,6016"
+                    },
+                    {
+                        "name":"Japan",
+                        "href":"explore.html?tids=1001,6020"
+                    },
+                    {
+                        "name":"Middle East and Africa",
+                        "href":"explore.html?tids=1001,6058"
+                    }
+                ]
+            }
+        ]
+    },
+    "pages":[
+        {
+            "name":"C-suite Study",
+            "href":"c-suite.html"
+        },
+        {
+            "name":"Benchmarking",
+            "href":"benchmark.html"
+        },
+        {
+            "name":"Cognitive Enterprise&trade;",
+            "href":"cognitiveenterprise.html"
+        },
+        {
+            "name":"CBM",
+            "href":"cbm.html"
+        },
+        {
+            "name":"COVID-19",
+            "href":"covid-19.html"
+        },
+        {
+            "name":"Search",
+            "href":"explore.html?tids=6000,5004"
+        }
+    ],
+    "about":{
+        "name":"About",
+        "links":[
+            {
+                "name":"About IBV",
+                "href":"about-ibv.html"
+            },
+			{
+                "name":"IBV Insider",
+                "href":"insider.html"
+            },
+            {
+                "name":"Order printed materials",
+                "href":"get-prints.html"
+            },
+            {
+                "name":"FAQs",
+                "href":"faqs.html"
+            },
+            {
+                "name":"IBV team",
+                "href":"team.html"
+            }
+        ]
+    }
+}

@@ -1,0 +1,27 @@
+<div id="faqShowHide" data-widget="showhide" data-type="panel" class="ibm-show-hide">
+    {{#faqs}}
+    <h2>{{question}}</h2>
+    <div class="ibm-container-body">
+        {{#answers}}
+        <p>{{{.}}}</p>
+        {{/answers}}
+		{{#answer}}
+		<p>{{answerdetail}}</p>
+		{{#img}}
+		<div class="ibm-columns">
+            <div class="ibm-col-6-1">
+                <img src="img/{{img}}" class="ibm-resize">
+            </div>
+		</div>
+		{{/img}}
+		{{#img3}}
+		<div class="ibm-columns">
+            <div class="ibm-col-5-2">
+                <img src="img/{{img3}}" class="ibm-resize">
+            </div>
+		</div>
+		{{/img3}}
+		{{/answer}}
+    </div>
+    {{/faqs}}
+</div>

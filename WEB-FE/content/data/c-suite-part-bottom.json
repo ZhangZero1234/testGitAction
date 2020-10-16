@@ -1,0 +1,16 @@
+{
+    "image" : {
+      "position" : "right",
+      "url" : "beauty_shot_5.png",
+      "alt":"c-suite"
+    },
+    "heading" : "About the Global C-suite Study",
+    "paragraphs" : [
+      "The Global C-suite Study is an ongoing series the IBM Institute for Business Value developed in 2003. Every couple of years, we interview C-suite executives in 20 industries around the world to understand their points of view about technology trends, their business priorities, and the key issues they’re facing.",
+      "As of our latest C-suite Study, we have collected data and insights from more than 50,000 interviews. Each new C-suite Study we publish is authored in collaboration with academics, futurists, and technology visionaries."
+    ],
+    "buttons" : [
+     
+    ] 
+   }
+   

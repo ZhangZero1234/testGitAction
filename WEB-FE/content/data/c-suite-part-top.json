@@ -1,0 +1,21 @@
+{
+    "video" : {
+      "position" : "right",
+      "url" : "mark_foster_about_c_suite_video_captions.mp4",
+      "poster":"csuit_video_cover.png"
+    },
+    "heading" : "How are top-performing companies extracting value from data while building customer trust?",
+    "paragraphs" : [
+      "We spoke with more than 13,000 C-suite executives worldwide about data, the value they derive from it, and what it takes to lead in a world awash with data.",
+      "Learn how an elite group of enterprises—we call them Torchbearers—are commanding data and trust to their spectacular advantage in the 20th Edition IBM Global C-suite Study, <a href='https://w3.ibm.com/services/lighthouse/documents/147311' target='_blank'>\"Build Your Trust Advantage: Leadership in the era of data and AI everywhere.\"</a>",
+      "The C-suite Study can help you provide new value to clients and discover new client opportunities. Seventy percent of the IBMers we surveyed who used the C-suite Study program said it deepens client relationships, and 46 percent said it leads to new business opportunities.",
+      "We have a suite of <a href='https://w3.ibm.com/services/lighthouse/documents/151311' target='_blank'>sales enablement materials</a> you can leverage to show your clients why they need data-driven leadership strategies. Take them through the <a href='https://production7.spsscloud.com/mrIWeb/mrIWeb.dll?I.Project=IBV_CSUITE2019IIS' target='_blank'>C-suite Digital Assessment</a> to see how they compare to surveyed companies. They get personalized feedback at the end."
+    ],
+    "buttons" : [
+      {
+       "label" : "Download report",
+       "url" : "https://w3.ibm.com/services/lighthouse/documents/147311"
+      }
+    ] 
+   }
+   

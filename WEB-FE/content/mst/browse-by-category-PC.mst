@@ -1,0 +1,21 @@
+{{#allInsights}}
+<div class="browseByCategoryPC">
+    <div class="ibm-columns">
+        <div class="ibm-col-12-12 flex">
+            <div class="categoryTitle">Browse by category</div>
+            <ul class="categoryLists flex">
+                {{#links}}
+                <li class="categoryItem" >
+                    <div class="categoryItemContent">{{pureName}} <i class="ibm-anchor-down-link"></i></div>
+                    <div class="childList" style={{gridTemplate}}>
+                        {{#links}}
+                        <a class="childItem" href={{href}}>{{{name}}}</a>
+                        {{/links}}
+                    </div>
+                </li>
+                {{/links}}
+            </ul>
+        </div>
+    </div>
+</div>
+{{/allInsights}}

@@ -1,0 +1,28 @@
+{
+  "faqs": [
+    {
+      "question": "2020",
+      "answers": [ 
+		"<a href='https://ibm.box.com/s/946f2qtpkg1onk35y46ew4nair8r8o02' target='_blank'>Webinar 18: Transformation Acceleration—Helping clients thrive amidst upheaval and uncertainty</a>",
+		"<a href='https://ibm.box.com/s/qewgqdorutu7n696056d43xl0oyy7kaf' target='_blank'>Webinar 17: Security, privacy and trust - Confronting complexity and fear in data-driven world</a>"
+      ]
+    },
+    {
+      "question": "2019",
+      "answers": [ 
+		"<a href='https://ibm.box.com/s/hfv0cb9f8uydwu4fq4vx07hgiq8bwwxp' target='_blank'>Webinar 16: Top Trends for 2019 – Did We Get It Right?</a>",
+		"<a href='https://ibm.box.com/s/hhiwqbshz63y0kl3dra06sboz3sz9z2d' target='_blank'>Webinar 15: Customer Experience: B2C versus B2B - Differentiation, Personalization, Collaboration</a>",
+		"<a href='https://ibm.box.com/s/23zgb12azjcfl6l2cejpf3yckd9v1i9i' target='_blank'>Webinar 14: Women and Leadership - Why the gender gap is still a thing, and how to close it</a>",
+		"<a href='https://ibm.box.com/s/m91yiwhb88pjpkee3rflqbo4nxcjor5t' target='_blank'>Webinar 13: The Cognitive Enterprise: A New Era of Business Reinvention</a>"
+      ]
+    },
+    {
+      "question": "2018",
+      "answers": [ 
+		"<a href='https://ibm.box.com/s/5mgks7i6put86wltfj545d9h8bvnibsw' target='_blank'>Webinar 12:  Top five trends for 2019 - Insights and impacts that could matter most</a>",
+		"<a href='https://ibm.box.com/s/8ohrtx5efopniljuq7g8462k6tfxrzdb' target='_blank'>Webinar 11: C-suite secrets - The inside scoop from the latest IBV C-suite Study</a>",
+		"<a href='https://ibm.box.com/s/nmx9d688jsz10l8m97vcp92ht1yyebce' target='_blank'>Webinar 10: Tackling the skills crisis - How to build a competitive workforce</a>"
+      ]
+    }
+  ]
+}

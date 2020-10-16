@@ -1,0 +1,19 @@
+
+<link rel="shortcut icon" href="img/favicon.ico"/>
+<link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
+<link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet"/>
+<link href="//1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+<script src="//1.www.s81c.com/common/stats/ida_stats.js"></script>
+<script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+<script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
+<script src="//1.www.s81c.com/common/v18/js/mustache.js"></script>
+<link rel="stylesheet" href="/css/video.css" />
+<script src="/js/ibv_video.js"></script>
+<script>
+  var $ = jQuery;
+  var timestamp = new Date().getTime();
+  document.write('<link rel="stylesheet" href="/css/common.css?v='+timestamp+'"/>'
+			   + '<script src="/js/promise.min.js?v='+timestamp+'"><\/script>'
+			   + '<script src="/js/ibv_common.js?v='+timestamp+'"><\/script>'
+			   + '<script src="/js/ibv_setup.js?v='+timestamp+'"><\/script>');
+</script>

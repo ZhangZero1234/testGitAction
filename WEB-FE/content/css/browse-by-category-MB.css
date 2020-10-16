@@ -1,0 +1,128 @@
+/* BROWSE BY CATEGORY FOR MOBILE PHONE */
+ul{
+    list-style: none;
+}
+
+.flex{
+    display: flex;
+}
+.stopScroll{
+    overflow: hidden;
+}
+
+.open{ 
+    background-color: #777677 !important; 
+}
+.show{
+    display: block !important;
+}
+
+.zIndex0{
+    z-index: 0 !important;
+}
+
+.browseByCategoryMB i {
+    font-style: normal;
+}
+.selectedColor{
+    background: #0062FF;
+    color: #fff;
+}
+.browseByCategoryMB{
+    background: #0062FF;
+    color:white;
+    height:50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;    
+    position: relative;
+    z-index: 100;
+}
+.browseByCategoryMB i[class*='-link']::before,.browseByCategoryMBListModel i[class*='-link']::before{
+    position: unset;
+}
+
+.browseByCategoryMB .icon i[class*='-link']::before{
+    
+    font-size: 1rem;
+    display: inline-block;
+    width: 1.5rem;
+    background-color: white;
+    height: 1.5rem;
+    color: #0062FF;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.5rem;
+    margin: 1px 0 0 4px;
+}
+
+.browseByCategoryMBListModel{
+    display: none;
+    position: fixed;
+    left: 0; bottom: 0;right: 0;
+    background-color: rgba(0,0,0,.5);
+}
+
+.browseByCategoryMBList{
+    position: absolute;
+    top: 0px;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    background-color: #ececec;
+    overflow-y: auto;
+    padding: 40px 0px 20px;
+}
+ul.browseByCategoryMBList li{
+    padding: 0 40px;
+}
+ul.browseByCategoryMBList li::before{
+    content:'';
+}
+
+.browseByCategoryMBItem{
+    justify-content: space-between;
+    line-height: 2.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.browseByCategoryMBItem i{
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+.browseByCategoryMBItemDetail{
+    padding:20px 0 0;
+    box-sizing: border-box;
+    display: none;
+}
+.browseByCategoryMBItemDetail li{
+    padding: 0 40px;
+}
+.browseByCategoryMBItemDetail a{
+    color:#333;
+    display: block;
+    line-height: 2.5rem;
+    font-weight: 600;
+}
+
+.browseByCategoryMBItemDetail a i{
+    float: right;
+    height: 0;
+}
+.browseByCategoryMBItemDetail a i[class*='-link']::before{
+    font-size: 1.3rem;
+}
+.deadline{
+    height: 1px;
+    background-color: #777677;
+    margin: 27px 40px;
+    
+}
+
+
+@media screen and (max-width:1024px){
+    body{
+        padding-bottom: 50px !important;
+    }
+} 

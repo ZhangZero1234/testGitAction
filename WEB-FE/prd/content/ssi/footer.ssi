@@ -1,0 +1,28 @@
+<!-- div#ibm-footer is required to prevent www.js errors -->
+<footer role="contentinfo" aria-label="IBM">
+<div id="ibm-footer" style="display:none!important"></div>
+<div class="page-footer">
+    <div class="ibm-columns">
+        <div class="ibm-col-1-1">
+            <ul>
+                <li>
+                    <a href="http://w3.ibm.com/w3/info_terms_of_use.html" target="_blank">Terms of use</a>
+                </li>
+                <li>
+                    <a href="http://w3.ibm.com/ibm/documents/corpdocweb.nsf/ContentDocsByTitle/Business+Conduct+Guidelines" target="_blank">Business conduct guidelines</a>
+                </li>
+                <li>
+                    <a href="https://w3-connections.ibm.com/wikis/home?lang=en-us#!/wiki/Wf49a0f070e65_41de_bb0a_ff81f7eb3319/page/yourIBM%20Accessibility%20Features" target="_blank">Accessibility</a>
+                </li>
+                <li>
+                    <!-- Usabilla integrated feedback button -->
+                    <a href="#" id="usbl-integrated-button">Give Feedback</a>
+                </li>
+                <li>
+                    <a href="https://w3-connections.ibm.com/communities/service/html/communitystart?communityUuid=6dd64b47-6463-4cf4-8f10-c18d63bf00b3" target="_blank">yourIBM Community</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</footer>

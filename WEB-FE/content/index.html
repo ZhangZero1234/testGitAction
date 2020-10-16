@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <!-- HEAD-TOP : BEGIN -->
+  <!--#include virtual="/ssi/head-top.ssi" -->
+  <!-- HEAD-TOP : END -->
+  
+  <!-- Page specific settings : START -->
+  <title>Home | IBM Institute for Business Value</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="title" content="Home | IBM Institute for Business Value"/>
+  <meta name="description" content="Research-driven insights to boost your business IQ."/>
+  <meta name="Keywords" content="IBV, thought leadership, institute for business value, business challenges, strategic insights, thought leader"/>
+  <meta name="IBM.Effective" content="2019-09-23"/>
+  <meta name="DC.Date" content="2019-09-23"/>
+  <link rel="canonical" href="https://ibv.dst.ibm.com/">
+  <link rel="stylesheet" href="css/browse-by-category-PC.css">
+  <link rel="stylesheet" href="css/browse-by-category-MB.css">
+  <script type="text/javascript">
+    digitalData = {
+      page: {
+        category: {
+          primaryCategory: 'IBM_Institute_for_Business_Value'
+        },
+        pageInfo: {
+          description: 'Research-driven insights to boost your business IQ.',
+          effectiveDate: '2019-09-23',
+          language: 'en-US',
+          publishDate: '2019-09-23',
+          publisher: 'IBM Corporation',
+          version: 'v18',
+          ibm: {
+            contentDelivery: 'IBV Next Web',
+            contentProducer: 'IBV Next CMS',
+            country: 'ZZ',
+            owner: 'Institute for Business Value/Raleigh/Contr/IBM',
+            siteID: 'IBM_IBV_w3',
+          }
+        }
+      }
+    };
+  </script>
+  <!-- Page specific settings : END -->
+  <!-- HEAD-BOT : BEGIN -->
+  <!--#include virtual="/ssi/head-bot.ssi" -->
+  <!-- HEAD-BOT : END -->
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/card-module.css">
+  <link rel="stylesheet" href="css/banner-module.css">
+  <link rel="stylesheet" href="css/connect-module.css">
+  <!-- ------------------------ -->
+  <!-- Page specific Javascript -->
+  <!-- ------------------------ -->
+  <script type="text/javascript">
+    // -------------------
+    // CARD DISPLAY: START
+    // cardInfo object will hold card format and card data for template processing
+    var cardInfo = {
+      "format" : {
+        "ibm-col-normal" : "ibm-col-4-1",
+        "ibm-col-mobile" : "ibm-col-medium-4-2",
+        "ibm-card-bottom": true
+      } 
+    };  
+    var requestOptions = {
+	  "cardIds":"2597,2771,2767,2753"
+    };
+    var renderOptions = {
+      "append":false,
+      "cardStatus":"span#cardStatus",
+      "cardTarget":"#cardsTarget",
+      "cardTemplateFile":"mst/cards.mst"
+    };
+    // CARD DISPLAY: END
+	//LeaderInformation
+    var picSize = 500;
+    //LeaderInformation: END			  
+    // -----------------  
+    $(function() {
+		// DISPLAY CARDS:
+		ibv.renderCards(cardInfo, requestOptions, renderOptions); 
+			//LeaderInformation Load
+		// ibv.getLeadershipData("mst/leader.mst","#leaders",leaders);	  
+		$("#ibm-contact-module").on("focus",()=>{$(".ibm-contact-widget-btn.ibm-active").click()});
+		$.getJSON('data/index.json',function(data){
+			ibv.renderSection("#section",data,"./mst/image-module.mst",function(){
+			document.getElementById('videoCom') == null? null : videojs(document.getElementById('videoCom'));
+			})
+		})
+		//browse-by-categpry-pc
+		$.getJSON('data/navigations.json',function(data){
+			data = lnkSymbol("lnk=cb",data,"allInsights");
+			ibv.renderSection("#browse-by-categpry-pc",data,"./mst/browse-by-category-PC.mst")
+		})
+	  
+		//browse-by-category-MB
+		$.getJSON('data/navigations.json',function(data){
+			data = lnkSymbol("lnk=cb",data,"allInsights");
+			ibv.renderSection("#browse-by-category-MB",data,"./mst/browse-by-category-MB.mst",function(){
+				let top = 0;
+				function categoryInit(){
+					$(".browseByCategoryMBItem").removeClass("selectedColor");
+					$(".browseByCategoryMBItem").find("i").attr("class","ibm-maximize-link");
+					$(".browseByCategoryMBItemDetail").slideUp("normal");
+				}
+				document.onreadystatechange = function () {     
+					if(document.readyState=="complete") {            
+						console.log("loading done"); 
+						$(".browseByCategoryMB").click(function(){
+							console.log("click in bbc in MB");
+							if($(".browseByCategoryMB .icon span").text()=="Close"){
+								categoryInit();
+							}
+							$("body").toggleClass("stopScroll");
+							$("#ibm-leadspace-body").toggleClass("zIndex0");
+							$(this).toggleClass("open");
+							$(".browseByCategoryMB .icon span").text()=="Open"?$(".browseByCategoryMB .icon span").text("Close"):$(".browseByCategoryMB .icon span").text("Open");
+							$(".browseByCategoryMB .icon i").attr("class")=="ibm-anchor-down-link"?$(".browseByCategoryMB .icon i").attr("class","ibm-anchor-up-link"):$(".browseByCategoryMB .icon i").attr("class","ibm-anchor-down-link")
+							if(document.body.getBoundingClientRect||document.documentElement.getBoundingClientRect){
+								top = document.querySelector(".ibm-sitenav-menu-container").getBoundingClientRect().y+document.querySelector(".ibm-sitenav-menu-container").getBoundingClientRect().height;
+								top=top<0?0:top
+							}
+							else{
+								top = document.querySelector(".ibm-sitenav-menu-container").offsetTop>document.querySelector("html").scrollTop?document.querySelector(".ibm-sitenav-menu-container").offsetTop-document.querySelector("html").scrollTop+51:51;
+							}
+							$(".browseByCategoryMBListModel").css("top",top+'px');
+							$(".browseByCategoryMBListModel").toggleClass("show");
+						})
+
+						$(".browseByCategoryMBItem").click(function(){
+							$(this).find("i").attr("class") == "ibm-maximize-link"? $(this).find("i").attr("class","ibm-minimize-link"): $(this).find("i").attr("class","ibm-maximize-link");
+							$(this).toggleClass("selectedColor");
+							$(this).siblings(".browseByCategoryMBItem").removeClass("selectedColor");
+							$(this).siblings(".browseByCategoryMBItem").find("i").attr("class","ibm-maximize-link");
+							$(this).next().siblings(".browseByCategoryMBItemDetail").slideUp("normal")
+							$(this).next().slideToggle("normal");
+						});
+					}     
+				} 
+			})
+		})
+
+		$.getJSON('data/index-banner.json',function(data){
+			ibv.renderSection("#spotlight",data,"./mst/banner-module.mst")
+		})
+
+		$.getJSON('data/index-connect.json',function(data){
+			ibv.renderSection("#connect-wrapper",data,"./mst/connect-module.mst",function(){
+				jQuery(".connect-with-us").setsameheight({});
+			});
+		})
+    });
+  </script>
+  
+</head>
+
+	<body id="ibm-com" class="ibm-type ibv-index">
+		<div id="ibm-top" class="ibm-landing-page">
+			<!-- MASTHEAD : BEGIN -->
+			<!--#include virtual="/ssi/masthead.ssi" -->
+			<!-- MASTHEAD : END -->
+
+			<!-- START MAIN PAGE WRAPPER AROUND LEADSPACE, MAIN CONTENT SIDENAV AND RELATED CONTENT -->
+			<div id="ibm-content-wrapper" role="region" aria-label="ibm content wrapper">
+				<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+
+					<!-- SITENAV_START -->
+					<!--#include virtual="/ssi/navigation.ssi" -->    
+					<!-- SITENAV_END --> 
+
+					<!-- LEADSPACE_START -->            
+						<div id="ibm-leadspace-head" class="ibm-alternate ibm-alternate-background ibm-vertical-center ibm-background-black-core">
+							<div id="ibm-leadspace-body" class="ibm-padding-top-r1 ibm-padding-bottom-r1 ibm-vertical-center">
+								<div id="ibv-leadspace" class="ibm-padding-content">
+									<h1 id="ibm-pagetitle-h1" class="ibm-h1 ibm-bold">COVID-19 Consumer Survey</h1>  
+									<p>
+										The pandemic is impacting perceptions of the economy, shopping, work, health and well-being, travel and mobility, and more.
+									</p> 	  		  
+									<p class="ibm-button-link btn-equal-width-mobile ibv-padding-top-1">
+										<a class="ibm-btn-pri ibv-pri-button ibv-button-space leadspaceBtn" href="https://w3.ibm.com/services/lighthouse/documents/154253" target="_blank">Learn more</a>
+										<a class="ibm-btn-pri ibv-sec-button ibv-button-space leadspaceBtn" href="http://www.pages02.net/instituteforbusinessvalue/w3subscription" target="_blank">Get insights via email</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					<!-- LEADSPACE_END -->
+				</header>
+				<div id="browse-by-categpry-pc"></div>
+			</div>
+			<!-- END MAIN PAGE WRAPPER AROUND LEADSPACE, MAIN CONTENT SIDENAV AND RELATED CONTENT -->
+
+			<!-- Page content here : START -->
+			<main role="main" aria-labelledby="ibm-pagetitle-h1">
+				<div id="ibm-pcon">
+					<div id="ibm-content-body">
+						<div id="ibm-content-main">
+							<div id="section"></div>
+							<div class="ibm-fullwidth">
+								<div class="ibm-columns ibm-padding-bottom-1" >
+									<div class="ibm-col-6-6 ibm-padding-content"></div>  					    
+									<div id="cardsTarget" data-widget="setsameheight" data-items=".ibm-card" data-always="true"></div>
+									<div class="ibm-columns ibv-padding-topbot-0">
+										<div class="ibm-col-6-6">
+											<p class="ibm-center ibm-padding-bottom-2">
+												<a class="ibm-btn-pri ibv-pri-button" onclick="ibv.setPageName()" href="explore.html?tids=6000,5004&lnk=index-em">Explore more</a>
+											</p>
+										</div>
+									</div> 
+								</div>
+							</div>
+							<!-- spolight -->
+							<div class="ibm-fullwidth" id="spotlight"></div>
+							<div id="connect-wrapper"></div>
+						</div>
+					</div>
+				</div>
+			</main>
+			<!-- Page content here : END -->
+
+			<!-- FOOTER : BEGIN -->
+			<!--#include virtual="/ssi/footer.ssi" -->
+			<!-- FOOTER : END -->	
+		</div>
+		<div id="browse-by-category-MB"></div>
+			<!-- CLOSING : BEGIN -->
+			<!--#include virtual="/ssi/closing.ssi" -->
+			<!-- CLOSING : END -->
+	</body>
+</html>

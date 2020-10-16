@@ -1,0 +1,18 @@
+{
+    "image" : {
+      "position" : "left",
+      "url" : "benchmarking.png",
+      "alt":"benchmarking"
+    },
+    "heading" : "Benchmarking app",
+    "paragraphs" : [
+      "Download the IBV Benchmarking app on your mobile device (iPads, iPhones, Android phones or tablets) for ready-access to financial and operational performance data in a workflow optimized for sales and client presentations. To go straight to the app: Search for 'IBV Benchmarking' on IBM App Store."
+    ],
+    "buttons" : [
+      {
+       "label" : "Benchmarking app",
+       "url" : "http://www.ibm.biz/BenchmarkingApp_QuickStart"
+      }
+    ] 
+   }
+   

@@ -1,0 +1,19 @@
+{{#allInsights}}
+<div class="browseByCategoryMB flex">
+    <div class="title">Browse by category</div>
+    <div class="icon"><span>Open</span> <i class="ibm-anchor-up-link"></i></div>
+</div>
+<div class="browseByCategoryMBListModel">
+    <ul class="browseByCategoryMBList">
+        {{#links}}
+        <li class="browseByCategoryMBItem flex">{{{pureName}}} <i class="ibm-maximize-link"></i></li>
+        <ul class="browseByCategoryMBItemDetail">
+            {{#links}}
+            <li><a href={{href}}>{{{name}}} <i class="ibm-forward-link"></i></a></li>
+            {{/links}}
+            <div class="deadline"></div>
+        </ul>
+        {{/links}}
+    </ul>
+</div>
+{{/allInsights}}

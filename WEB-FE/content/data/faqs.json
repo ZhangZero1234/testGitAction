@@ -1,0 +1,69 @@
+{
+  "faqs": [
+    {
+      "question": "What content does the IBV provide?",
+      "answers": [ 
+        "We provide a wide range of thought leadership that can help you and your clients understand trends, anticipate industry changes, and create and identify innovative opportunities. Our resources include: presentations, infographics, reports, videos, webinars, social kits, seller and solution guides, and <a href='/benchmark.html' target='_blank'>benchmarking</a> and <a href='/cbm.html'  target='_blank' >component business modeling (CBM)</a> tools. If you have any questions or would like our help, please contact <a href='/team.html' target='_blank' >our experts</a> or send an email to <a href='mailto:ibv@us.ibm.com' target='_blank'>ibv@us.ibm.com</a>."
+      ]
+    },
+    {
+      "question": "What IBV content can I use with clients?",
+      "answers": [ 
+        "IBV reports and infographics are client-ready and can be freely distributed. The presentation decks are intended for use with clients in one-on-one or one-on-many sessions. We do not recommend sharing decks with clients if you don't have an opportunity to walk them through the decks."
+      ]
+    },
+    {
+      "question": "Is there a cost associated with accessing IBV materials?",
+      "answers": [ 
+        "IBV funding is obtained from a variety of sources, including direct investment, special project funding, and since 2012, usage charges. For unlimited quarterly usage of either IBV thought leadership materials, benchmarking tools/applications or reports, or our component business modeling (CBM) tool and assets, departments may incur a charge of up to $450 per user."
+      ]
+    },
+    {
+      "question": "When I try to get access to IBV content, I get a message that says I need to register. Why?",
+      "answers": [ 
+        "All IBV content is published on <a href='https://w3.ibm.com/services/lighthouse/spotlight' target='_blank' >Lighthouse</a>, which contains client-sensitive information that needs to be protected. Registration is a one-time activity and access is normally granted within an hour."
+      ]
+    },
+    {
+      "question": "Does the IBV use any of my personal information?",
+      "answers": [ 
+        "The IBV is committed to providing the most relevant content to you, and in order to do so, we must access certain personal and professional information such as your name, email, location, business status, and activity on IBV materials and tools. This data will only be used for personalized recommendations, analyzing usage data to improve the user experience or for billing purposes.",
+        "<a href='https://w3.ibm.com/w3publisher/w3-privacy-notice' target='_blank'>View the IBM privacy policy&nbsp;</a>"
+      ]
+    },
+    {
+      "question": "How can external users get access to IBV content?",
+      "answers": [ 
+        "All client-ready IBV content can be accessed on the IBV external website, <a href='http://ibm.com/ibv' target='_blank'>ibm.com/ibv</a>. External users also can follow us on <a href='https://twitter.com/ibmibv' target='_blank'>Twitter</a>, join our <a href='https://www.linkedin.com/groups/2597995/' target='_blank' >LinkedIn group</a>, subscribe to our <a href='https://www.youtube.com/channel/UCAD0mjCvnb6H7rEPqP8UEbw' target='_blank'>YouTube channel</a>, and sign up to receive our <a href='https://www.ibm.com/account/reg/us-en/signup?formid=urx-43376' target='_blank'>external email updates</a>."
+      ]
+    },
+    {
+      "question": "I have heard that there is an IBV internal newsletter. How do I subscribe?",
+      "answers": [ 
+        "You can subscribe to receive email updates from the IBV <a href='http://www.pages02.net/instituteforbusinessvalue/w3subscription' target='_blank'>here</a>. You can customize your subscription to receive emails on the topics that are most relevant to you."
+      ]
+    },
+    {
+      "question": "How can clients subscribe to the external IBV newsletter?",
+      "answers": [ "Clients can sign up to receive external email updates <a href='https://www.ibm.com/account/reg/us-en/signup?formid=urx-43376' target='_blank'>here</a>."
+      ]
+    },
+    {
+      "question": "How does the IBV decide what research to conduct?",
+      "answers": [ "The IBV conducts research across industries, technologies, and functional areas, as well as for special topics defined in coordination with IBM senior executives. Within each area, the IBV works with an advisory council led by executives from IBM Services and Global Markets to identify and prioritize topics, data gathering, analysis, studies, and other outputs."
+      ]
+    },
+    {
+      "question": "I have an idea for a study. How do I submit it to the IBV?",
+      "answers": [ 
+        "If you know the research area associated with your idea, or if you support an Elite, Premier, or Integrated account, please feel free to contact either the <a href='/team.html' target='_blank' >IBV research lead</a> for the relevant area or our IBV Research Directors <a href='https://w3.ibm.com/bluepages/profile.html?uid=0D0022897' target='_blank' >David Zaharchuk</a> and <a href='https://w3.ibm.com/bluepages/profile.html?uid=4D4129897' target='_blank' >Haynes Cooney</a> to discuss. Alternatively, consider escalating your idea to your senior management so that they may bring your idea forward as part of an advisory council discussion (see \"How does the IBV decide what research to conduct?\")."
+      ]
+    },
+    {
+      "question": "Can I get involved in an IBV project?",
+      "answers": [ 
+        "If you are an expert in an area where the IBV is doing research and you would like to participate, please feel free to contact either the <a href='/team.html' target='_blank' >IBV research lead</a> for your area of expertise or our IBV Research Directors <a href='https://w3.ibm.com/bluepages/profile.html?uid=0D0022897' target='_blank' >David Zaharchuk</a> and <a href='https://w3.ibm.com/bluepages/profile.html?uid=4D4129897' target='_blank' >Haynes Cooney</a> to discuss. For those interested in supporting an IBV research project in a capacity other than that of a subject matter expert, the IBV periodically engages emerging talent. These opportunities are promoted through traditional internal IBM staffing channels. "
+      ]
+    }
+  ]
+}

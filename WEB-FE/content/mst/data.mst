@@ -1,0 +1,37 @@
+<table>
+ 
+  <tr>
+    <th>Product</th>
+    <th>Colour</th>
+    <th>Price</th>
+    <th>Buy</th>
+  </tr>
+ 
+  {{#product}}
+  <tr>
+    <td>{{name}}</td>
+    <td>{{colour}}</td>
+    <td>${{price}}</td>
+    {{#inStock}}<td><a href="buy.php?productId={{id}}">Buy Now!</a></td>{{/inStock}}
+    {{^inStock}}<td>Out of Stock</td>{{/inStock}}
+  </tr>
+  {{/product}}
+ 
+</table>
+
+<div class="ibm-rule ibm-alternate ibm-gray-30 ibm-margin-top-0 ibm-margin-bottom-0">&nbsp;</div>
+
+<!--
+jQuery("#faqShowHide").showhide(); 
+-->
+<div id="faqShowHide" data-widget="showhide" data-type="panel" class="ibm-show-hide">
+    {{#faqs}}
+    <h2>{{question}}</h2>
+    <div class="ibm-container-body">
+        <!-- <p>{{{answers}}}</p> -->
+        {{#answers}}
+        <p>{{{.}}}</p>
+        {{/answers}}
+    </div>
+    {{/faqs}}
+</div>

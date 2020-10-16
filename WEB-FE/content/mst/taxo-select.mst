@@ -1,0 +1,31 @@
+{{#taxoSelectControls}}
+{{#firstColumn}}
+<div class="ibm-columns ibm-fullwidth">
+{{/firstColumn}}
+  <div class="{{#colFormatLrg}}{{.}}{{/colFormatLrg}}{{^colFormatLrg}}ibm-col-4-1{{/colFormatLrg}} {{#colFormatMed}}{{.}}{{/colFormatMed}}{{^colFormatMed}}ibm-col-medium-4-2{{/colFormatMed}}">
+  <p class="ibm-form-elem-grp">
+    <label for="taxoId-{{taxoId}}">{{taxoBeanList.label}}</label>
+    <span>
+      <select class="taxoSelect" id="taxoId-{{taxoId}}" {{#multiple}}multiple{{/multiple}} data-placeholder="< select >">
+        {{#taxoBeanList}}
+        {{#subTaxoBeans}}
+        {{#displayGroups}}
+        <optgroup label="{{label}}">
+          {{#subTaxoBeans}}
+          <option value="{{taxoId}}" {{#selected}}selected{{/selected}}>{{label}}</option>
+          {{/subTaxoBeans}}
+        </optgroup>
+        {{/displayGroups}}
+        {{^displayGroups}}
+        <option value="{{taxoId}}" {{#selected}}selected{{/selected}}>{{label}}</option>
+        {{/displayGroups}}
+        {{/subTaxoBeans}}
+        {{/taxoBeanList}}
+      </select>
+    </span>
+  </p>
+</div>
+{{#lastColumn}}
+</div>
+{{/lastColumn}}
+{{/taxoSelectControls}}

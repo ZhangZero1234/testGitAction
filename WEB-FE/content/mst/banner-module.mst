@@ -1,0 +1,14 @@
+<div id="banner" style="background-image:url('/img/banner/{{image}}')">
+    <div class="ibm-columns">
+        <div class="ibm-col-12-6 ibm-col-medium-12-12">
+            <h3 class="ibm-h3">{{title}}</h3>
+            <h1 class="ibm-h1">{{header}}</h1>
+            <p>
+                {{paragraphs}}
+            </p>
+            <p class="ibm-button-link btn-equal-width-mobile ibv-padding-top-1">
+                <a class="ibm-btn-pri ibv-pri-button leadspaceBtn" href="{{linkAddress}}">{{linkName}}</a>
+            </p>
+        </div>
+    </div>
+</div>

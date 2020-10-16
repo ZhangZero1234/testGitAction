@@ -1,0 +1,19 @@
+{
+    "image" : {
+      "position" : "right",
+      "url" : "mainfig.jpg",
+      "alt":"Main_fig"
+    },
+    "heading" : "About the Cognitive Enterprise",
+    "paragraphs" : [
+      "Organizations are facing an unprecedented convergence of technological, social, and regulatory forces. As artificial intelligence, blockchain, automation, Internet of Things, 5G, and edge computing become pervasive, their combined impact will reshape standard business architectures. The “outside-in” digital transformation of the past decade is giving way to the “inside-out” potential of data exploited with these exponential technologies.",
+      "To use these technologies to create a competitive advantage, clients can adopt a new business model we call the Cognitive Enterprise. We've created a website where you can learn more and access tools to help your clients build a Cognitive Enterprise."
+    ],
+    "buttons" : [
+      {
+       "label" : "Learn more",
+       "url" : "https://ppydalceibv01.sl.bluecloud.ibm.com/sales/cognitive-enterprise"
+      }
+    ] 
+   }
+   

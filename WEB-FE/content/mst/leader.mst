@@ -1,0 +1,33 @@
+{{#leadership}} 
+  <div class="ibm-col-12-6 ibm-col-medium-12-12 ibm-vertical-center">
+		<div class="ibm-columns">
+			{{#tmpPullquote}}
+			<div class="ibm-col-12-12">
+				<div style="padding:0 10px 0 10px;">
+					<p class="ibm-left">
+					  <em>
+						<span class="ibm-pullquote-open ibm-alternate-font">“</span>
+						{{#first}}
+						By understanding weak signals and early indicators of industry transformation, we help our clients to be ahead of the pack.
+						{{/first}}
+						{{#second}}
+						Independent, fact-based thought leadership has never been more important in helping our clients make decisions today that help them remain -- or become -- industry leaders tomorrow.
+						{{/second}}
+						<span class="ibm-pullquote-close ibm-alternate-font">”</span>
+					  </em>
+					</p>
+				</div>	
+			</div>
+			{{/tmpPullquote}}
+			<div class="ibm-col-12-12">
+				<div class="ibm-mo">
+				  <div class="ibm-mo__image"><img class="ibm-circle" src="{{imgUrl}}" width="150px" height="150px" alt="" /></div>
+				  <div class="ibm-mo__body ibm-vertical-center">
+					  <h3><span class="ibm-h4 ibm-textcolor-blue-50"><a target="_blank" href="{{bluepage}}">{{infomation.name}}</a></span></h>
+					  <p>{{infomation.bio}}</p> 
+				  </div>
+				</div>
+			</div>
+		</div>  
+  </div> 
+{{/leadership}}

@@ -1,0 +1,22 @@
+{
+    "image" : {
+      "position" : "right",
+      "url" : "digitalreinvention.png",
+      "alt":"Business-platform"
+    },
+    "paragraphs" : [
+      "Digital Reinvention® involves a fundamental re-imagining of how an organization innovates, operates and engages with its environment, its customers, employees and partners. The Digital Reinvention approach reinvents the enterprise through an Assessment and Envision phase, followed by a series of Creation prototypes and pilots. This informs how the enterprise will transform across the foundation to reinvent itself for the future.",
+      "<span class='ibm-bold'>Orchestrate:</span> A team of executive leaders oversees the long-term Digital Reinvention program orchestrating an ongoing series of envision sessions, prototypes and pilots to redefine experience and reinvent the enterprise.",
+      "<span class='ibm-bold'>Assess:</span> Map maturity gap in terms of new focus, new expertise, new ways to work and experience from where we are, to where we want to be.",
+      "<span class='ibm-bold'>Envision:</span> Use IBM Design Thinking to envision opportunities in experiences, processes and the ecosystem.",
+      "<span class='ibm-bold'>Create:</span> Agile methods are applied to rapidly prototype and iterate with input from users, then pilot new experiences to gather data on performance and adoption before scaling.",
+      "<span class='ibm-bold'>Scale:</span> Leverage the foundation to enable prototyping and piloting."
+    ],
+    "buttons" : [
+      {
+       "label" : "Learn more",
+       "url" : "https://ppydalceibv02.sl.bluecloud.ibm.com/sales/digitalreinvention"
+      }
+    ] 
+   }
+   

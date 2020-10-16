@@ -1,0 +1,150 @@
+<section role="region" aria-label="contact with us">
+    <div id="ibm-contact-module" tabindex="0">
+        <h2 id="left-name" class="ibm-bold">Connect with us</h2>
+        <h3 class="ibm-bold">Connect with us</h3>
+        <ul class="ibm-live-assistance-list">                   
+            <li>
+                <p class="ibm-icon-nolink ibm-twitter-encircled-link">
+                    <span class="ibm-small">
+                        <a id="ibv-twitter" href="https://twitter.com/IBMIBV" class="no-left-padding" target="_blank">Follow us on Twitter</a>
+                    </span>
+                </p>
+            </li>
+            <li>
+                <p class="ibm-icon-nolink ibm-linkedin-encircled-link">
+                    <span class="ibm-small">
+                        <a id="ibv-linkedin" href="https://www.linkedin.com/groups/2597995/" class="no-left-padding" target="_blank">Join our LinkedIn group</a>
+                    </span>
+                </p>
+            </li> 
+            <li>
+                <p class="ibm-icon-nolink ibm-youtube-link">
+                    <span class="ibm-small">
+                        <a id="ibv-email-us" href="https://www.youtube.com/channel/UCAD0mjCvnb6H7rEPqP8UEbw" class="no-left-padding" target="_blank">Subscribe to our YouTube channel</a>
+                    </span>
+                </p>
+            </li>	
+			<li>
+                <p class="ibm-icon-nolink ibm-mobile-link">
+                    <span class="ibm-small">
+                        <a id="ibv-email-us" href="http://www.pages02.net/instituteforbusinessvalue/w3subscription" class="no-left-padding" target="_blank">Receive IBV insights via email</a>
+                    </span>
+                </p>
+            </li>				
+            <li>
+                <p class="ibm-icon-nolink ibm-email-link">
+                    <span class="ibm-small">
+                        <a id="ibv-email-us" href="mailto:ibv@us.ibm.com" class="no-left-padding">Email us</a>
+                    </span>
+                </p>
+            </li>
+            <!-- FOR FUTURE USE
+            <li>
+                <p class="ibm-icon-nolink ibm-forward-link">
+                    <span class="ibm-small">
+                        <a id="ibv-experts" href="experts.html" class="no-left-padding">Contact our experts</a>
+                    </span>
+                </p>
+            </li>       
+            <li>
+                <a class="ibm-popup-link" href="#" onclick="IBMCore.common.widget.overlay.show('overlayGeneralInquiries');return false;">
+                    <span class="ibm-small">Send general inquiries</span>
+                </a>
+            </li>        
+            <li class="ibm-feedback-item">
+                <a href="#" onclick="IBMCore.common.widget.overlay.show('overlayFeedback');return false;" class="ibm-popup-link">
+                    <span class="ibm-small">Website feedback</span>
+                </a>
+            </li>
+            -->
+        </ul>
+    </div>
+</section>
+
+<!-- OVERLAYS FOR CONTACT MODULE -->
+<!-- FOR FUTURE USE
+<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="overlayGeneralInquiries">
+    <div class="ibm-title ibm-center">
+        <h3 class="ibm-h3">Contact us</h3>
+    </div>
+    <form action="" class="ibm-row-form" enctype="multipart/form-data" id="generalInquiriesForm" method="post">
+        <p id="error-msg1" style="display:none">
+            <span class="ibm-item-note ibm-alert-link">Email, offering and question are required.</span>
+        </p>
+        <p id="error-msg0" style="display:none">
+            <span class="ibm-item-note ibm-alert-link">Please enter a valid email.</span>
+        </p>
+        <p>
+            <label for="user_email">Enter your email address here: <span class="ibm-required">*</span>
+            </label>
+            <span>
+                <input id="user_email" name="email" type="email" size="40">
+            </span>
+        </p>
+        <p>
+            <label>Select the offering you are interested in: <span class="ibm-required">*</span></label>
+            <span class="ibm-input-group">
+                <span class="ibm-checkbox-wrapper">
+                    <input type="checkbox" id="insights" class="ibm-styled-checkbox" name="inquiryType" value="Northstar"/>
+                    <label for="northstarInq">Insights topics</label>
+                </span>
+                <span class="ibm-checkbox-wrapper">
+                    <input type="checkbox" id="csuite" class="ibm-styled-checkbox" name="inquiryType" value="Design"/>
+                    <label for="designInq">C-suite</label>
+                </span>
+                <span class="ibm-checkbox-wrapper">
+                    <input type="checkbox" id="cbm" class="ibm-styled-checkbox" name="inquiryType" value="Content"/>
+                    <label for="contentInq">CBM</label>
+                </span>
+                <span class="ibm-checkbox-wrapper">
+                    <input type="checkbox" id="benchmarking" class="ibm-styled-checkbox" name="inquiryType" value="Video"/>
+                    <label for="videoInq">Benchmarking</label>
+                </span>
+                <span class="ibm-checkbox-wrapper">
+                    <input type="checkbox" id="printing" class="ibm-styled-checkbox" name="inquiryType" value="Web"/>
+                    <label for="webInq">Printing</label>
+                </span>
+                <span class="ibm-checkbox-wrapper">
+                    <input type="checkbox" id="newsletter" class="ibm-styled-checkbox" name="inquiryType" value="Social"/>
+                    <label for="socialInq">Newsletter subscription</label>
+                </span>
+                <span class="ibm-checkbox-wrapper">
+                    <input type="checkbox" id="assetUse" class="ibm-styled-checkbox" name="inquiryType" value="Applications"/>
+                    <label for="applicationsInq">Use of IBV Assets</label>
+                </span>
+                <span class="ibm-checkbox-wrapper">
+                    <input type="checkbox" id="generalInq" class="ibm-styled-checkbox" name="inquiryType" value="General Inquiry"/>
+                    <label for="generalInq">General Inquiry</label>
+                </span>
+            </span>
+        </p>
+        <p>
+            <label for="user_question">Describe your challenge or present your question here: <span class="ibm-required">*</span></label>
+            <textarea cols="60" id="user_question" name="Client question" rows="6"></textarea>
+        </p>
+        <p>
+            <button type="submit"  id="submitContact" class="ibm-btn-pri ibm-btn-teal-50">Send</button>
+        </p>
+    </form>
+</div>
+
+<div class="ibm-common-overlay ibm-overlay-alt-two" data-widget="overlay" id="overlayFeedback">
+    <div class="ibm-title ibm-center">
+        <h2 class="ibm-h3">Website feedback</h2>
+    </div>
+    <form action="" class="ibm-row-form" enctype="multipart/form-data" id="feedbackForm" method="post">
+        <p id="error-msg2" style="display:none">
+            <span class="ibm-item-note ibm-alert-link">Feedback is required.</span>
+        </p>
+        <p>
+            <label for="user_feedback">Help us improve. Send us your comments.</label>
+            <textarea cols="60" id="user_feedback" name="Feedback" rows="3"></textarea>
+        </p>
+        <p>
+           <button type="submit"  id="submitFeedback" class="ibm-btn-pri ibm-btn-teal-50">Send</button>
+       </p>
+   </form>
+</div>
+-->
+
+

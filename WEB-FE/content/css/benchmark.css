@@ -1,0 +1,6 @@
+.ibv-benchmark #ibm-leadspace-head{
+    background-image: url('../img/leadspace/benchmark.png');
+  }
+.ibv-benchmark .ibm-grid-small #ibm-leadspace-head{
+    background-image: url('../img/leadspace/benchmark.png');
+  }

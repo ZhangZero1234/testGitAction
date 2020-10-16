@@ -1,0 +1,36 @@
+{{#allInsights}}
+<li role="presentation" class="ibm-haschildlist">
+    <button role="menuitem">{{{name}}}</button>
+    <ul  class="ibv-mega-menu mega-menu show-hide menu-content-background mega-menu-title-bgc" role="menu" aria-label="Mega menu">
+    {{#links}}
+        <li role="presentation" class="show-hide-item {{#padding-t-2}}padding-t-2{{/padding-t-2}} {{#padding-b-5}}padding-b-5{{/padding-b-5}} {{#border-l}}border-l{{/border-l}} {{#border-r}}border-r{{/border-r}} {{#padding-b-1}}padding-b-1{{/padding-b-1}}">
+            <h3 class="ibm-h4 ibm-maximize-link ibm-inlinelink ibm-icon-after">{{{name}}}</h3>
+            <div class="showhide-container-body padding-t-2">
+                {{#links}}
+                <p><a href="{{href}}">{{{name}}}</a></p>
+                {{/links}}
+            </div>
+        </li>
+    {{/links}}
+    </ul>
+</li>
+{{/allInsights}}
+
+{{#pages}}
+<li role="presentation">
+    <a role="menuitem" href="{{href}}">{{{name}}}</a>
+</li>
+{{/pages}}
+
+{{#about}}
+<li role="presentation" class="ibm-haschildlist">
+    <button role="menuitem">{{{name}}}</button>
+    <ul role="menu" aria-label="{{{name}}}">
+        {{#links}}
+            <li role="presentation">
+                <a role="menuitem" href="{{href}}">{{{name}}}</a>
+            </li>
+        {{/links}}
+    </ul>
+</li>
+{{/about}}

@@ -1,0 +1,24 @@
+.connect-with-us{
+    background-color:#323232;
+    box-sizing: border-box;
+    padding:50px 40px !important;
+
+}
+.connect-title{
+    color:#fff; 
+}
+
+.connect-with-us .ibm-card{
+    background-color:#464646;
+    border: none;
+    color: #fff;
+}
+
+.connect-with-us .ibm-card .ibm-link-list a[class*='-encircled-link']::before{
+    color: #fff;
+    font-size:1.3rem;
+}
+.connect-with-us .ibm-card .ibm-link-list li a{
+    color: #fff;
+    font-size:1rem;
+}

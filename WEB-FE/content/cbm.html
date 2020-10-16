@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+  <!-- HEAD-TOP : BEGIN -->
+  <!--#include virtual="/ssi/head-top.ssi" -->
+  <!-- HEAD-TOP : END -->
+
+  <!-- Page specific settings : START -->
+  <title>Component Business Modeling | IBM Institute for Business Value</title>
+  <meta name="title" content="Component Business Modeling | IBM Institute for Business Value"/>
+  <meta name="description" content="Component Business Model is a strategic management framework to identify opportunities for improvement or innovation in an organization."/>
+  <meta name="Keywords" content="CBM, component_business_modeling, industry_maps, case_studies, industry, thought_leadership, maps"/>
+  <meta name="IBM.Effective" content="2019-09-23"/>
+  <meta name="DC.Date" content="2019-09-23"/>
+  <link rel="canonical" href="https://ibv.dst.ibm.com/cbm.html">
+  <script type="text/javascript">
+    digitalData = {
+      page: {
+        category: {
+          primaryCategory: 'IBM_Institute_for_Business_Value'
+        },
+        pageInfo: {
+          description: 'Component Business Model is a strategic management framework to identify opportunities for improvement or innovation in an organization.',
+          effectiveDate: '2019-09-23',
+          language: 'en-US',
+          publishDate: '2019-09-23',
+          publisher: 'IBM Corporation',
+          version: 'v18',
+          ibm: {
+            contentDelivery: 'IBV Next Web',
+            contentProducer: 'IBV Next CMS',
+            country: 'ZZ',
+            owner: 'Institute for Business Value/Raleigh/Contr/IBM',
+            siteID: 'IBM_IBV_w3',
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Page specific settings : END -->
+
+  <!-- HEAD-BOT : BEGIN -->
+  <!--#include virtual="/ssi/head-bot.ssi" -->
+  <!-- HEAD-BOT : END -->
+  <link rel="stylesheet" href="css/cbm.css">
+  <link rel="stylesheet" href="css/card-module.css">
+  <!-- ------------------------ -->
+  <!-- Page specific Javascript -->
+  <!-- ------------------------ -->
+  <script type="text/javascript">
+    // -------------------
+    // CARD DISPLAY: START
+    // cardInfo object will hold card format, card, etc. information
+    var cardInfo = {
+      "format" : {
+        "ibm-col-normal" : "ibm-col-4-1",
+        "ibm-col-mobile" : "ibm-col-medium-4-2",
+        "ibm-card-bottom": true
+      } 
+    };  
+    var requestOptions = {
+      pageSize:8,
+      page:1,
+      taxoIds:["7002","6000","5004"],
+      "vID":"9040"
+    };
+    var renderOptions = {
+      "append":false,
+      "cardStatus":"span#cardStatus",
+      "cardTarget":"#cardsTarget",
+      "cardTemplateFile":"mst/cards.mst"
+    };
+    // CARD DISPLAY: END
+    // -----------------
+
+    $(function() {
+
+      // ----------------------------------------------------------------------------------------
+      // DISPLAY CARDS:
+      ibv.renderCards(cardInfo, requestOptions, renderOptions);
+      $("#ibm-contact-module").on("focus",()=>{$(".ibm-contact-widget-btn.ibm-active").click()})
+      $.getJSON('data/cbm.json',function(data){
+        ibv.renderSection("#section",data,"./mst/image-module.mst")
+      })
+    });
+
+  </script>
+  <!-- ------------------------ -->
+</head>
+
+<body id="ibm-com" class="ibm-type ibv-cbm">
+  <div id="ibm-top" class="ibm-landing-page">
+
+    <!-- MASTHEAD : BEGIN -->
+    <!--#include virtual="/ssi/masthead.ssi" -->
+    <!-- MASTHEAD : END -->
+
+    <!-- START MAIN PAGE WRAPPER AROUND LEADSPACE, MAIN CONTENT SIDENAV AND RELATED CONTENT -->
+    <div id="ibm-content-wrapper" role="region" aria-label="ibm content wrapper">
+      <header role="banner" aria-labelledby="ibm-pagetitle-h1">
+
+        <!-- SITENAV_START -->
+        <!--#include virtual="/ssi/navigation.ssi" -->    
+        <!-- SITENAV_END --> 
+
+        <!-- LEADSPACE_START -->
+        <div id="ibm-leadspace-head" class="ibm-alternate ibm-alternate-background ibm-vertical-center ibm-background-black-core">
+          <div id="ibm-leadspace-body" class="ibm-padding-top-r1 ibm-padding-bottom-r1 ibm-vertical-center">
+            <div id="ibv-leadspace" class="ibm-padding-content">
+			  <h1 id="ibm-pagetitle-h1" class="ibm-h1 ibm-bold ibm-padding-bottom-0">Component Business Modeling</h1>
+			  <h3 class="ibm-h3 leadspace-subtitle">&nbsp;</h3>
+              <p class="ibm-button-link btn-equal-width-mobile ibv-padding-top-1">
+                <a class="ibm-btn-pri ibv-pri-button ibv-button-space leadspaceBtn"  href="#cbm-explore">Explore insights
+				</a>
+				<a class="ibm-btn-pri ibv-sec-button ibv-button-space leadspaceBtn" href="https://ibm.co/ibv-subscribe-internal" target="_blank">Get insights via email
+				</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- LEADSPACE_END -->
+
+      </header>
+    </div>
+    <!-- END MAIN PAGE WRAPPER AROUND LEADSPACE, MAIN CONTENT SIDENAV AND RELATED CONTENT -->
+
+    <!-- Page content here : START -->
+    <main role="main" aria-labelledby="ibm-pagetitle-h1">
+      <div id="ibm-pcon">
+        <div id="ibm-content">
+          <div id="ibm-content-body">
+
+            <div id="ibm-content-main">
+              <div id="section"></div>          
+              <div class="ibm-fullwidth">
+                <div class="ibm-columns">
+                <div class="ibm-col-6-6 ibv-padding-topbot-0">
+                  <p class="ibm-margin-top-1 ibm-margin-bottom-1"><span class="ibm-h3"><a name="cbm-explore" class="ibm-textcolor-black-core" href="explore.html?tids=6000,5004,7002&lnk=cbm-cd">Explore CBM insights </a></span><span class="ibm-h4" id="cardStatus"></span></p>				  
+                </div>                
+                <div id="cardsTarget" data-widget="setsameheight" data-items=".ibm-card" data-always="true"></div>             
+                <div class="ibm-col-6-6 ibv-padding-topbot-0">
+                  <p class="ibm-center"><a class="ibm-btn-pri ibv-pri-button" onclick="ibv.setPageName()" href="explore.html?tids=6000,5004,7002&lnk=cbm-em">Explore more</a></p>
+                </div>
+                <div class="ibm-anchor-pointer"><a name="cbmmore"></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Page content here : END -->
+
+    <!-- FOOTER : BEGIN -->
+    <!--#include virtual="/ssi/footer.ssi" -->
+    <!-- FOOTER : END -->
+
+    <!-- CONTACT_MODULE : BEGIN -->
+    <!--#include virtual="/ssi/contact.ssi" -->
+    <!-- CONTACT_MODULE : END -->
+  </div>
+<!-- CLOSING : BEGIN -->
+<!--#include virtual="/ssi/closing.ssi" -->
+<!-- CLOSING : END -->
+</body>
+</html>

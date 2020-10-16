@@ -1,0 +1,33 @@
+{{#leadership}}
+    {{#firstLine}}<div class="ibm-columns ibv-padding-topbot-0 data-widget="setsameheight" data-items=".ibv-card">{{/firstLine}}
+	{{#ibm_col_12_6}}
+	<div class="ibm-col-12-6 ibm-col-medium-12-12 ibm-left ibv-card">
+		<div class="ibm-mo">
+		  <div class="ibm-mo__image"><img class="ibm-circle" src="{{imgUrl}}" width="150" height="150" alt="" /></div>
+		  <div class="ibm-mo__body ibm-vertical-center">
+			  <h3><span class="ibm-h4 ibm-textcolor-blue-50"><a target="_blank" href="{{bluepage}}">{{infomation.name}}</a></span></h3>
+			  <p>{{infomation.bio}}</p> 
+		  </div>
+		</div>
+	</div>
+	{{#lastLine}}
+	<div class="ibm-col-6-6 ibv-padding-topbot-0">
+		<div class="ibm-rule ibm-alternate ibm-gray-30">&nbsp;</div>
+	</div>
+	{{/lastLine}}
+	{{/ibm_col_12_6}}
+	{{#ibm_col_12_3}}
+	<div class="ibm-col-12-3 ibm-col-medium-12-6 ibm-left ibv-card {{#leave}}menber-leave{{/leave}}">
+		{{^leave}}
+		<div class="ibm-mo--top">
+		  <div class="ibm-mo__image"><img class="ibm-circle" src="{{imgUrl}}" width="75" height="75" alt="" /></div>
+		  <div class="ibm-mo__body">
+			  <h3><span class="ibm-h4 ibm-textcolor-blue-50"><a target="_blank" href="{{bluepage}}">{{infomation.name}}</a></span></h3>
+			  <p>{{infomation.bio}}</p> 
+		  </div>
+		</div>
+		{{/leave}}
+	</div>
+	{{/ibm_col_12_3}}
+    {{#lastLine}}</div>{{/lastLine}}
+{{/leadership}}
