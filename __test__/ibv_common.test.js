@@ -101,6 +101,6 @@ test("processTemplate append=false", () => {
   document.body.appendChild(oDiv);
   processTemplate(targetID, template, data, cb, append);
 
-  expect($("#cardsTarget .ibm-card").length).toBe(8);
+  expect($("#cardsTarget .ibm-card").length).toBe(89);
   expect(cb).toBeCalled();
 });
