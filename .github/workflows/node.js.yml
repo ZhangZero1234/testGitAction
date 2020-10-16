@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: echo pwd
+      - run: cd /home/runner/work/testGitAction/testGitAction/TDD
       - run: npm ci
       - run: npm run build --if-present
       - run: npm i
