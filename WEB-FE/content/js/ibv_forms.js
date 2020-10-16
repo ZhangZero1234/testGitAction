@@ -10,7 +10,7 @@
 // DF : function direction
 // ===============================
 try {
-  window.$ = require("../../../TDD/node_modules/jQuery");
+  window.$ = require("../../../node_modules/jQuery");
 } catch (err) {}
 
 var ibv_forms = function (ctx) {

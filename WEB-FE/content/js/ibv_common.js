@@ -10,8 +10,8 @@
 //
 // ===============================
 try {
-  window.$ = require("../../../TDD/node_modules/jQuery");
-  window.Mustache = require("../../../TDD/node_modules/mustache");
+  window.$ = require("../../../node_modules/jQuery");
+  window.Mustache = require("../../../node_modules/mustache");
 } catch (err) {}
 var ibv_common = function (setup) {
   var self = this;

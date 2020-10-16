@@ -111,9 +111,9 @@ module.exports = {
   reporters: [
     "default",
     [
-      "./TDD/node_modules/jest-json-cumulative-reporter",
+      "jest-json-cumulative-reporter",
       {
-        filename: "../jest-report.json",
+        filename: "./jest-report.json",
       },
     ],
   ],
