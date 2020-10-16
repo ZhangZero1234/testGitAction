@@ -1,4 +1,4 @@
-const { getTaxoBeanList } = require("../../WEB-FE/content/js/ibv_forms");
+const { getTaxoBeanList } = require("../WEB-FE/content/js/ibv_forms");
 test("getTaxoBeanList success", () => {
   expect.assertions(2);
   console.log("test case getTaxoBeanList success");

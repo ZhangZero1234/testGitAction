@@ -1,7 +1,7 @@
 const {
   manageCardSizes,
   processTemplate,
-} = require("../../WEB-FE/content/js/ibv_common");
+} = require("../WEB-FE/content/js/ibv_common");
 const $ = require("jQuery");
 test("manageCardSizes", () => {
   console.log("test case manageCardSizes");

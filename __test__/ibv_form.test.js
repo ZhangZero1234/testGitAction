@@ -1,7 +1,7 @@
 const {
   getSelectIDs,
   markSelectedTaxos,
-} = require("../../WEB-FE/content/js/ibv_forms");
+} = require("../WEB-FE/content/js/ibv_forms");
 
 window.$ = require("jQuery");
 
