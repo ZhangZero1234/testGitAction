@@ -1,3 +1,4 @@
+#! /bin/sh
 npm i
 npm run build --if-present
 npm test
