@@ -1,232 +1,948 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
- 
-  <!-- HEAD-TOP : BEGIN -->
-  <!--#include virtual="/ssi/head-top.ssi" -->
-  <!-- HEAD-TOP : END -->   
-     
-  <!-- Page specific settings : START -->
-  <title>Home | IBM Institute for Business Value</title>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="title" content="Home | IBM Institute for Business Value"/>
-  <meta name="description" content="Research-driven insights to boost your business IQ."/>
-  <meta name="Keywords" content="IBV, thought leadership, institute for business value, business challenges, strategic insights, thought leader"/>
-  <meta name="IBM.Effective" content="2019-09-23"/>
-  <meta name="DC.Date" content="2019-09-23"/>
-  <link rel="canonical" href="https://ibv.dst.ibm.com/">
-  <link rel="stylesheet" href="css/browse-by-category-PC.css">
-  <link rel="stylesheet" href="css/browse-by-category-MB.css">
-  <script src="https://1.www.s81c.com/common/v18/js/www.js"></script>
-  <script type="text/javascript">
-    digitalData = {
-      page: {
-        category: {
-          primaryCategory: 'IBM_Institute_for_Business_Value'
-        },
-        pageInfo: {
-          description: 'Research-driven insights to boost your business IQ.',
-          effectiveDate: '2019-09-23',
-          language: 'en-US',
-          publishDate: '2019-09-23',
-          publisher: 'IBM Corporation',
-          version: 'v18',
-          ibm: {
-            contentDelivery: 'IBV Next Web',
-            contentProducer: 'IBV Next CMS',
-            country: 'ZZ',
-            owner: 'Institute for Business Value/Raleigh/Contr/IBM',
-			siteID: 'IBM_IBV_w3', 
-			
-          }
-        }
-      }
-    };
-  </script> 
-  <!-- Page specific settings : END -->
-  <!-- HEAD-BOT : BEGIN --> 
-  <!--#include virtual="/ssi/head-bot.ssi" -->
-  <!-- HEAD-BOT : END --> 
-  <link rel="stylesheet" href="css/index.css"> 
-  <link rel="stylesheet" href="css/card-module.css">
-  <link rel="stylesheet" href="css/banner-module.css">
-  <link rel="stylesheet" href="css/connect-module.css">
-  <!-- ------------------------ -->
-  <!-- Page specific Javascript --> 
-  <!-- ------------------------ -->
-  <script type="text/javascript">
-    // -------------------
-    // CARD DISPLAY: START
-    // cardInfo object will hold card format and card data for template processing
-    var cardInfo = {
-      "format" : {
-        "ibm-col-normal" : "ibm-col-4-1",
-        "ibm-col-mobile" : "ibm-col-medium-4-2",
-        "ibm-card-bottom": true
-      } 
-    };  
-    var requestOptions = {
-	  "cardIds":"2597,2771,2767,2753"
-    };
-    var renderOptions = {
-      "append":false,
-      "cardStatus":"span#cardStatus",
-      "cardTarget":"#cardsTarget",
-      "cardTemplateFile":"mst/cards.mst"
-    };
-    // CARD DISPLAY: END
-	//LeaderInformation
-    var picSize = 500;
-    //LeaderInformation: END			  
-    // -----------------  
-    $(function() {
-		// DISPLAY CARDS:
-		ibv.renderCards(cardInfo, requestOptions, renderOptions); 
-			//LeaderInformation Load
-		// ibv.getLeadershipData("mst/leader.mst","#leaders",leaders);	  
-		$("#ibm-contact-module").on("focus",()=>{$(".ibm-contact-widget-btn.ibm-active").click()});
-		$.getJSON('data/index.json',function(data){
-			ibv.renderSection("#section",data,"./mst/image-module.mst",function(){
-			document.getElementById('videoCom') == null? null : videojs(document.getElementById('videoCom'));
-			})
-		})
-		//browse-by-categpry-pc
-		$.getJSON('data/navigations.json',function(data){
-			data = lnkSymbol("lnk=cb",data,"allInsights");
-			ibv.renderSection("#browse-by-categpry-pc",data,"./mst/browse-by-category-PC.mst")
-		})
-	  
-		//browse-by-category-MB
-		$.getJSON('data/navigations.json',function(data){
-			data = lnkSymbol("lnk=cb",data,"allInsights");
-			ibv.renderSection("#browse-by-category-MB",data,"./mst/browse-by-category-MB.mst",function(){
-				let top = 0;
-				function categoryInit(){
-					$(".browseByCategoryMBItem").removeClass("selectedColor");
-					$(".browseByCategoryMBItem").find("i").attr("class","ibm-maximize-link");
-					$(".browseByCategoryMBItemDetail").slideUp("normal");
-				}
-				document.onreadystatechange = function () {     
-					if(document.readyState=="complete") {            
-						console.log("loading done"); 
-						$(".browseByCategoryMB").click(function(){
-							console.log("click in bbc in MB");
-							if($(".browseByCategoryMB .icon span").text()=="Close"){
-								categoryInit();
-							}
-							$("body").toggleClass("stopScroll");
-							$("#ibm-leadspace-body").toggleClass("zIndex0");
-							$(this).toggleClass("open");
-							$(".browseByCategoryMB .icon span").text()=="Open"?$(".browseByCategoryMB .icon span").text("Close"):$(".browseByCategoryMB .icon span").text("Open");
-							$(".browseByCategoryMB .icon i").attr("class")=="ibm-anchor-down-link"?$(".browseByCategoryMB .icon i").attr("class","ibm-anchor-up-link"):$(".browseByCategoryMB .icon i").attr("class","ibm-anchor-down-link")
-							if(document.body.getBoundingClientRect||document.documentElement.getBoundingClientRect){
-								top = document.querySelector(".ibm-sitenav-menu-container").getBoundingClientRect().y+document.querySelector(".ibm-sitenav-menu-container").getBoundingClientRect().height;
-								top=top<0?0:top
-							}
-							else{
-								top = document.querySelector(".ibm-sitenav-menu-container").offsetTop>document.querySelector("html").scrollTop?document.querySelector(".ibm-sitenav-menu-container").offsetTop-document.querySelector("html").scrollTop+51:51;
-							}
-							$(".browseByCategoryMBListModel").css("top",top+'px');
-							$(".browseByCategoryMBListModel").toggleClass("show");
-						})
+<html lang="en-US" style="" class="no-applicationcache geolocation history postmessage svg websockets localstorage sessionstorage websqldatabase webworkers hashchange pointerevents canvas audio canvastext video webgl cssgradients multiplebgs opacity rgba inlinesvg hsla supports svgclippaths smil no-touchevents fontface generatedcontent textshadow cssanimations backgroundsize borderimage borderradius boxshadow csscolumns csscolumns-width csscolumns-span csscolumns-fill csscolumns-gap csscolumns-rule csscolumns-rulecolor csscolumns-rulestyle csscolumns-rulewidth csscolumns-breakbefore csscolumns-breakafter csscolumns-breakinside flexbox flexboxlegacy cssreflections csstransforms csstransforms3d csstransitions indexeddb indexeddb-deletedatabase js ibm-v18 ibm-cxtype-3g no-hires win chrome chrome8 webkit webkit5 ibm-grid-xlarge"><head><style class="vjs-styles-defaults">
+	.video-js {
+	  width: 300px;
+	  height: 150px;
+	}
 
-						$(".browseByCategoryMBItem").click(function(){
-							$(this).find("i").attr("class") == "ibm-maximize-link"? $(this).find("i").attr("class","ibm-minimize-link"): $(this).find("i").attr("class","ibm-maximize-link");
-							$(this).toggleClass("selectedColor");
-							$(this).siblings(".browseByCategoryMBItem").removeClass("selectedColor");
-							$(this).siblings(".browseByCategoryMBItem").find("i").attr("class","ibm-maximize-link");
-							$(this).next().siblings(".browseByCategoryMBItemDetail").slideUp("normal")
-							$(this).next().slideToggle("normal");
-						});
-					}     
-				} 
-			})
-		})
+	.vjs-fluid {
+	  padding-top: 56.25%
+	}
+  </style>
 
-		$.getJSON('data/index-banner.json',function(data){
-			ibv.renderSection("#spotlight",data,"./mst/banner-module.mst")
-		})
+<!-- HEAD-TOP : BEGIN -->
+<meta charset="UTF-8">
+<meta name="owner" content="Institute for Business Value/Raleigh/Contr/IBM">
+<meta name="robots" content="index,follow">
+<meta name="Source" content="v18 DELIVERY:IBV Next Web AUTHORING:IBV Next CMS">
+<meta name="IBM.Country" content="ZZ">
+<meta name="DC.Type" content="CT602" scheme="IBM_ContentClassTaxonomy">
+<meta name="DC.Subject" content="SVH00, BA.0070, IN.CB" scheme="IBM_SubjectTaxonomy">
+<meta name="DC.Language" content="en-US">
+<meta name="DC.Rights" content="© Copyright IBM Corp. 2018">
+<meta name="IBM.WTMSiteID" content="IBM_IBV_w3">
+<meta name="IBM.WTMCategory" content="IBM_Institute_for_Business_Value">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="feedback" content="ibv@us.ibm.com">
+<meta name="DC.Publisher" content="IBM Corporation">
+<!-- HEAD-TOP : END -->
 
-		$.getJSON('data/index-connect.json',function(data){
-			ibv.renderSection("#connect-wrapper",data,"./mst/connect-module.mst",function(){
-				jQuery(".connect-with-us").setsameheight({});
-			});
-		})
-    });
-  </script>
+<!-- Page specific settings : START -->
+<title>Home | IBM Institute for Business Value</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="title" content="Home | IBM Institute for Business Value">
+<meta name="description" content="Research-driven insights to boost your business IQ.">
+<meta name="Keywords" content="IBV, thought leadership, institute for business value, business challenges, strategic insights, thought leader">
+<meta name="IBM.Effective" content="2019-09-23">
+<meta name="DC.Date" content="2019-09-23">
+<link rel="canonical" href="https://ibv.dst.ibm.com/">
+<link rel="stylesheet" href="css/browse-by-category-PC.css">
+<link rel="stylesheet" href="css/browse-by-category-MB.css">
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" charset="utf-8" id="utag_178" src="//pixel.mathtag.com/sync/js?cs_jsonp=mmUuidSync&amp;mt_nsync=1"></script><script type="text/javascript" async="" charset="utf-8" id="utag_53" src="//pixel.mathtag.com/event/js?mt_pp=1"></script><script type="text/javascript" async="" charset="utf-8" id="demandbase_js_lib" src="//scripts.demandbase.com/ab057a07.min.js"></script><script type="text/javascript" async="" charset="utf-8" id="utag_162" src="https://www.googletagmanager.com/gtag/js?id=UA-143580012-1"></script><script type="text/javascript" async="" charset="utf-8" id="tealium_cormetrics2" src="//libs.coremetrics.com/eluminate.js"></script><script src="https://ad.crwdcntrl.net/5/c=10025/pe=y/callback=_dl.fn.lotame.callback" type="application/javascript" async=""></script><script src="https://tags.tiqcdn.com/utag/ibm/web/prod/utag.js" type="application/javascript" async=""></script><script src="https://www-api.ibm.com/cookie-sync/dbdm-data?callback=_dl.fn.cookieSync.callback" type="application/javascript" async=""></script><script src="https://tags.tiqcdn.com/dle/ibm/web/p_32f559f0a7abe94f2ab2e2576828d17cfc7668eb36ba0b541bf511b29bb084d4.js" type="application/javascript" async=""></script><script src="https://api.www.s81c.com/webmaster/dbip/?callback=_dl.fn.userIpData.callback" type="application/javascript" async=""></script><script type="text/javascript">
+  digitalData = {
+	page: {
+	  category: {
+		primaryCategory: 'IBM_Institute_for_Business_Value'
+	  },
+	  pageInfo: {
+		description: 'Research-driven insights to boost your business IQ.',
+		effectiveDate: '2019-09-23',
+		language: 'en-US',
+		publishDate: '2019-09-23',
+		publisher: 'IBM Corporation',
+		version: 'v18',
+		ibm: {
+		  contentDelivery: 'IBV Next Web',
+		  contentProducer: 'IBV Next CMS',
+		  country: 'ZZ',
+		  owner: 'Institute for Business Value/Raleigh/Contr/IBM',
+		  siteID: 'IBM_IBV_w3',
+		}
+	  }
+	}
+  };
+</script>
+<!-- Page specific settings : END -->
+<!-- HEAD-BOT : BEGIN -->
+
+<link rel="shortcut icon" href="img/favicon.ico">
+<link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet">
+<link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet">
+<link href="//1.www.s81c.com/common/v18/css/grid-fluid.css" rel="stylesheet">
+<script src="//1.www.s81c.com/common/stats/ida_stats.js"></script><meta property="og:title" content="Home"><meta property="og:image" content="https://1.cms.s81c.com/sites/default/files/2018-12-04/4_1.png"><meta property="og:type" content="website"><meta property="og:description" content="Research-driven insights to boost your business IQ."><meta property="og:url" content="https://ibv.dst.ibm.com/"><meta property="og:locale" content="en-US"><meta property="og:published_time" content="2019-09-23"><meta property="article:published_time" content="2019-09-23"><img width="1" height="1" alt="Pixel Lotame-pixel loaded" src="https://bcp.crwdcntrl.net/5/c=10026/genp=pageinit">
+<script src="//1.www.s81c.com/common/v18/js/www.js"></script><style></style>
+<script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
+<script src="//1.www.s81c.com/common/v18/js/mustache.js"></script>
+<link rel="stylesheet" href="/css/video.css">
+<script src="/js/ibv_video.js"></script>
+<script>
+var $ = jQuery;
+var timestamp = new Date().getTime();
+document.write('<link rel="stylesheet" href="/css/common.css?v='+timestamp+'"/>'
+			 + '<script src="/js/promise.min.js?v='+timestamp+'"><\/script>'
+			 + '<script src="/js/ibv_common.js?v='+timestamp+'"><\/script>'
+			 + '<script src="/js/ibv_setup.js?v='+timestamp+'"><\/script>');
+</script><link rel="stylesheet" href="/css/common.css?v=1603098936547"><script src="/js/promise.min.js?v=1603098936547"></script><script src="/js/ibv_common.js?v=1603098936547"></script><script src="/js/ibv_setup.js?v=1603098936547"></script>
+<!-- HEAD-BOT : END -->
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/card-module.css">
+<link rel="stylesheet" href="css/banner-module.css">
+<link rel="stylesheet" href="css/connect-module.css">
+<!-- ------------------------ -->
+<!-- Page specific Javascript -->
+<!-- ------------------------ -->
+<script type="text/javascript">
+  // -------------------
+  // CARD DISPLAY: START
+  // cardInfo object will hold card format and card data for template processing
+  var cardInfo = {
+	"format" : {
+	  "ibm-col-normal" : "ibm-col-4-1",
+	  "ibm-col-mobile" : "ibm-col-medium-4-2",
+	  "ibm-card-bottom": true
+	} 
+  };  
+  var requestOptions = {
+	"cardIds":"2597,2714,2767,2753"
+  };
+  var renderOptions = {
+	"append":false,
+	"cardStatus":"span#cardStatus",
+	"cardTarget":"#cardsTarget",
+	"cardTemplateFile":"mst/cards.mst"
+  };
+  // CARD DISPLAY: END
+  //LeaderInformation
+  var picSize = 500;
+  //LeaderInformation: END			  
+  // -----------------  
+  $(function() {
+	  // DISPLAY CARDS:
+	  ibv.renderCards(cardInfo, requestOptions, renderOptions); 
+		  //LeaderInformation Load
+	  // ibv.getLeadershipData("mst/leader.mst","#leaders",leaders);	  
+	  $("#ibm-contact-module").on("focus",()=>{$(".ibm-contact-widget-btn.ibm-active").click()});
+	  $.getJSON('data/index.json',function(data){
+		  ibv.renderSection("#section",data,"./mst/image-module.mst",function(){
+		  document.getElementById('videoCom') == null? null : videojs(document.getElementById('videoCom'));
+		  })
+	  })
+	  //browse-by-categpry-pc
+	  $.getJSON('data/navigations.json',function(data){
+		  data = lnkSymbol("lnk=cb",data,"allInsights");
+		  ibv.renderSection("#browse-by-categpry-pc",data,"./mst/browse-by-category-PC.mst")
+	  })
+	
+	  //browse-by-category-MB
+	  $.getJSON('data/navigations.json',function(data){
+		  data = lnkSymbol("lnk=cb",data,"allInsights");
+		  ibv.renderSection("#browse-by-category-MB",data,"./mst/browse-by-category-MB.mst",function(){
+			  let top = 0;
+			  function categoryInit(){
+				  $(".browseByCategoryMBItem").removeClass("selectedColor");
+				  $(".browseByCategoryMBItem").find("i").attr("class","ibm-maximize-link");
+				  $(".browseByCategoryMBItemDetail").slideUp("normal");
+			  }
+			  document.onreadystatechange = function () {     
+				  if(document.readyState=="complete") {            
+					  console.log("loading done"); 
+					  $(".browseByCategoryMB").click(function(){
+						  console.log("click in bbc in MB");
+						  if($(".browseByCategoryMB .icon span").text()=="Close"){
+							  categoryInit();
+						  }
+						  $("body").toggleClass("stopScroll");
+						  $("#ibm-leadspace-body").toggleClass("zIndex0");
+						  $(this).toggleClass("open");
+						  $(".browseByCategoryMB .icon span").text()=="Open"?$(".browseByCategoryMB .icon span").text("Close"):$(".browseByCategoryMB .icon span").text("Open");
+						  $(".browseByCategoryMB .icon i").attr("class")=="ibm-anchor-down-link"?$(".browseByCategoryMB .icon i").attr("class","ibm-anchor-up-link"):$(".browseByCategoryMB .icon i").attr("class","ibm-anchor-down-link")
+						  if(document.body.getBoundingClientRect||document.documentElement.getBoundingClientRect){
+							  top = document.querySelector(".ibm-sitenav-menu-container").getBoundingClientRect().y+document.querySelector(".ibm-sitenav-menu-container").getBoundingClientRect().height;
+							  top=top<0?0:top
+						  }
+						  else{
+							  top = document.querySelector(".ibm-sitenav-menu-container").offsetTop>document.querySelector("html").scrollTop?document.querySelector(".ibm-sitenav-menu-container").offsetTop-document.querySelector("html").scrollTop+51:51;
+						  }
+						  $(".browseByCategoryMBListModel").css("top",top+'px');
+						  $(".browseByCategoryMBListModel").toggleClass("show");
+					  })
+
+					  $(".browseByCategoryMBItem").click(function(){
+						  $(this).find("i").attr("class") == "ibm-maximize-link"? $(this).find("i").attr("class","ibm-minimize-link"): $(this).find("i").attr("class","ibm-maximize-link");
+						  $(this).toggleClass("selectedColor");
+						  $(this).siblings(".browseByCategoryMBItem").removeClass("selectedColor");
+						  $(this).siblings(".browseByCategoryMBItem").find("i").attr("class","ibm-maximize-link");
+						  $(this).next().siblings(".browseByCategoryMBItemDetail").slideUp("normal")
+						  $(this).next().slideToggle("normal");
+					  });
+				  }     
+			  } 
+		  })
+	  })
+
+	  $.getJSON('data/index-banner.json',function(data){
+		  ibv.renderSection("#spotlight",data,"./mst/banner-module.mst")
+	  })
+
+	  $.getJSON('data/index-connect.json',function(data){
+		  ibv.renderSection("#connect-wrapper",data,"./mst/connect-module.mst",function(){
+			  jQuery(".connect-with-us").setsameheight({});
+		  });
+	  })
+  });
+</script>
+
+<style id="ibm-sitenav-menu-hidelinks">@media screen and (max-width: 343.609375px) {.ibm-sitenav-menu-container .ibm-sitenav-menu-list > ul > li {display:none}}@media screen and (min-width: 344.609375px) {.ibm-mobilemenu-sitenavmenu > ul > li {display:none}}</style><style id="ibm-masthead-hidelinks">@media screen and (max-width: 194px) { .ibm-masthead-categories,#ibm-megamenu-sections{display:none} }</style><style type="text/css">@media only screen and (max-width:480px){.truste_box_overlay{width: 100%!important;margin: 0px!important;max-width: 100%!important;box-shadow: rgb(0,0,0,0.2) 0px 0px 16px 2px!important;}}@media only screen and (min-width:481px){.truste_box_overlay{width: 80%!important;margin: 20px auto!important;max-width: 800px!important;box-shadow: rgb(0,0,0,0.2) 0px 0px 16px 2px!important;}}</style><script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_24" src="//tags.tiqcdn.com/utag/ibm/web/prod/utag.24.js?utv=ut4.46.202004021713"></script><script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_28" src="//tags.tiqcdn.com/utag/ibm/web/prod/utag.28.js?utv=ut4.46.201803300231"></script><script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_53" src="//tags.tiqcdn.com/utag/ibm/web/prod/utag.53.js?utv=ut4.46.201706292022"></script><script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_94" src="//tags.tiqcdn.com/utag/ibm/web/prod/utag.94.js?utv=ut4.46.201803300324"></script><script type="text/javascript" async="" charset="utf-8" id="utag_ibm.web_178" src="//tags.tiqcdn.com/utag/ibm/web/prod/utag.178.js?utv=ut4.46.202008241237"></script><script type="text/javascript" async="" charset="utf-8" id="tiqapp" src="//tags.tiqcdn.com/utag/tiqapp/utag.v.js?a=ibm/web/202010170425&amp;cb=1603098943754"></script><script type="text/javascript" async="" charset="utf-8" id="LOTCC_10026" src="//tags.crwdcntrl.net/c/10026/cc.js?ns=_cc10026"></script><script type="text/javascript" async="" charset="utf-8" id="tealium_visitor_service_184main_1" src="https://visitor-service-us-east-1.tealiumiq.com/ibm/main/0174075670090019eb98734c75a303073001b06b0093c?callback=utag.ut%5B%22writevamain%22%5D&amp;rnd=1603098945301"></script><script type="text/javascript" async="" charset="utf-8" id="tealium_visitor_service_184main_2" src="https://visitor-service-us-east-1.tealiumiq.com/ibm/main/0174075670090019eb98734c75a303073001b06b0093c?callback=utag.ut%5B%22writevamain%22%5D&amp;rnd=1603098945802"></script><script language="javascript" type="text/javascript" src="https://libs.coremetrics.com/configs/50200000.js"></script><script language="javascript" type="text/javascript" src="https://data.cmcore.com/cookie-id.js?fn=cmSetAvid"></script><script language="javascript" type="text/javascript" src="https://data.coremetrics.com/at/rules_50200000.js"></script><script language="javascript" type="text/javascript" src="https://tmscdn.coremetrics.com/tms/dispatcher-v3.js"></script><style type="text/css">.truste_cookie_prefs,#teconsent{display:none !important}</style><script type="text/javascript" async="" charset="utf-8" id="tealium_visitor_service_184main_3" src="https://visitor-service-us-east-1.tealiumiq.com/ibm/main/0174075670090019eb98734c75a303073001b06b0093c?callback=utag.ut%5B%22writevamain%22%5D&amp;rnd=1603098949556"></script><script type="text/javascript" async="" charset="utf-8" id="tealium_visitor_service_184main_4" src="https://visitor-service-us-east-1.tealiumiq.com/ibm/main/0174075670090019eb98734c75a303073001b06b0093c?callback=utag.ut%5B%22writevamain%22%5D&amp;rnd=1603098950057"></script><script src="https://libs.coremetrics.com/ddxlibs/yahoo-min.js" type="text/javascript"></script><script src="//tmscdn.coremetrics.com/tms/50200000/cp-v3.js?__t=20201019171550087" type="text/javascript"></script><script src="https://libs.coremetrics.com/ddxlibs/json-min.js" type="text/javascript"></script></head>
+
+  <body id="ibm-com" class="ibm-type ibv-index ibm-sitenav-menu">
+	  <div id="ibm-top" class="ibm-landing-page">
+		  <!-- MASTHEAD : BEGIN -->
+				<!-- MASTHEAD_BEGIN -->
+	<div id="ibm-masthead" role="banner" aria-label="IBM" class="ibm-mhtype-minimal">
+	  <div id="ibm-mast-options">
+		<ul role="toolbar" aria-labelledby="ibm-masthead">
+		  <li id="ibm-geo" role="presentation">
+			<a href="http://www.ibm.com/planetwide/select/selector.html" role="button" aria-label="United States selected - Choose a country">United States</a>
+		  </li>
+		  <li id="ibm-language" role="presentation">
+			<span class="ibm-active" role="button" aria-disabled="true">English</span>
+			<a href="http://www.ibm.com/us-en/" lang="en-US" role="button">English</a>
+		  </li>
+		</ul>
+	  </div>
+	  <div id="ibm-universal-nav" class="">
+		<nav role="navigation" aria-label="IBM">
+		  <!-- ibm-home div required to prevent www.js errors -->
+		  <div id="ibm-home" style="display: none;"><a href="https://w3.ibm.com/?lnk=m?lnk=m">www</a></div>
+		  <div id="ibm-w3-home" class="w3-logo">
+			<a href="//w3.ibm.com/"><strong>w</strong>3</a>
+		  </div>
+		  <ul id="ibm-menu-links" role="toolbar" aria-label="Site map" class="ibm-hide"></ul><div class="ibm-masthead-rightside"><div id="ibm-search-module" role="search" aria-labelledby="ibm-masthead" style="display:none!important">
+		  <div class="ibm-masthead-search-close"><p class="ibm-ind-link ibm-icononly ibm-padding-bottom-0"><a href="#" class="ibm-close-link ibm-nospacing">Close</a></p></div><form id="ibm-search-form" action="//w3.ibm.com/Search/" method="get" aria-labelledby="ibm-masthead">
+		   <p>
+			<label for="q">IBM</label>
+			<input type="text" style="opacity:0" maxlength="100" value="" placeholder="Search" name="q" id="q" aria-label="Search" autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="ibm-search-typeahead-container"><input name="lnk" type="hidden" value="mhsrch">
+			<input type="hidden" value="18" name="v">
+			<input type="hidden" value="utf" name="en">
+			<input type="hidden" value="en" name="lang">
+			<input type="hidden" value="us" name="cc">
+			<button role="button" type="submit" id="ibm-search" class="ibm-search-link" value="Submit"><span class="ibm-access">Submit</span></button>
+		   </p>
+		  </form><form class="ibm-hide" id="ibm-default-scope-form" action="https://www.ibm.com/search" method="get"><input name="lang" type="hidden" value="en"><input name="cc" type="hidden" value="us"><input name="tabType[0]" type="hidden" value="Products"><input name="q" type="text" value=""><input name="lnk" type="hidden" value="mhmpsrch"></form>
+		</div><div id="ibm-search-typeahead-container" aria-expanded="true" class="ibm-search-typeahead-container ibm-fadeout"></div><ul aria-label="Tools" role="menubar" class="ibm-masthead-iconsonly"><li role="presentation" class="ibm-masthead-item-signin"><button role="button" aria-haspopup="true" aria-owns="ibm-signin-minimenu-container" class="ibm-profile-link">My IBM</button><ul id="ibm-signin-minimenu-container" role="menu" aria-label="Profile" class="ibm-dropdown-menu"><li role="presentation"><a role="menuitem" href="https://myibm.ibm.com/?lnk=mmi">My IBM</a></li><li role="presentation" data-linktype="signin"><a role="menuitem" href="https://login.ibm.com/oidc/endpoint/default/authorize?redirect_uri=https%3A%2F%2Fmyibm.ibm.com%2FOIDCHandler.html&amp;response_type=token&amp;client_id=v18LoginProdCI&amp;scope=openid&amp;state=https%3A%2F%2Fibv-dev.dst.ibm.com%2F&amp;nonce=8675309">Log in</a></li></ul></li><li role="presentation" class="ibm-masthead-item-menu"><button role="button" aria-haspopup="true" aria-owns="ibm-burger-menu-container" class="ibm-menu-link">Site navigation</button></li></ul></div>
+		</nav>
+		
+	  </div>
+	</div><div class="ibm-mobilemenu ibm-hide" id="ibm-burger-menu-container" aria-labelledby="ibm-burgermenu-a11y" role="dialog" tabindex="0"><p class="ibm-hide" id="ibm-burgermenu-a11y">Site navigation</p><div class="ibm-mobilemenu-close"><p class="ibm-icononly ibm-fright ibm-ind-link ibm-nospacing"><a class="ibm-close-link" href="?lnk=hm#">Close</a></p></div><div class="ibm-mobilemenu-section ibm-mobilemenu-sitenavmenu"><ul id="all-insights" role="menubar" onkeypress="" style="width: unset;"><li class="ibm-mobile-section-heading ibm-mobile-sitename">
+  <a href="index.html?lnk=hm" class="ibm-bold">IBM Institute for Business Value</a>
+</li><li role="presentation" class="ibm-haschildlist"><div class="ibm-show-hide ibm-widget-processed" data-type="panel" data-widget="showhide">
+  <h2><a href="javascript:void();">All insights</a></h2>
+  <div class="ibm-container-body" style="display: none;"><div><ul class="ibv-mega-menu mega-menu show-hide menu-content-background mega-menu-title-bgc ibm-padding-top-0" role="menu" aria-label="Mega menu">
+	  <li role="presentation" class="show-hide-item    border-r padding-b-1">
+		  <h3 class="ibm-h4 ibm-maximize-link ibm-inlinelink ibm-icon-after">By industry</h3>
+		  <div class="showhide-container-body padding-t-2">
+			  <p><a href="explore.html?tids=5004,6000,4001&amp;lnk=hmstudies-mm"><span>Aerospace and Defense</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4002&amp;lnk=hmstudies-mm"><span>Automotive</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4003&amp;lnk=hmstudies-mm"><span>Banking and Financial markets</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4004&amp;lnk=hmstudies-mm"><span>Chemicals</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4005&amp;lnk=hmstudies-mm"><span>Consumer products</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4006&amp;lnk=hmstudies-mm"><span>Education</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4007&amp;lnk=hmstudies-mm"><span>Electronics</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4008&amp;lnk=hmstudies-mm"><span>Energy and Utilities</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4009&amp;lnk=hmstudies-mm"><span>Government</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4010&amp;lnk=hmstudies-mm"><span>Healthcare</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4011&amp;lnk=hmstudies-mm"><span>Industrial products</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4012&amp;lnk=hmstudies-mm"><span>Insurance</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4013&amp;lnk=hmstudies-mm"><span>IT and Professional services</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4014&amp;lnk=hmstudies-mm"><span>Life sciences</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4015&amp;lnk=hmstudies-mm"><span>Media and Entertainment</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4016&amp;lnk=hmstudies-mm"><span>Petroleum</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4017&amp;lnk=hmstudies-mm"><span>Retail</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4018&amp;lnk=hmstudies-mm"><span>Telecommunications</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4019&amp;lnk=hmstudies-mm"><span>Transportation</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,4020&amp;lnk=hmstudies-mm"><span>Travel</span></a></p>
+		  </div>
+	  </li>
+	  <li role="presentation" class="show-hide-item  padding-b-5  border-r ">
+		  <h3 class="ibm-h4 ibm-maximize-link ibm-inlinelink ibm-icon-after">By technology</h3>
+		  <div class="showhide-container-body padding-t-2">
+			  <p><a href="explore.html?tids=5004,6000,8001&amp;lnk=hmstudies-mm"><span>Artificial Intelligence (AI)</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,8002&amp;lnk=hmstudies-mm"><span>Automation and Robotics</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,8003&amp;lnk=hmstudies-mm"><span>Blockchain</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,8004&amp;lnk=hmstudies-mm"><span>Cloud</span></a></p>
+			  <p><a href="cognitiveenterprise.html?lnk=hmstudies-mm"><span>Cognitive Enterprise™</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,8005&amp;lnk=hmstudies-mm"><span>Data and Analytics</span></a></p>
+			  <p><a href="digitalreinvention.html?lnk=hmstudies-mm"><span>Digital Reinvention®</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,8007&amp;lnk=hmstudies-mm"><span>Internet of Things (IoT)</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,8008&amp;lnk=hmstudies-mm"><span>Mobile</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,8009&amp;lnk=hmstudies-mm"><span>Quantum computing</span></a></p>
+		  </div>
+	  </li>
+	  <li role="presentation" class="show-hide-item    border-r padding-b-1">
+		  <h3 class="ibm-h4 ibm-maximize-link ibm-inlinelink ibm-icon-after">By business role</h3>
+		  <div class="showhide-container-body padding-t-2">
+			  <p><a href="explore.html?tids=5004,6000,3001&amp;lnk=hmstudies-mm"><span>Finance and Risk, CFO</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,3002&amp;lnk=hmstudies-mm"><span>Marketing and Sales, CMO</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,3003&amp;lnk=hmstudies-mm"><span>Operations and Supply chain, COO</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,3004&amp;lnk=hmstudies-mm"><span>Strategy and Management, CEO</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,3005&amp;lnk=hmstudies-mm"><span>Talent and Skills, CHRO</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,3006&amp;lnk=hmstudies-mm"><span>Technology and Security, CIO</span></a></p>
+		  </div>
+	  </li>
+	  <li role="presentation" class="show-hide-item     ">
+		  <h3 class="ibm-h4 ibm-maximize-link ibm-inlinelink ibm-icon-after">By special program</h3>
+		  <div class="showhide-container-body padding-t-2">
+			  <p><a href="covid-19.html?lnk=hmstudies-mm"><span>COVID-19</span></a></p>
+			  <p><a href="c-suite.html?lnk=hmstudies-mm"><span>C-suite Study</span></a></p>
+			  <p><a href="cbm.html?lnk=hmstudies-mm"><span>Component Business Modeling (CBM)</span></a></p>
+			  <p><a href="cognitiveenterprise.html?lnk=hmstudies-mm"><span>Cognitive Enterprise™</span></a></p>
+			  <p><a href="digitalreinvention.html?lnk=hmstudies-mm"><span>Digital Reinvention®</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,7008&amp;lnk=hmstudies-mm"><span>Expert Insights</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,7005&amp;lnk=hmstudies-mm"><span>Global Industry Agenda (GIA)</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,7006&amp;lnk=hmstudies-mm"><span>Global Location Trends</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,7009&amp;lnk=hmstudies-mm"><span>IBM Services Strategy and Capabilities</span></a></p>
+			  <p><a href="benchmark.html?lnk=hmstudies-mm"><span>Performance data and Benchmarking</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,9052&amp;lnk=hmstudies-mm"><span>Sustainability</span></a></p>
+			  <p><a href="explore.html?tids=5004,6000,9053&amp;lnk=hmstudies-mm"><span>Technology and the Global economy</span></a></p>
+		  </div>
+	  </li>
+	  <li role="presentation" class="show-hide-item padding-t-2    ">
+		  <h3 class="ibm-h4 ibm-maximize-link ibm-inlinelink ibm-icon-after">By region</h3>
+		  <div class="showhide-container-body padding-t-2">
+			  <p><a href="explore.html?tids=1001,6006&amp;lnk=hmstudies-mm"><span>Canada</span></a></p>
+			  <p><a href="explore.html?tids=1001,6007&amp;lnk=hmstudies-mm"><span>China</span></a></p>
+			  <p><a href="explore.html?tids=1001,6013&amp;lnk=hmstudies-mm"><span>Germany</span></a></p>
+			  <p><a href="explore.html?tids=1001,6016&amp;lnk=hmstudies-mm"><span>India</span></a></p>
+			  <p><a href="explore.html?tids=1001,6020&amp;lnk=hmstudies-mm"><span>Japan</span></a></p>
+			  <p><a href="explore.html?tids=1001,6058&amp;lnk=hmstudies-mm"><span>Middle East and Africa</span></a></p>
+		  </div>
+	  </li>
+  </ul></div></div>
+</div></li>
+
+<li role="presentation">
+  <a role="menuitem" href="c-suite.html?lnk=hm">C-suite Study</a>
+</li>
+<li role="presentation">
+  <a role="menuitem" href="benchmark.html?lnk=hm">Benchmarking</a>
+</li>
+<li role="presentation">
+  <a role="menuitem" href="cognitiveenterprise.html?lnk=hm">Cognitive Enterprise™</a>
+</li>
+<li role="presentation">
+  <a role="menuitem" href="cbm.html?lnk=hm">CBM</a>
+</li>
+<li role="presentation">
+  <a role="menuitem" href="covid-19.html?lnk=hm">COVID-19</a>
+</li>
+<li role="presentation">
+  <a role="menuitem" href="explore.html?tids=6000,5004&amp;lnk=hm">Search</a>
+</li>
+
+<li role="presentation" class="ibm-haschildlist"><div class="ibm-show-hide ibm-widget-processed" data-type="panel" data-widget="showhide">
+  <h2><a href="javascript:void();">About</a></h2>
+  <div class="ibm-container-body" style="display: none;"><div><ul role="menu" aria-label="About" class="ibm-padding-top-0">
+		  <li role="presentation">
+			  <a role="menuitem" href="about-ibv.html?lnk=hm"><span>About IBV</span></a>
+		  </li>
+		  <li role="presentation">
+			  <a role="menuitem" href="insider.html?lnk=hm"><span>IBV Insider</span></a>
+		  </li>
+		  <li role="presentation">
+			  <a role="menuitem" href="get-prints.html?lnk=hm"><span>Order printed materials</span></a>
+		  </li>
+		  <li role="presentation">
+			  <a role="menuitem" href="faqs.html?lnk=hm"><span>FAQs</span></a>
+		  </li>
+		  <li role="presentation">
+			  <a role="menuitem" href="team.html?lnk=hm"><span>IBV team</span></a>
+		  </li>
+  </ul></div></div>
+</div></li>
+</ul></div><div class="ibm-mobilemenu-section"><ul class="ibm-mobilemenu-mhlinks" aria-label="Discover IBM"><li><div data-widget="showhide" data-type="panel" class="ibm-show-hide ibm-widget-processed"><h2><a href="javascript:void();">Products &amp; Solutions</a></h2><div class="ibm-container-body" style="display: none;"><ul><li><a href="https://www.ibm.com/products?lnk=hmhpmps_bupr&amp;lnk2=link"><span>Top products &amp; platforms</span></a></li><li><a href="https://www.ibm.com/industries?lnk=hmhpmps_buin&amp;lnk2=link"><span>Industries</span></a></li><li><a href="https://www.ibm.com/artificial-intelligence?lnk=hmhpmps_buai&amp;lnk2=link"><span>Artificial intelligence</span></a></li><li><a href="https://www.ibm.com/automation?lnk=hmhpmps_buau&amp;lnk2=link"><span>Automation</span></a></li><li><a href="https://www.ibm.com/blockchain?lnk=hmhpmps_bubc&amp;lnk2=link"><span>Blockchain</span></a></li><li><a href="https://www.ibm.com/business-operations?lnk=hmhpmps_buop&amp;lnk2=link"><span>Business operations</span></a></li><li><a href="https://www.ibm.com/cloud?lnk=hmhpmps_bucl&amp;lnk2=link"><span>Cloud computing</span></a></li><li><a href="https://www.ibm.com/analytics?lnk=hmhpmps_buda&amp;lnk2=link"><span>Data &amp; Analytics</span></a></li><li><a href="https://www.ibm.com/it-infrastructure?lnk=hmhpmps_buit&amp;lnk2=link"><span>IT infrastructure</span></a></li><li><a href="https://www.ibm.com/security?lnk=hmhpmps_buse&amp;lnk2=link"><span>Security</span></a></li><li><a href="https://www.ibm.com/supply-chain?lnk=hmhpmps_busc&amp;lnk2=link"><span>Supply chain</span></a></li><li><a href="https://www.ibm.com/financing?lnk=hmhpmps_bufi&amp;lnk2=link"><span>Payment plans for Products &amp; Solutions</span></a></li><li><a href="https://www.ibm.com/products?lnk=hmhpmps_buall&amp;lnk2=link"><span>View all products</span></a></li></ul></div></div></li><li><div data-widget="showhide" data-type="panel" class="ibm-show-hide ibm-widget-processed"><h2><a href="javascript:void();">Services &amp; Consulting</a></h2><div class="ibm-container-body" style="display: none;"><ul><li><a href="https://www.ibm.com/services/process?lnk=hmhpmsc_bups&amp;lnk2=link"><span>Business process services</span></a></li><li><a href="https://www.ibm.com/services/ibmix/?lnk=hmhpmsc_budbs&amp;lnk2=link"><span>Design &amp; business strategy</span></a></li><li><a href="https://www.ibm.com/services/?lnk=hmhpmsc_buhs&amp;lnk2=link"><span>Hybrid multicloud services</span></a></li><li><a href="https://www.ibm.com/talent-management?lnk=hmhpmsc_buta&amp;lnk2=link"><span>Talent &amp; transformation</span></a></li><li><a href="https://www.ibm.com/services/applications?lnk=hmhpmsc_buas&amp;lnk2=link"><span>Application services</span></a></li><li><a href="https://www.ibm.com/security/services?lnk=hmhpmsc_buse&amp;lnk2=link"><span>Security services</span></a></li><li><a href="https://www.ibm.com/services/technology-support?lnk=hmhpmsc_busv&amp;lnk2=link"><span>Services for tech support</span></a></li><li><a href="https://www.ibm.com/financing/solutions/it-services-financing?lnk=hmhpmsc_bufi&amp;lnk2=link"><span>Payment plans for Services &amp; Consulting</span></a></li><li><a href="https://www.ibm.com/services?lnk=hmhpmsc_buall&amp;lnk2=link"><span>View all services</span></a></li></ul></div></div></li><li><div data-widget="showhide" data-type="panel" class="ibm-show-hide ibm-widget-processed"><h2><a href="javascript:void();">Learn &amp; Support</a></h2><div class="ibm-container-body" style="display: none;"><ul><li><a href="https://www.ibm.com/support?lnk=hmhpmls_busu&amp;lnk2=link"><span>Support</span></a></li><li><a href="https://www.ibm.com/support/knowledgecenter/?lnk=hmhpmls_budc&amp;lnk2=link"><span>Documentation</span></a></li><li><a href="https://developer.ibm.com/?lnk=hmhpmls_bude&amp;lnk2=link"><span>Developer education</span></a></li><li><a href="https://www.ibm.com/training/?lnk=hmhpmls_butr&amp;lnk2=link"><span>Training</span></a></li><li><a href="https://www.ibm.com/blogs/?lnk=hmhpmls_bure&amp;lnk2=link"><span>Resources</span></a></li><li><a href="https://www.ibm.com/cloud/learn?lnk=hmhpmls_buwi&amp;lnk2=link"><span>What is...</span></a></li></ul></div></div></li><li><div data-widget="showhide" data-type="panel" class="ibm-show-hide ibm-widget-processed"><h2><a href="javascript:void();">Explore more</a></h2><div class="ibm-container-body" style="display: none;"><ul><li><a href="https://www.ibm.com/partnerworld/public?lnk=hmhpmex_bupa&amp;lnk2=link"><span>Partners</span></a></li><li><a href="https://www.research.ibm.com/?lnk=hmhpmex_bure&amp;lnk2=link"><span>IBM Research</span></a></li><li><a href="https://www.ibm.com/ibm/us/en/?lnk=hmhpmex_buab&amp;lnk2=link"><span>About IBM</span></a></li><li><a href="https://www.ibm.com/impact/covid-19?lnk=hmhpmex_buco&amp;lnk2=link"><span>COVID-19</span></a></li></ul></div></div></li></ul></div></div><div class="ibm-mhplaceholder ibm-hide"></div>
+	<!-- MASTHEAD_END -->
+
+		  <!-- MASTHEAD : END -->
+
+		  <!-- START MAIN PAGE WRAPPER AROUND LEADSPACE, MAIN CONTENT SIDENAV AND RELATED CONTENT -->
+		  <div id="ibm-content-wrapper" role="region" aria-label="ibm content wrapper">
+			  <header role="banner" aria-labelledby="ibm-pagetitle-h1">
+
+				  <!-- SITENAV_START -->
+				  
+<!-- SITENAV_START -->
+<div class="ibm-sitenav-menu-container" data-widgetprocessed="true">
+<div class="ibm-sitenav-menu-name header-details">
+  <a href="index.html" class="ibm-bold">IBM Institute for Business Value</a>
+</div>
+<div class="ibm-sitenav-menu-list">
+  <ul id="all-insights" role="menubar" onkeypress="" style="width: unset;"><li role="presentation" class="ibm-haschildlist">
+  <button role="menuitem">All insights</button>
+  <ul class="ibv-mega-menu mega-menu show-hide menu-content-background mega-menu-title-bgc" role="menu" aria-label="Mega menu">
+	  <li role="presentation" class="show-hide-item    border-r padding-b-1">
+		  <h3 class="ibm-h4 ibm-maximize-link ibm-inlinelink ibm-icon-after">By industry</h3>
+		  <div class="showhide-container-body padding-t-2">
+			  <p><a href="explore.html?tids=5004,6000,4001&amp;lnk=studies-mm">Aerospace and Defense</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4002&amp;lnk=studies-mm">Automotive</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4003&amp;lnk=studies-mm">Banking and Financial markets</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4004&amp;lnk=studies-mm">Chemicals</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4005&amp;lnk=studies-mm">Consumer products</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4006&amp;lnk=studies-mm">Education</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4007&amp;lnk=studies-mm">Electronics</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4008&amp;lnk=studies-mm">Energy and Utilities</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4009&amp;lnk=studies-mm">Government</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4010&amp;lnk=studies-mm">Healthcare</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4011&amp;lnk=studies-mm">Industrial products</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4012&amp;lnk=studies-mm">Insurance</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4013&amp;lnk=studies-mm">IT and Professional services</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4014&amp;lnk=studies-mm">Life sciences</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4015&amp;lnk=studies-mm">Media and Entertainment</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4016&amp;lnk=studies-mm">Petroleum</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4017&amp;lnk=studies-mm">Retail</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4018&amp;lnk=studies-mm">Telecommunications</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4019&amp;lnk=studies-mm">Transportation</a></p>
+			  <p><a href="explore.html?tids=5004,6000,4020&amp;lnk=studies-mm">Travel</a></p>
+		  </div>
+	  </li>
+	  <li role="presentation" class="show-hide-item  padding-b-5  border-r ">
+		  <h3 class="ibm-h4 ibm-maximize-link ibm-inlinelink ibm-icon-after">By technology</h3>
+		  <div class="showhide-container-body padding-t-2">
+			  <p><a href="explore.html?tids=5004,6000,8001&amp;lnk=studies-mm">Artificial Intelligence (AI)</a></p>
+			  <p><a href="explore.html?tids=5004,6000,8002&amp;lnk=studies-mm">Automation and Robotics</a></p>
+			  <p><a href="explore.html?tids=5004,6000,8003&amp;lnk=studies-mm">Blockchain</a></p>
+			  <p><a href="explore.html?tids=5004,6000,8004&amp;lnk=studies-mm">Cloud</a></p>
+			  <p><a href="cognitiveenterprise.html?lnk=studies-mm">Cognitive Enterprise™</a></p>
+			  <p><a href="explore.html?tids=5004,6000,8005&amp;lnk=studies-mm">Data and Analytics</a></p>
+			  <p><a href="digitalreinvention.html?lnk=studies-mm">Digital Reinvention®</a></p>
+			  <p><a href="explore.html?tids=5004,6000,8007&amp;lnk=studies-mm">Internet of Things (IoT)</a></p>
+			  <p><a href="explore.html?tids=5004,6000,8008&amp;lnk=studies-mm">Mobile</a></p>
+			  <p><a href="explore.html?tids=5004,6000,8009&amp;lnk=studies-mm">Quantum computing</a></p>
+		  </div>
+	  </li>
+	  <li role="presentation" class="show-hide-item    border-r padding-b-1">
+		  <h3 class="ibm-h4 ibm-maximize-link ibm-inlinelink ibm-icon-after">By business role</h3>
+		  <div class="showhide-container-body padding-t-2">
+			  <p><a href="explore.html?tids=5004,6000,3001&amp;lnk=studies-mm">Finance and Risk, CFO</a></p>
+			  <p><a href="explore.html?tids=5004,6000,3002&amp;lnk=studies-mm">Marketing and Sales, CMO</a></p>
+			  <p><a href="explore.html?tids=5004,6000,3003&amp;lnk=studies-mm">Operations and Supply chain, COO</a></p>
+			  <p><a href="explore.html?tids=5004,6000,3004&amp;lnk=studies-mm">Strategy and Management, CEO</a></p>
+			  <p><a href="explore.html?tids=5004,6000,3005&amp;lnk=studies-mm">Talent and Skills, CHRO</a></p>
+			  <p><a href="explore.html?tids=5004,6000,3006&amp;lnk=studies-mm">Technology and Security, CIO</a></p>
+		  </div>
+	  </li>
+	  <li role="presentation" class="show-hide-item     ">
+		  <h3 class="ibm-h4 ibm-maximize-link ibm-inlinelink ibm-icon-after">By special program</h3>
+		  <div class="showhide-container-body padding-t-2">
+			  <p><a href="covid-19.html?lnk=studies-mm">COVID-19</a></p>
+			  <p><a href="c-suite.html?lnk=studies-mm">C-suite Study</a></p>
+			  <p><a href="cbm.html?lnk=studies-mm">Component Business Modeling (CBM)</a></p>
+			  <p><a href="cognitiveenterprise.html?lnk=studies-mm">Cognitive Enterprise™</a></p>
+			  <p><a href="digitalreinvention.html?lnk=studies-mm">Digital Reinvention®</a></p>
+			  <p><a href="explore.html?tids=5004,6000,7008&amp;lnk=studies-mm">Expert Insights</a></p>
+			  <p><a href="explore.html?tids=5004,6000,7005&amp;lnk=studies-mm">Global Industry Agenda (GIA)</a></p>
+			  <p><a href="explore.html?tids=5004,6000,7006&amp;lnk=studies-mm">Global Location Trends</a></p>
+			  <p><a href="explore.html?tids=5004,6000,7009&amp;lnk=studies-mm">IBM Services Strategy and Capabilities</a></p>
+			  <p><a href="benchmark.html?lnk=studies-mm">Performance data and Benchmarking</a></p>
+			  <p><a href="explore.html?tids=5004,6000,9052&amp;lnk=studies-mm">Sustainability</a></p>
+			  <p><a href="explore.html?tids=5004,6000,9053&amp;lnk=studies-mm">Technology and the Global economy</a></p>
+		  </div>
+	  </li>
+	  <li role="presentation" class="show-hide-item padding-t-2    ">
+		  <h3 class="ibm-h4 ibm-maximize-link ibm-inlinelink ibm-icon-after">By region</h3>
+		  <div class="showhide-container-body padding-t-2">
+			  <p><a href="explore.html?tids=1001,6006&amp;lnk=studies-mm">Canada</a></p>
+			  <p><a href="explore.html?tids=1001,6007&amp;lnk=studies-mm">China</a></p>
+			  <p><a href="explore.html?tids=1001,6013&amp;lnk=studies-mm">Germany</a></p>
+			  <p><a href="explore.html?tids=1001,6016&amp;lnk=studies-mm">India</a></p>
+			  <p><a href="explore.html?tids=1001,6020&amp;lnk=studies-mm">Japan</a></p>
+			  <p><a href="explore.html?tids=1001,6058&amp;lnk=studies-mm">Middle East and Africa</a></p>
+		  </div>
+	  </li>
+  </ul>
+</li>
+
+<li role="presentation">
+  <a role="menuitem" href="c-suite.html">C-suite Study</a>
+</li>
+<li role="presentation">
+  <a role="menuitem" href="benchmark.html">Benchmarking</a>
+</li>
+<li role="presentation">
+  <a role="menuitem" href="cognitiveenterprise.html">Cognitive Enterprise™</a>
+</li>
+<li role="presentation">
+  <a role="menuitem" href="cbm.html">CBM</a>
+</li>
+<li role="presentation">
+  <a role="menuitem" href="covid-19.html">COVID-19</a>
+</li>
+<li role="presentation">
+  <a role="menuitem" href="explore.html?tids=6000,5004">Search</a>
+</li>
+
+<li role="presentation" class="ibm-haschildlist">
+  <button role="menuitem">About</button>
+  <ul role="menu" aria-label="About">
+		  <li role="presentation">
+			  <a role="menuitem" href="about-ibv.html">About IBV</a>
+		  </li>
+		  <li role="presentation">
+			  <a role="menuitem" href="insider.html">IBV Insider</a>
+		  </li>
+		  <li role="presentation">
+			  <a role="menuitem" href="get-prints.html">Order printed materials</a>
+		  </li>
+		  <li role="presentation">
+			  <a role="menuitem" href="faqs.html">FAQs</a>
+		  </li>
+		  <li role="presentation">
+			  <a role="menuitem" href="team.html">IBV team</a>
+		  </li>
+  </ul>
+</li>
+</ul>
+</div>
+</div>
+<!-- SITENAV_END -->
+
+
+
   
-</head>
+				  <!-- SITENAV_END --> 
 
-	<body id="ibm-com" class="ibm-type ibv-index">
-		<div id="ibm-top" class="ibm-landing-page">
-			<!-- MASTHEAD : BEGIN -->
-			<!--#include virtual="/ssi/masthead.ssi" -->
-			<!-- MASTHEAD : END -->
+				  <!-- LEADSPACE_START -->            
+					  <div id="ibm-leadspace-head" class="ibm-alternate ibm-alternate-background ibm-vertical-center ibm-background-black-core">
+						  <div id="ibm-leadspace-body" class="ibm-padding-top-r1 ibm-padding-bottom-r1 ibm-vertical-center">
+							  <div id="ibv-leadspace" class="ibm-padding-content">
+							   <h1 id="ibm-pagetitle-h1" class="ibm-h1 ibm-bold">5 executive epiphanies reveal post-pandemic opportunities</h1>  
+							   <p>COVID-19 has made it clear: The old way of working is over. More than half of companies we surveyed say they have made permanent changes to organizational strategy in response to the pandemic.</p> 	  		  
+							   <p class="ibm-button-link btn-equal-width-mobile ibv-padding-top-1">
+								<a class="ibm-btn-pri ibv-pri-button ibv-button-space leadspaceBtn" href="https://w3.ibm.com/services/lighthouse/documents/159899" target="_blank">Learn more</a>
+								<a class="ibm-btn-pri ibv-sec-button ibv-button-space leadspaceBtn" href="http://www.pages02.net/instituteforbusinessvalue/w3subscription" target="_blank">Get insights via email</a>
+							   </p>
+							  </div>
+						  </div>
+					  </div>
+				  <!-- LEADSPACE_END -->
+			  </header>
+			  <div id="browse-by-categpry-pc"><div class="browseByCategoryPC">
+  <div class="ibm-columns">
+	  <div class="ibm-col-12-12 flex">
+		  <div class="categoryTitle">Browse by category</div>
+		  <ul class="categoryLists flex">
+			  <li class="categoryItem">
+				  <div class="categoryItemContent">Industry <i class="ibm-anchor-down-link"></i></div>
+				  <div class="childList" style="grid-template-rows:repeat(8,34px);grid-template-columns:repeat(3,240px);left:-210px">
+					  <a class="childItem" href="explore.html?tids=5004,6000,4001&amp;lnk=cb">Aerospace and Defense</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4002&amp;lnk=cb">Automotive</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4003&amp;lnk=cb">Banking and Financial markets</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4004&amp;lnk=cb">Chemicals</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4005&amp;lnk=cb">Consumer products</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4006&amp;lnk=cb">Education</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4007&amp;lnk=cb">Electronics</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4008&amp;lnk=cb">Energy and Utilities</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4009&amp;lnk=cb">Government</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4010&amp;lnk=cb">Healthcare</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4011&amp;lnk=cb">Industrial products</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4012&amp;lnk=cb">Insurance</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4013&amp;lnk=cb">IT and Professional services</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4014&amp;lnk=cb">Life sciences</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4015&amp;lnk=cb">Media and Entertainment</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4016&amp;lnk=cb">Petroleum</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4017&amp;lnk=cb">Retail</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4018&amp;lnk=cb">Telecommunications</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4019&amp;lnk=cb">Transportation</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,4020&amp;lnk=cb">Travel</a>
+				  </div>
+			  </li>
+			  <li class="categoryItem">
+				  <div class="categoryItemContent">Technology <i class="ibm-anchor-down-link"></i></div>
+				  <div class="childList" style="grid-template-rows:repeat(6,34px);grid-template-columns:repeat(2,240px)">
+					  <a class="childItem" href="explore.html?tids=5004,6000,8001&amp;lnk=cb">Artificial Intelligence (AI)</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,8002&amp;lnk=cb">Automation and Robotics</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,8003&amp;lnk=cb">Blockchain</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,8004&amp;lnk=cb">Cloud</a>
+					  <a class="childItem" href="cognitiveenterprise.html?lnk=cb">Cognitive Enterprise™</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,8005&amp;lnk=cb">Data and Analytics</a>
+					  <a class="childItem" href="digitalreinvention.html?lnk=cb">Digital Reinvention®</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,8007&amp;lnk=cb">Internet of Things (IoT)</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,8008&amp;lnk=cb">Mobile</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,8009&amp;lnk=cb">Quantum computing</a>
+				  </div>
+			  </li>
+			  <li class="categoryItem">
+				  <div class="categoryItemContent">Business role <i class="ibm-anchor-down-link"></i></div>
+				  <div class="childList" style="grid-template-rows:repeat(6,34px)">
+					  <a class="childItem" href="explore.html?tids=5004,6000,3001&amp;lnk=cb">Finance and Risk, CFO</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,3002&amp;lnk=cb">Marketing and Sales, CMO</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,3003&amp;lnk=cb">Operations and Supply chain, COO</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,3004&amp;lnk=cb">Strategy and Management, CEO</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,3005&amp;lnk=cb">Talent and Skills, CHRO</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,3006&amp;lnk=cb">Technology and Security, CIO</a>
+				  </div>
+			  </li>
+			  <li class="categoryItem">
+				  <div class="categoryItemContent">Special programs <i class="ibm-anchor-down-link"></i></div>
+				  <div class="childList" style="grid-template-rows:repeat(7,34px);grid-template-columns:repeat(2,300px);left:unset;right:0;">
+					  <a class="childItem" href="covid-19.html?lnk=cb">COVID-19</a>
+					  <a class="childItem" href="c-suite.html?lnk=cb">C-suite Study</a>
+					  <a class="childItem" href="cbm.html?lnk=cb">Component Business Modeling (CBM)</a>
+					  <a class="childItem" href="cognitiveenterprise.html?lnk=cb">Cognitive Enterprise™</a>
+					  <a class="childItem" href="digitalreinvention.html?lnk=cb">Digital Reinvention®</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,7008&amp;lnk=cb">Expert Insights</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,7005&amp;lnk=cb">Global Industry Agenda (GIA)</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,7006&amp;lnk=cb">Global Location Trends</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,7009&amp;lnk=cb">IBM Services Strategy and Capabilities</a>
+					  <a class="childItem" href="benchmark.html?lnk=cb">Performance data and Benchmarking</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,9052&amp;lnk=cb">Sustainability</a>
+					  <a class="childItem" href="explore.html?tids=5004,6000,9053&amp;lnk=cb">Technology and the Global economy</a>
+				  </div>
+			  </li>
+			  <li class="categoryItem">
+				  <div class="categoryItemContent">Regions <i class="ibm-anchor-down-link"></i></div>
+				  <div class="childList" style="grid-template-rows:repeat(6,34px);left:unset;right:0;min-width:250px;">
+					  <a class="childItem" href="explore.html?tids=1001,6006&amp;lnk=cb">Canada</a>
+					  <a class="childItem" href="explore.html?tids=1001,6007&amp;lnk=cb">China</a>
+					  <a class="childItem" href="explore.html?tids=1001,6013&amp;lnk=cb">Germany</a>
+					  <a class="childItem" href="explore.html?tids=1001,6016&amp;lnk=cb">India</a>
+					  <a class="childItem" href="explore.html?tids=1001,6020&amp;lnk=cb">Japan</a>
+					  <a class="childItem" href="explore.html?tids=1001,6058&amp;lnk=cb">Middle East and Africa</a>
+				  </div>
+			  </li>
+		  </ul>
+	  </div>
+  </div>
+</div>
+</div>
+		  <p class="ibm-ind-link ibm-nospacing ibm-icononly ibm-btt-auto ibm-hidden-small"><a class="ibm-nospacing ibm-chevron-up-link" href="#top" tabindex="-1">Back to top</a></p></div>
+		  <!-- END MAIN PAGE WRAPPER AROUND LEADSPACE, MAIN CONTENT SIDENAV AND RELATED CONTENT -->
 
-			<!-- START MAIN PAGE WRAPPER AROUND LEADSPACE, MAIN CONTENT SIDENAV AND RELATED CONTENT -->
-			<div id="ibm-content-wrapper" role="region" aria-label="ibm content wrapper">
-				<header role="banner" aria-labelledby="ibm-pagetitle-h1">
+		  <!-- Page content here : START -->
+		  <main role="main" aria-label="5 executive epiphanies reveal post-pandemic opportunities">
+			  <div id="ibm-pcon">
+				  <div id="ibm-content-body">
+					  <div id="ibm-content-main">
+						  <div id="section"><div class="ibm-columns ibm-padding-bottom-2 ibm-padding-top-r1">
+  <div class="ibm-col-12-12 ibm-padding-content ibm-padding-bottom-1">
+	  <h3 class="ibm-h3">Featured insights</h3>
+  </div>
+<div class="ibm-col-12-6 ibm-col-medium-12-12 ibm-center ibm-padding-content" style="float:left">
+  <img class="ibm-resize" alt="homepage" src="img/side-by-side/cost-transformation.jpg">
+</div>
+<div class="ibm-col-12-6 ibm-col-medium-12-12 ibm-padding-content">
+  
+  <p><span class="ibm-h3 ibm-left">Cost and Value Transformation in the Era of COVID-19</span></p>
+	  <p>As organizations around the world continue to navigate the turmoil of COVID-19, uncertainty remains about how businesses will finally reemerge, and what markets will look like. However, one thing is clear. In the different normal that ensues, resiliency, agility, and speed will separate the organizations that succeed from those that don’t.</p>
+	  <p>In this disruption-ready reality, organizations will need to anticipate and respond more frequently to sudden and significant change. Cash preservation is critical, but the answer isn’t merely cost cutting—it’s a focus on cost and value transformation: Finding better ways to organize and run a business that lower cost and make it more variable, while enabling investments so the company is positioned for growth.</p>
+  <p class="ibm-button-link">
+		  <a class="ibm-btn-pri ibv-pri-button" style="margin-right:20px;" href="https://w3.ibm.com/services/lighthouse/documents/158806" target="_blank">Read the report</a>
+  </p>
+</div>
+</div></div>
+						  <div class="ibm-fullwidth">
+							  <div class="ibm-columns ibm-padding-bottom-1">
+								  <div class="ibm-col-6-6 ibm-padding-content"></div>  					    
+								  <div id="cardsTarget" data-widget="setsameheight" data-items=".ibm-card" data-always="true" class="ibm-widget-processed ibm-sameheight-processed"><div class="ibm-col-4-1 ibm-col-medium-4-2">
+<div class="ibm-card ibm-card--noborder" style="height: 518px;">
+  
+  <div class="ibm-card__image">
+	<img src="/img/card/investrecovercovid19.jpg" style="width:100%" alt="investrecovercovid19.jpg" class="">
+	<!--  width="300"  height="170" -->
+  </div>
 
-					<!-- SITENAV_START -->
-					<!--#include virtual="/ssi/navigation.ssi" -->    
-					<!-- SITENAV_END --> 
+  <div class="ibm-card__content" style="padding:10px 10px 10px 0;">
+	<h3 class="ibm-h4 ibm-bold">How to invest now to expedite COVID-19 recovery</h3>
+	<p>During COVID-19 and economic stress, cost cutting and cost management should redirect resources to digital and enterprise transformation.</p>
 
-					<!-- LEADSPACE_START -->            
-						<div id="ibm-leadspace-head" class="ibm-alternate ibm-alternate-background ibm-vertical-center ibm-background-black-core">
-							<div id="ibm-leadspace-body" class="ibm-padding-top-r1 ibm-padding-bottom-r1 ibm-vertical-center">
-								<div id="ibv-leadspace" class="ibm-padding-content">
-									<h1 id="ibm-pagetitle-h1" class="ibm-h1 ibm-bold">COVID-19 Consumer Survey</h1>  
-									<p>
-										The pandemic is impacting perceptions of the economy, shopping, work, health and well-being, travel and mobility, and more.
-									</p> 	  		  
-									<p class="ibm-button-link btn-equal-width-mobile ibv-padding-top-1">
-										<a class="ibm-btn-pri ibv-pri-button ibv-button-space leadspaceBtn" href="https://w3.ibm.com/services/lighthouse/documents/154253" target="_blank">Learn more</a>
-										<a class="ibm-btn-pri ibv-sec-button ibv-button-space leadspaceBtn" href="http://www.pages02.net/instituteforbusinessvalue/w3subscription" target="_blank">Get insights via email</a>
-									</p>
-								</div>
-							</div>
-						</div>
-					<!-- LEADSPACE_END -->
-				</header>
-				<div id="browse-by-categpry-pc"></div>
-			</div>
-			<!-- END MAIN PAGE WRAPPER AROUND LEADSPACE, MAIN CONTENT SIDENAV AND RELATED CONTENT -->
 
-			<!-- Page content here : START -->
-			<main role="main" aria-labelledby="ibm-pagetitle-h1">
-				<div id="ibm-pcon">
-					<div id="ibm-content-body">
-						<div id="ibm-content-main">
-							<div id="section"></div>
-							<div class="ibm-fullwidth">
-								<div class="ibm-columns ibm-padding-bottom-1" >
-									<div class="ibm-col-6-6 ibm-padding-content"></div>  					    
-									<div id="cardsTarget" data-widget="setsameheight" data-items=".ibm-card" data-always="true"></div>
-									<div class="ibm-columns ibv-padding-topbot-0">
-										<div class="ibm-col-6-6">
-											<p class="ibm-center ibm-padding-bottom-2">
-												<a class="ibm-btn-pri ibv-pri-button" onclick="ibv.setPageName()" href="explore.html?tids=6000,5004&lnk=index-em">Explore more</a>
-											</p>
-										</div>
-									</div> 
-								</div>
-							</div>
-							<!-- spolight -->
-							<div class="ibm-fullwidth" id="spotlight"></div>
-							<div id="connect-wrapper"></div>
-						</div>
-					</div>
-				</div>
-			</main>
-			<!-- Page content here : END -->
+  </div>
+  <div class="ibm-card__bottom" style="padding: 20px 0 20px 0">
 
-			<!-- FOOTER : BEGIN -->
-			<!--#include virtual="/ssi/footer.ssi" -->
-			<!-- FOOTER : END -->	
-		</div>
-		<div id="browse-by-category-MB"></div>
-			<!-- CLOSING : BEGIN -->
-			<!--#include virtual="/ssi/closing.ssi" -->
-			<!-- CLOSING : END -->
-	</body>
-</html>
+	<p class="ibm-padding-top-1">        
+	  <a href="https://w3.ibm.com/services/lighthouse/documents/156970" target="_blank" class="ibv-card-link ibm-forward-link ibm-inlinelink ibm-icon-after">Access content on Lighthouse</a>
+	</p>    
+	<p>
+	  <a href="https://ibm.co/covid-19-recovery-wiki" target="_blank" class="ibv-card-link ibm-forward-link ibm-inlinelink ibm-icon-after">Share on social media</a>     
+	</p>
+
+  </div>    
+</div>
+</div>
+<div class="ibm-col-4-1 ibm-col-medium-4-2">
+<div class="ibm-card ibm-card--noborder" style="height: 518px;">
+  
+  <div class="ibm-card__image">
+	<img src="/img/card/chro-workforce.jpg" style="width:100%" alt="chro-workforce.jpg" class="">
+	<!--  width="300"  height="170" -->
+  </div>
+
+  <div class="ibm-card__content" style="padding:10px 10px 10px 0;">
+	<h3 class="ibm-h4 ibm-bold">The CHRO’s guide to workforce re-entry: Rethinking the workplace</h3>
+	<p>Organizations must consider how skilling will evolve during the transition back to the workplace and into the future. </p>
+
+
+  </div>
+  <div class="ibm-card__bottom" style="padding: 20px 0 20px 0">
+
+	<p class="ibm-padding-top-1">        
+	  <a href="https://w3.ibm.com/services/lighthouse/documents/154384" target="_blank" class="ibv-card-link ibm-forward-link ibm-inlinelink ibm-icon-after">Access content on Lighthouse</a>
+	</p>    
+	<p>
+	  <a href="https://ibm.co/return-to-work-wiki" target="_blank" class="ibv-card-link ibm-forward-link ibm-inlinelink ibm-icon-after">Share on social media</a>     
+	</p>
+
+  </div>    
+</div>
+</div>
+<div class="ibm-col-4-1 ibm-col-medium-4-2">
+<div class="ibm-card ibm-card--noborder" style="height: 518px;">
+  
+  <div class="ibm-card__image">
+	<img src="/img/card/covidlh_lighthouse-image-625.jpg" style="width:100%" alt="covidlh_lighthouse-image-625.jpg" class="">
+	<!--  width="300"  height="170" -->
+  </div>
+
+  <div class="ibm-card__content" style="padding:10px 10px 10px 0;">
+	<h3 class="ibm-h4 ibm-bold">COVID-19 impact on individual perspectives, perceptions and behaviors</h3>
+	<p>To better understand how elements of the lives of individuals have been—and continue to be—impacted by the current COVID-19 crisis, the IBM Institute for Business Value has fielded a survey ...</p>
+
+
+  </div>
+  <div class="ibm-card__bottom" style="padding: 20px 0 20px 0">
+
+	<p class="ibm-padding-top-1">        
+	  <a href="https://w3.ibm.com/services/lighthouse/documents/154253" target="_blank" class="ibv-card-link ibm-forward-link ibm-inlinelink ibm-icon-after">Access content on Lighthouse</a>
+	</p>
+
+  </div>    
+</div>
+</div>
+<div class="ibm-col-4-1 ibm-col-medium-4-2">
+<div class="ibm-card ibm-card--noborder" style="height: 518px;">
+  
+  <div class="ibm-card__image">
+	<img src="/img/card/cogent-deepdive_lh.jpg" style="width:100%" alt="cogent_deepdive_lh.jpg" class="">
+	<!--  width="300"  height="170" -->
+  </div>
+
+  <div class="ibm-card__content" style="padding:10px 10px 10px 0;">
+	<h3 class="ibm-h4 ibm-bold">Building the Cognitive Enterprise: Nine Action Areas - Deep Dive</h3>
+	<p>How leading companies are using market-making business platforms, intelligent workflows, and enterprise experience and humanity to become Cognitive Enterprises.</p>
+
+
+  </div>
+  <div class="ibm-card__bottom" style="padding: 20px 0 20px 0">
+
+	<p class="ibm-padding-top-1">        
+	  <a href="https://w3.ibm.com/services/lighthouse/documents/150536" target="_blank" class="ibv-card-link ibm-forward-link ibm-inlinelink ibm-icon-after">Access content on Lighthouse</a>
+	</p>    
+	<p>
+	  <a href="http://ibm.co/cognitive-enterprisew3" target="_blank" class="ibv-card-link ibm-forward-link ibm-inlinelink ibm-icon-after">Share on social media</a>     
+	</p>
+
+  </div>    
+</div>
+</div>
+</div>
+								  <div class="ibm-columns ibv-padding-topbot-0">
+									  <div class="ibm-col-6-6">
+										  <p class="ibm-center ibm-padding-bottom-2">
+											  <a class="ibm-btn-pri ibv-pri-button" onclick="ibv.setPageName()" href="explore.html?tids=6000,5004&amp;lnk=index-em">Explore more</a>
+										  </p>
+									  </div>
+								  </div> 
+							  </div>
+						  </div>
+						  <!-- spolight -->
+						  <div class="ibm-fullwidth" id="spotlight"><div id="banner" style="background-image:url('/img/banner/ds_version_CovidA_Hero_for_Spotlight.jpg')">
+  <div class="ibm-columns">
+	  <div class="ibm-col-12-6 ibm-col-medium-12-12">
+		  <h3 class="ibm-h3">Spotlight</h3>
+		  <h1 class="ibm-h1">Beyond the Great Lockdown: Emerging stronger to a different normal</h1>
+		  <p>
+			  We have expert advice on leadership and strategy, tips to build more resilient supply chains and a robust defense against cyber attacks, guidance on mental health issues, industry insights, and much more.
+		  </p>
+		  <p class="ibm-button-link btn-equal-width-mobile ibv-padding-top-1">
+			  <a class="ibm-btn-pri ibv-pri-button leadspaceBtn" href="covid-19.html">Explore COVID-19 insights</a>
+		  </p>
+	  </div>
+  </div>
+</div></div>
+						  <div id="connect-wrapper"><div class="connect-with-us ibm-fullwidth ibm-widget-processed ibm-sameheight-processed" data-items=".ibm-card" data-widget="setsameheight">
+  <div class="ibm-columns">
+	  <div class="ibm-col-12-3 ibm-col-medium-12-12 connect-title">
+		  <h2 class="ibm-h2">Connect <br class="connect-title-br">with us</h2>	
+	  </div>
+	  <div class="ibm-col-12-3 ibm-col-medium-12-12">
+		  <div class="ibm-card" style="height: 316px;">
+			  <div class="ibm-card__content">
+				  <h3 class="ibm-h3">
+					  Get insights <br>via email
+				  </h3>
+				  <p>Subscribe to receive our email updates. You can customize your subscription based on your role and interests.</p>
+			  </div>
+			  <div class="ibm-card__bottom">
+				  <p class="ibm-padding-top-1 ibm-button-link">
+					  <a class="ibm-btn-pri ibv-pri-button ibv-button-space leadspaceBtn" href="http://www.pages02.net/instituteforbusinessvalue/w3subscription" target="_blank">Subscribe now</a>
+				  </p>
+			  </div>
+		  </div>
+	  </div>
+	  <div class="ibm-col-12-3 ibm-col-medium-12-12">
+		  <div class="ibm-card" style="height: 316px;">
+			  <div class="ibm-card__content">
+				  <h3 class="ibm-h3">
+					  Access our <br>benchmarking data
+				  </h3>
+				  <p>Assess client performance and compare clients to peers to help them identify opportunities to excel.</p>
+			  </div>
+			  <div class="ibm-card__bottom">
+				  <p class="ibm-padding-top-1 ibm-button-link">
+					  <a class="ibm-btn-pri ibv-pri-button ibv-button-space leadspaceBtn" href="benchmark.html">Access data</a>
+				  </p>
+			  </div>
+		  </div>
+	  </div>
+	  <div class="ibm-col-12-3 ibm-col-medium-12-12">
+		  <div class="ibm-card" style="height: 316px;">
+			  <div class="ibm-card__content">
+				  <h3 class="ibm-h3">
+					  Find IBV on <br>social media
+				  </h3>
+				  <p>
+					  </p><ul class="ibm-link-list">
+						  <li><a class="ibm-twitter-encircled-link" href="https://twitter.com/ibmibv" target="_blank">Twitter</a></li>
+						  <li><a class="ibm-linkedin-encircled-link" href="https://www.linkedin.com/groups/2597995/" target="_blank">LinkedIn</a></li>
+						  <li><a class="ibm-youtube-encircled-link" href="https://www.youtube.com/channel/UCAD0mjCvnb6H7rEPqP8UEbw" target="_blank">YouTube</a></li>
+					  </ul>
+				  <p></p>
+			  </div>
+		  </div>
+	  </div>
+  </div>
+</div></div>
+					  </div>
+				  </div>
+			  </div>
+		  </main>
+		  <!-- Page content here : END -->
+
+		  <!-- FOOTER : BEGIN -->
+		  <!-- div#ibm-footer is required to prevent www.js errors -->
+<footer role="contentinfo" aria-label="IBM">
+<div id="ibm-footer" style="display:none!important" class="ibm-alternate"><div class="ibm-columns ibm-padding-bottom-0"><div class="ibm-col-1-1"><div class="ibm-footer-corporate-links ibm-word-break-all"><ul class="ibm-padding-bottom-0 ibm-textcolumns-small-2"><li><a href="https://www.ibm.com/contact/us/en/?lnk=flg-cont-usen">Contact IBM</a></li><li><a href="https://www.ibm.com/privacy?lnk=flg-priv-usen">Privacy</a></li><li><a href="https://www.ibm.com/us-en/legal?lnk=flg-tous-usen">Terms of use</a></li><li><a href="https://www.ibm.com/able?lnk=flg-able-usen">Accessibility</a></li></ul></div><div id="ibm-footer-locale-selector"><h3 id="ibm-footer-locale-selector-label" class="ibm-bold">Select a country/region</h3><select class="ibm-fullwidth select2-hidden-accessible ibm-widget-processed" aria-labelledby="ibm-footer-locale-selector-label" tabindex="-1" aria-hidden="true" style="width: 20px;"><optgroup label="Worldwide ibm.com home pages"><option data-localecode="en-us" value="http://www.ibm.com/us-en/?lnk=fcc">United States - English</option><option data-localecode="en-af" value="http://www.ibm.com/af-en/?lnk=fcc">Afghanistan - English</option><option data-localecode="fr-dz" value="http://www.ibm.com/dz-fr/?lnk=fcc">Algeria - French</option><option data-localecode="pt-ao" value="http://www.ibm.com/ao-pt/?lnk=fcc">Angola - Portuguese</option><option data-localecode="en-ai" value="http://www.ibm.com/ai-en/?lnk=fcc">Anguilla - English</option><option data-localecode="en-ag" value="http://www.ibm.com/ag-en/?lnk=fcc">Antigua and Barbuda - English</option><option data-localecode="es-ar" value="http://www.ibm.com/ar-es/?lnk=fcc">Argentina - Spanish</option><option data-localecode="en-aw" value="http://www.ibm.com/aw-en/?lnk=fcc">Aruba - English</option><option data-localecode="en-au" value="http://www.ibm.com/au-en/?lnk=fcc">Australia - English</option><option data-localecode="de-at" value="http://www.ibm.com/at-de/?lnk=fcc">Austria - German</option><option data-localecode="en-bs" value="http://www.ibm.com/bs-en/?lnk=fcc">Bahamas - English</option><option data-localecode="en-bh" value="http://www.ibm.com/bh-en/?lnk=fcc">Bahrain - English</option><option data-localecode="en-bd" value="http://www.ibm.com/bd-en/?lnk=fcc">Bangladesh - English</option><option data-localecode="en-bb" value="http://www.ibm.com/bb-en/?lnk=fcc">Barbados - English</option><option data-localecode="nl-be" value="http://www.ibm.com/be-nl/?lnk=fcc">Belgium/Luxembourg - Dutch</option><option data-localecode="en-be" value="http://www.ibm.com/be-en/?lnk=fcc">Belgium/Luxembourg - English</option><option data-localecode="fr-be" value="http://www.ibm.com/be-fr/?lnk=fcc">Belgium/Luxembourg - French</option><option data-localecode="en-bm" value="http://www.ibm.com/bm-en/?lnk=fcc">Bermuda - English</option><option data-localecode="es-bo" value="http://www.ibm.com/bo-es/?lnk=fcc">Bolivia - Spanish</option><option data-localecode="en-bw" value="http://www.ibm.com/bw-en/?lnk=fcc">Botswana - English</option><option data-localecode="pt-br" value="http://www.ibm.com/br-pt/?lnk=fcc">Brazil - Portuguese</option><option data-localecode="en-bn" value="http://www.ibm.com/bn-en/?lnk=fcc">Brunei Darussalam - English</option><option data-localecode="bg-bg" value="http://www.ibm.com/bg-bg/?lnk=fcc">Bulgaria - Bulgarian</option><option data-localecode="en-bg" value="http://www.ibm.com/bg-en/?lnk=fcc">Bulgaria - English</option><option data-localecode="fr-bf" value="http://www.ibm.com/bf-fr/?lnk=fcc">Burkina Faso - French</option><option data-localecode="en-kh" value="http://www.ibm.com/kh-en/?lnk=fcc">Cambodia - English</option><option data-localecode="en-cm" value="http://www.ibm.com/cm-en/?lnk=fcc">Cameroon - English</option><option data-localecode="fr-cm" value="http://www.ibm.com/cm-fr/?lnk=fcc">Cameroon - French</option><option data-localecode="en-ca" value="http://www.ibm.com/ca-en/?lnk=fcc">Canada - English</option><option data-localecode="fr-ca" value="http://www.ibm.com/ca-fr/?lnk=fcc">Canada - French</option><option data-localecode="en-ky" value="http://www.ibm.com/ky-en/?lnk=fcc">Cayman Islands - English</option><option data-localecode="fr-td" value="http://www.ibm.com/td-fr/?lnk=fcc">Chad - French</option><option data-localecode="es-cl" value="http://www.ibm.com/cl-es/?lnk=fcc">Chile - Spanish</option><option data-localecode="zh-cn" value="http://www.ibm.com/cn-zh/?lnk=fcc">China - Chinese (Simplified)</option><option data-localecode="es-co" value="http://www.ibm.com/co-es/?lnk=fcc">Colombia - Spanish</option><option data-localecode="fr-cg" value="http://www.ibm.com/cg-fr/?lnk=fcc">Congo - French</option><option data-localecode="fr-cd" value="http://www.ibm.com/cd-fr/?lnk=fcc">Congo, The Democratic Republic of the - French</option><option data-localecode="es-cr" value="http://www.ibm.com/cr-es/?lnk=fcc">Costa Rica - Spanish</option><option data-localecode="hr-hr" value="http://www.ibm.com/hr-hr/?lnk=fcc">Croatia - Croatian</option><option data-localecode="en-hr" value="http://www.ibm.com/hr-en/?lnk=fcc">Croatia - English</option><option data-localecode="en-cw" value="http://www.ibm.com/cw-en/?lnk=fcc">Curacao - English</option><option data-localecode="en-cy" value="http://www.ibm.com/cy-en/?lnk=fcc">Cyprus - English</option><option data-localecode="cs-cz" value="http://www.ibm.com/cz-cs/?lnk=fcc">Czech Republic - Czech</option><option data-localecode="en-cz" value="http://www.ibm.com/cz-en/?lnk=fcc">Czech Republic - English</option><option data-localecode="da-dk" value="http://www.ibm.com/dk-da/?lnk=fcc">Denmark - Danish</option><option data-localecode="en-dk" value="http://www.ibm.com/dk-en/?lnk=fcc">Denmark - English</option><option data-localecode="en-dm" value="http://www.ibm.com/dm-en/?lnk=fcc">Dominica - English</option><option data-localecode="es-ec" value="http://www.ibm.com/ec-es/?lnk=fcc">Ecuador - Spanish</option><option data-localecode="en-eg" value="http://www.ibm.com/eg-en/?lnk=fcc">Egypt - English</option><option data-localecode="en-ee" value="http://www.ibm.com/ee-en/?lnk=fcc">Estonia - English</option><option data-localecode="et-ee" value="http://www.ibm.com/ee-et/?lnk=fcc">Estonia - Estonian</option><option data-localecode="en-et" value="http://www.ibm.com/et-en/?lnk=fcc">Ethiopia - English</option><option data-localecode="en-fi" value="http://www.ibm.com/fi-en/?lnk=fcc">Finland - English</option><option data-localecode="fi-fi" value="http://www.ibm.com/fi-fi/?lnk=fcc">Finland - Finnish</option><option data-localecode="fr-fr" value="http://www.ibm.com/fr-fr/?lnk=fcc">France - French</option><option data-localecode="fr-ga" value="http://www.ibm.com/ga-fr/?lnk=fcc">Gabon - French</option><option data-localecode="de-de" value="http://www.ibm.com/de-de/?lnk=fcc">Germany - German</option><option data-localecode="en-gh" value="http://www.ibm.com/gh-en/?lnk=fcc">Ghana - English</option><option data-localecode="en-gr" value="http://www.ibm.com/gr-en/?lnk=fcc">Greece - English</option><option data-localecode="el-gr" value="http://www.ibm.com/gr-el/?lnk=fcc">Greece - Greek</option><option data-localecode="en-gd" value="http://www.ibm.com/gd-en/?lnk=fcc">Grenada - English</option><option data-localecode="en-gy" value="http://www.ibm.com/gy-en/?lnk=fcc">Guyana - English</option><option data-localecode="en-hk" value="http://www.ibm.com/hk-en/?lnk=fcc">Hong Kong S.A.R. of China - English</option><option data-localecode="en-hu" value="http://www.ibm.com/hu-en/?lnk=fcc">Hungary - English</option><option data-localecode="hu-hu" value="http://www.ibm.com/hu-hu/?lnk=fcc">Hungary - Hungarian</option><option data-localecode="en-in" value="http://www.ibm.com/in-en/?lnk=fcc">India - English</option><option data-localecode="en-id" value="http://www.ibm.com/id-en/?lnk=fcc">Indonesia - English</option><option data-localecode="en-iq" value="http://www.ibm.com/iq-en/?lnk=fcc">Iraq - English</option><option data-localecode="en-ie" value="http://www.ibm.com/ie-en/?lnk=fcc">Ireland - English</option><option data-localecode="en-il" value="http://www.ibm.com/il-en/?lnk=fcc">Israel - English</option><option data-localecode="he-il" value="http://www.ibm.com/il-he/?lnk=fcc">Israel - Hebrew</option><option data-localecode="it-it" value="http://www.ibm.com/it-it/?lnk=fcc">Italy - Italian</option><option data-localecode="fr-ci" value="http://www.ibm.com/ci-fr/?lnk=fcc">Ivory Coast - French</option><option data-localecode="en-jm" value="http://www.ibm.com/jm-en/?lnk=fcc">Jamaica - English</option><option data-localecode="ja-jp" value="http://www.ibm.com/jp-ja/?lnk=fcc">Japan - Japanese</option><option data-localecode="en-jo" value="http://www.ibm.com/jo-en/?lnk=fcc">Jordan - English</option><option data-localecode="en-kz" value="http://www.ibm.com/kz-en/?lnk=fcc">Kazakhstan - English</option><option data-localecode="kk-kz" value="http://www.ibm.com/kz-kk/?lnk=fcc">Kazakhstan - Kazakh</option><option data-localecode="en-ke" value="http://www.ibm.com/ke-en/?lnk=fcc">Kenya - English</option><option data-localecode="ko-kr" value="http://www.ibm.com/kr-ko/?lnk=fcc">Korea, Republic of - Korean</option><option data-localecode="en-kw" value="http://www.ibm.com/kw-en/?lnk=fcc">Kuwait - English</option><option data-localecode="en-lv" value="http://www.ibm.com/lv-en/?lnk=fcc">Latvia - English</option><option data-localecode="lv-lv" value="http://www.ibm.com/lv-lv/?lnk=fcc">Latvia - Latvian</option><option data-localecode="en-lb" value="http://www.ibm.com/lb-en/?lnk=fcc">Lebanon - English</option><option data-localecode="en-ly" value="http://www.ibm.com/ly-en/?lnk=fcc">Libya - English</option><option data-localecode="en-lt" value="http://www.ibm.com/lt-en/?lnk=fcc">Lithuania - English</option><option data-localecode="lt-lt" value="http://www.ibm.com/lt-lt/?lnk=fcc">Lithuania - Lithuanian</option><option data-localecode="fr-mg" value="http://www.ibm.com/mg-fr/?lnk=fcc">Madagascar - French</option><option data-localecode="en-mw" value="http://www.ibm.com/mw-en/?lnk=fcc">Malawi - English</option><option data-localecode="en-my" value="http://www.ibm.com/my-en/?lnk=fcc">Malaysia - English</option><option data-localecode="en-mu" value="http://www.ibm.com/mu-en/?lnk=fcc">Mauritius - English</option><option data-localecode="fr-mu" value="http://www.ibm.com/mu-fr/?lnk=fcc">Mauritius - French</option><option data-localecode="es-mx" value="http://www.ibm.com/mx-es/?lnk=fcc">Mexico - Spanish</option><option data-localecode="en-ms" value="http://www.ibm.com/ms-en/?lnk=fcc">Montserrat - English</option><option data-localecode="fr-ma" value="http://www.ibm.com/ma-fr/?lnk=fcc">Morocco - French</option><option data-localecode="pt-mz" value="http://www.ibm.com/mz-pt/?lnk=fcc">Mozambique - Portuguese</option><option data-localecode="en-na" value="http://www.ibm.com/na-en/?lnk=fcc">Namibia - English</option><option data-localecode="en-np" value="http://www.ibm.com/np-en/?lnk=fcc">Nepal - English</option><option data-localecode="nl-nl" value="http://www.ibm.com/nl-nl/?lnk=fcc">Netherlands - Dutch</option><option data-localecode="en-nl" value="http://www.ibm.com/nl-en/?lnk=fcc">Netherlands - English</option><option data-localecode="en-nz" value="http://www.ibm.com/nz-en/?lnk=fcc">New Zealand - English</option><option data-localecode="fr-ne" value="http://www.ibm.com/ne-fr/?lnk=fcc">Niger - French</option><option data-localecode="en-ng" value="http://www.ibm.com/ng-en/?lnk=fcc">Nigeria - English</option><option data-localecode="en-no" value="http://www.ibm.com/no-en/?lnk=fcc">Norway - English</option><option data-localecode="no-no" value="http://www.ibm.com/no-no/?lnk=fcc">Norway - Norwegian</option><option data-localecode="en-om" value="http://www.ibm.com/om-en/?lnk=fcc">Oman - English</option><option data-localecode="en-pk" value="http://www.ibm.com/pk-en/?lnk=fcc">Pakistan - English</option><option data-localecode="es-py" value="http://www.ibm.com/py-es/?lnk=fcc">Paraguay - Spanish</option><option data-localecode="es-pe" value="http://www.ibm.com/pe-es/?lnk=fcc">Peru - Spanish</option><option data-localecode="en-ph" value="http://www.ibm.com/ph-en/?lnk=fcc">Philippines - English</option><option data-localecode="pl-pl" value="http://www.ibm.com/pl-pl/?lnk=fcc">Poland - Polish</option><option data-localecode="en-pt" value="http://www.ibm.com/pt-en/?lnk=fcc">Portugal - English</option><option data-localecode="pt-pt" value="http://www.ibm.com/pt-pt/?lnk=fcc">Portugal - Portuguese</option><option data-localecode="en-qa" value="http://www.ibm.com/qa-en/?lnk=fcc">Qatar - English</option><option data-localecode="en-ro" value="http://www.ibm.com/ro-en/?lnk=fcc">Romania - English</option><option data-localecode="ro-ro" value="http://www.ibm.com/ro-ro/?lnk=fcc">Romania - Romanian</option><option data-localecode="ru-ru" value="http://www.ibm.com/ru-ru/?lnk=fcc">Russian Federation - Russian</option><option data-localecode="en-kn" value="http://www.ibm.com/kn-en/?lnk=fcc">Saint Kitts and Nevis - English</option><option data-localecode="en-lc" value="http://www.ibm.com/lc-en/?lnk=fcc">Saint Lucia - English</option><option data-localecode="en-vc" value="http://www.ibm.com/vc-en/?lnk=fcc">Saint Vincent and the Grenadines - English</option><option data-localecode="ar-sa" value="http://www.ibm.com/sa-ar/?lnk=fcc">Saudi Arabia - Arabic</option><option data-localecode="en-sa" value="http://www.ibm.com/sa-en/?lnk=fcc">Saudi Arabia - English</option><option data-localecode="fr-sn" value="http://www.ibm.com/sn-fr/?lnk=fcc">Senegal - French</option><option data-localecode="en-rs" value="http://www.ibm.com/rs-en/?lnk=fcc">Serbia - English</option><option data-localecode="sr-rs" value="http://www.ibm.com/rs-sr/?lnk=fcc">Serbia - Serbian</option><option data-localecode="fr-sc" value="http://www.ibm.com/sc-fr/?lnk=fcc">Seychelles - French</option><option data-localecode="en-sl" value="http://www.ibm.com/sl-en/?lnk=fcc">Sierra Leone - English</option><option data-localecode="en-sg" value="http://www.ibm.com/sg-en/?lnk=fcc">Singapore - English</option><option data-localecode="en-sk" value="http://www.ibm.com/sk-en/?lnk=fcc">Slovakia - English</option><option data-localecode="sk-sk" value="http://www.ibm.com/sk-sk/?lnk=fcc">Slovakia - Slovak</option><option data-localecode="en-si" value="http://www.ibm.com/si-en/?lnk=fcc">Slovenia - English</option><option data-localecode="sl-si" value="http://www.ibm.com/si-sl/?lnk=fcc">Slovenia - Slovenian</option><option data-localecode="en-za" value="http://www.ibm.com/za-en/?lnk=fcc">South Africa - English</option><option data-localecode="es-es" value="http://www.ibm.com/es-es/?lnk=fcc">Spain - Spanish</option><option data-localecode="en-lk" value="http://www.ibm.com/lk-en/?lnk=fcc">Sri Lanka - English</option><option data-localecode="en-sr" value="http://www.ibm.com/sr-en/?lnk=fcc">Suriname - English</option><option data-localecode="en-se" value="http://www.ibm.com/se-en/?lnk=fcc">Sweden - English</option><option data-localecode="sv-se" value="http://www.ibm.com/se-sv/?lnk=fcc">Sweden - Swedish</option><option data-localecode="fr-ch" value="http://www.ibm.com/ch-fr/?lnk=fcc">Switzerland - French</option><option data-localecode="de-ch" value="http://www.ibm.com/ch-de/?lnk=fcc">Switzerland - German</option><option data-localecode="zh-tw" value="http://www.ibm.com/tw-zh/?lnk=fcc">Taiwan - Chinese (Traditional)</option><option data-localecode="en-tz" value="http://www.ibm.com/tz-en/?lnk=fcc">Tanzania, United Republic of - English</option><option data-localecode="en-th" value="http://www.ibm.com/th-en/?lnk=fcc">Thailand - English</option><option data-localecode="en-tt" value="http://www.ibm.com/tt-en/?lnk=fcc">Trinidad and Tobago - English</option><option data-localecode="fr-tn" value="http://www.ibm.com/tn-fr/?lnk=fcc">Tunisia - French</option><option data-localecode="tr-tr" value="http://www.ibm.com/tr-tr/?lnk=fcc">Turkey - Turkish</option><option data-localecode="en-tc" value="http://www.ibm.com/tc-en/?lnk=fcc">Turks and Caicos Islands - English</option><option data-localecode="en-ug" value="http://www.ibm.com/ug-en/?lnk=fcc">Uganda - English</option><option data-localecode="en-ua" value="http://www.ibm.com/ua-en/?lnk=fcc">Ukraine - English</option><option data-localecode="uk-ua" value="http://www.ibm.com/ua-uk/?lnk=fcc">Ukraine - Ukrainian</option><option data-localecode="ar-ae" value="http://www.ibm.com/ae-ar/?lnk=fcc">United Arab Emirates - Arabic</option><option data-localecode="en-ae" value="http://www.ibm.com/ae-en/?lnk=fcc">United Arab Emirates - English</option><option data-localecode="en-uk" value="http://www.ibm.com/uk-en/?lnk=fcc">United Kingdom - English</option><option data-localecode="es-uy" value="http://www.ibm.com/uy-es/?lnk=fcc">Uruguay - Spanish</option><option data-localecode="en-uz" value="http://www.ibm.com/uz-en/?lnk=fcc">Uzbekistan - English</option><option data-localecode="uz-uz" value="http://www.ibm.com/uz-uz/?lnk=fcc">Uzbekistan - Uzbek</option><option data-localecode="es-ve" value="http://www.ibm.com/ve-es/?lnk=fcc">Venezuela - Spanish</option><option data-localecode="en-vn" value="http://www.ibm.com/vn-en/?lnk=fcc">Vietnam - English</option><option data-localecode="vi-vn" value="http://www.ibm.com/vn-vi/?lnk=fcc">Vietnam - Vietnamese</option><option data-localecode="en-vg" value="http://www.ibm.com/vg-en/?lnk=fcc">Virgin Islands, British - English</option><option data-localecode="en-ye" value="http://www.ibm.com/ye-en/?lnk=fcc">Yemen - English</option><option data-localecode="en-zm" value="http://www.ibm.com/zm-en/?lnk=fcc">Zambia - English</option><option data-localecode="en-zw" value="http://www.ibm.com/zw-en/?lnk=fcc">Zimbabwe - English</option></optgroup></select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-djo9-container"><span class="select2-selection__rendered" id="select2-djo9-container" title="United States - English">United States - English</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div></div></div></div>
+<div class="page-footer">
+  <div class="ibm-columns">
+	  <div class="ibm-col-1-1">
+		  <ul>
+			  <li>
+				  <a href="http://w3.ibm.com/w3/info_terms_of_use.html" target="_blank">Terms of use</a>
+			  </li>
+			  <li>
+				  <a href="http://w3.ibm.com/ibm/documents/corpdocweb.nsf/ContentDocsByTitle/Business+Conduct+Guidelines" target="_blank">Business conduct guidelines</a>
+			  </li>
+			  <li>
+				  <a href="https://w3-connections.ibm.com/wikis/home?lang=en-us#!/wiki/Wf49a0f070e65_41de_bb0a_ff81f7eb3319/page/yourIBM%20Accessibility%20Features" target="_blank">Accessibility</a>
+			  </li>
+			  <li>
+				  <a href="http://w3.ibm.com/feedback/" target="_blank">Feedback</a>
+			  </li>
+			  <li>
+				  <a href="https://w3-connections.ibm.com/communities/service/html/communitystart?communityUuid=6dd64b47-6463-4cf4-8f10-c18d63bf00b3" target="_blank">yourIBM Community</a>
+			  </li>
+		  </ul>
+	  </div>
+  </div>
+</div>
+</footer>
+		  <!-- FOOTER : END -->	
+	  </div>
+	  <div id="browse-by-category-MB"><div class="browseByCategoryMB flex">
+  <div class="title">Browse by category</div>
+  <div class="icon"><span>Open</span> <i class="ibm-anchor-up-link"></i></div>
+</div>
+<div class="browseByCategoryMBListModel">
+  <ul class="browseByCategoryMBList">
+	  <li class="browseByCategoryMBItem flex">Industry <i class="ibm-maximize-link"></i></li>
+	  <ul class="browseByCategoryMBItemDetail">
+		  <li><a href="explore.html?tids=5004,6000,4001&amp;lnk=cb">Aerospace and Defense <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4002&amp;lnk=cb">Automotive <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4003&amp;lnk=cb">Banking and Financial markets <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4004&amp;lnk=cb">Chemicals <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4005&amp;lnk=cb">Consumer products <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4006&amp;lnk=cb">Education <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4007&amp;lnk=cb">Electronics <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4008&amp;lnk=cb">Energy and Utilities <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4009&amp;lnk=cb">Government <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4010&amp;lnk=cb">Healthcare <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4011&amp;lnk=cb">Industrial products <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4012&amp;lnk=cb">Insurance <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4013&amp;lnk=cb">IT and Professional services <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4014&amp;lnk=cb">Life sciences <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4015&amp;lnk=cb">Media and Entertainment <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4016&amp;lnk=cb">Petroleum <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4017&amp;lnk=cb">Retail <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4018&amp;lnk=cb">Telecommunications <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4019&amp;lnk=cb">Transportation <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,4020&amp;lnk=cb">Travel <i class="ibm-forward-link"></i></a></li>
+		  <div class="deadline"></div>
+	  </ul>
+	  <li class="browseByCategoryMBItem flex">Technology <i class="ibm-maximize-link"></i></li>
+	  <ul class="browseByCategoryMBItemDetail">
+		  <li><a href="explore.html?tids=5004,6000,8001&amp;lnk=cb">Artificial Intelligence (AI) <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,8002&amp;lnk=cb">Automation and Robotics <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,8003&amp;lnk=cb">Blockchain <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,8004&amp;lnk=cb">Cloud <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="cognitiveenterprise.html?lnk=cb">Cognitive Enterprise™ <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,8005&amp;lnk=cb">Data and Analytics <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="digitalreinvention.html?lnk=cb">Digital Reinvention® <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,8007&amp;lnk=cb">Internet of Things (IoT) <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,8008&amp;lnk=cb">Mobile <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,8009&amp;lnk=cb">Quantum computing <i class="ibm-forward-link"></i></a></li>
+		  <div class="deadline"></div>
+	  </ul>
+	  <li class="browseByCategoryMBItem flex">Business role <i class="ibm-maximize-link"></i></li>
+	  <ul class="browseByCategoryMBItemDetail">
+		  <li><a href="explore.html?tids=5004,6000,3001&amp;lnk=cb">Finance and Risk, CFO <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,3002&amp;lnk=cb">Marketing and Sales, CMO <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,3003&amp;lnk=cb">Operations and Supply chain, COO <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,3004&amp;lnk=cb">Strategy and Management, CEO <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,3005&amp;lnk=cb">Talent and Skills, CHRO <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,3006&amp;lnk=cb">Technology and Security, CIO <i class="ibm-forward-link"></i></a></li>
+		  <div class="deadline"></div>
+	  </ul>
+	  <li class="browseByCategoryMBItem flex">Special programs <i class="ibm-maximize-link"></i></li>
+	  <ul class="browseByCategoryMBItemDetail">
+		  <li><a href="covid-19.html?lnk=cb">COVID-19 <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="c-suite.html?lnk=cb">C-suite Study <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="cbm.html?lnk=cb">Component Business Modeling (CBM) <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="cognitiveenterprise.html?lnk=cb">Cognitive Enterprise™ <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="digitalreinvention.html?lnk=cb">Digital Reinvention® <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,7008&amp;lnk=cb">Expert Insights <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,7005&amp;lnk=cb">Global Industry Agenda (GIA) <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,7006&amp;lnk=cb">Global Location Trends <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,7009&amp;lnk=cb">IBM Services Strategy and Capabilities <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="benchmark.html?lnk=cb">Performance data and Benchmarking <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,9052&amp;lnk=cb">Sustainability <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=5004,6000,9053&amp;lnk=cb">Technology and the Global economy <i class="ibm-forward-link"></i></a></li>
+		  <div class="deadline"></div>
+	  </ul>
+	  <li class="browseByCategoryMBItem flex">Regions <i class="ibm-maximize-link"></i></li>
+	  <ul class="browseByCategoryMBItemDetail">
+		  <li><a href="explore.html?tids=1001,6006&amp;lnk=cb">Canada <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=1001,6007&amp;lnk=cb">China <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=1001,6013&amp;lnk=cb">Germany <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=1001,6016&amp;lnk=cb">India <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=1001,6020&amp;lnk=cb">Japan <i class="ibm-forward-link"></i></a></li>
+		  <li><a href="explore.html?tids=1001,6058&amp;lnk=cb">Middle East and Africa <i class="ibm-forward-link"></i></a></li>
+		  <div class="deadline"></div>
+	  </ul>
+  </ul>
+</div>
+</div>
+		  <!-- CLOSING : BEGIN -->
+		  <!-- This is the closing ssi -->
+
+		  <!-- CLOSING : END -->
+  
+
+<div id="ibm-overlay-backdrop"></div><div id="ibm-mobilemenu-screen"></div><div id="teconsent" class="truste_cookie_prefs" style="position: fixed; display: none; height: 40px; background-color: #ffffff; z-index: 9999999999; bottom: 0; right: 0; margin: 0; padding: 0 16px; line-height: 40px; vertical-align: middle; box-shadow:0 0 10px 3px rgba(0,0,0,.1)" consent="undefined" aria-label="Open Cookie Preferences Modal" role="complementary"><script type="text/javascript" src="//consent.truste.com/notice?c=teconsent&amp;domain=ibm.com&amp;country=us&amp;state=ny&amp;text=true&amp;pcookie&amp;gtm=1&amp;cdn=1" id="truste_0.5886488422751461"></script><script async="async" type="text/javascript" crossorigin="" src="https://consent-st.trustarc.com/asset/notice.js/v/v1.7-218"></script><a role="link" id="icon-id05700001663070573" tabindex="0" lang="en" style="cursor: pointer; font-family: ibm-plex-sans; font-size: 12pt; color: #3d3d3d; text-decoration: none">Cookie Preferences</a></div><script async="" src="//pixel.mathtag.com/event/js?mt_pp=2&amp;mt_adid=171815&amp;mt_id=1075167&amp;event_type=catchall&amp;industry=technology&amp;mt_excl=85477167234215621353381&amp;page_name=ibv-dev.dst.ibm.com&amp;site_language=en-US&amp;version=1.0&amp;language=zh-CN%2Czh%3Bq%3D0.9&amp;mt_lim=20&amp;document_title=Home%20%7C%20IBM%20Institute%20for%20Business%20Value&amp;location=https%3A%2F%2Fibv-dev.dst.ibm.com%2F&amp;document_path=%2F&amp;mt_cb=1603098946463" id="mm_pp_background"></script><iframe name="trustarc_notice" id="trustarcNoticeFrame" title="Trustarc Cross-Domain Consent Frame" src="https://consent-st.trustarc.com/get?name=crossdomain.html&amp;domain=ibm.com" style="display: none;"></iframe><iframe id="LOTCCFrame_1603098947011" src="https://bcp.crwdcntrl.net/5/c=10026/rand=503099178/pv=y/tp=IBMX/seg=IBMID%3ANo/seg=%23OpR%2383586%23digitalData%20%3A%20user%20%3A%20userInfo%20%3A%20company_name%20%3A%20ibm%20corporation/seg=%23OpR%2383587%23digitalData%20%3A%20user%20%3A%20userInfo%20%3A%20country%20%3A%20us/seg=%23OpR%2383588%23digitalData%20%3A%20user%20%3A%20userInfo%20%3A%20industry%20%3A%20software%20%26%20technology/seg=%23OpR%2383591%23digitalData%20%3A%20user%20%3A%20userInfo%20%3A%20forbes_2000%20%3A%20true/seg=%23OpR%2383592%23digitalData%20%3A%20user%20%3A%20userInfo%20%3A%20fortune_1000%20%3A%20true/seg=%23OpR%2383593%23digitalData%20%3A%20user%20%3A%20userInfo%20%3A%20registry_country_code%20%3A%20us/seg=%23OpR%2383594%23digitalData%20%3A%20user%20%3A%20userInfo%20%3A%20company_name%20%3A%20ibm%20corporation/tpid=49133f0b-7209-402c-9cfa-9fcb8bc3d6d1/int=%23OpR%2377304%23digitalData%20%3A%20siteID%20%3A%20IBM_IBV_w3/int=%23OpR%2399714%23IBM.com%20%3A%20Logged%20In%20User%20%3A%20No/dem=%23OpR%2377294%23digitalData%20%3A%20isIBMer%20%3A%201/dem=%23OpR%2377836%23digitalData%20%3A%20language%20%3A%20en-US/dem=%23OpR%2383589%23digitalData%20%3A%20user%20%3A%20userInfo%20%3A%20annual_sales%20%3A%2079590000000/dem=%23OpR%2383590%23digitalData%20%3A%20user%20%3A%20userInfo%20%3A%20employee_count%20%3A%20351000/dmn=%23OpR%2386492%23digitalData%20%3A%20referrerID%20%3A%20/rt=ifr" title="empty" tabindex="-1" role="presentation" aria-hidden="true" style="border: 0px; width: 0px; height: 0px; display: block;"></iframe><iframe src="https://pixel.mathtag.com/sync/iframe?mt_uuid=e4ca5f3d-453d-4300-b839-398582ae318a&amp;no_iframe=1&amp;mt_adid=171815&amp;mt_lim=20&amp;skipsync=10090" id="mm_sync_back_ground" title="MediaMath Advertising" style="visibility: hidden; display: none;"></iframe></body></html>
